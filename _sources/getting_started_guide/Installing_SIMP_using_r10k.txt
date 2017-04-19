@@ -85,7 +85,7 @@ The modules are defined in a :term:`Puppetfile`, which SIMP uses as a developmen
 tool. We keep an up-to-date Puppetfile in the core of our repo, which you can
 download using this snippet:
 
-.. code-block:: bash
+.. parsed-literal::
 
   $ curl -o Puppetfile https://github.com/simp/simp-core/blob/|simp_version|/Puppetfile.stable
 
