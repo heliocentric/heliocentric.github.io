@@ -1,6 +1,6 @@
 .. _install-simp-on-pe:
 
-Installing SIMP on PE
+Installing SIMP on Puppet Enterprise
 ======================
 
 .. contents:: Contents:
