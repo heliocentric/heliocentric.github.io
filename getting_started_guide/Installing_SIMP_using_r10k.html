@@ -176,16 +176,12 @@
 <li><a class="reference internal" href="#setting-up-your-control-repo" id="id2">Setting up your Control Repo</a></li>
 <li><a class="reference internal" href="#keydist-rsync-and-the-alternate-module-path" id="id3">Keydist, Rsync, and the Alternate Module Path</a></li>
 <li><a class="reference internal" href="#minimum-classes-for-classification" id="id4">Minimum classes for classification</a><ul>
-<li><a class="reference internal" href="#server" id="id5">Server</a><ul>
-<li><a class="reference internal" href="#open-source" id="id6">Open Source</a></li>
-<li><a class="reference internal" href="#pe" id="id7">PE</a></li>
+<li><a class="reference internal" href="#server" id="id5">Server</a></li>
+<li><a class="reference internal" href="#agents" id="id6">Agents</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#agents" id="id8">Agents</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#running-puppet-for-the-first-time" id="id9">Running Puppet for the first time</a></li>
-<li><a class="reference internal" href="#notes-about-simp-infrastructure" id="id10">Notes about SIMP Infrastructure</a></li>
+<li><a class="reference internal" href="#running-puppet-for-the-first-time" id="id7">Running Puppet for the first time</a></li>
+<li><a class="reference internal" href="#notes-about-simp-infrastructure" id="id8">Notes about SIMP Infrastructure</a></li>
 </ul>
 </div>
 <p><a class="reference internal" href="../glossary.html#term-r10k"><span class="xref std std-term">r10k</span></a> and <a class="reference internal" href="../glossary.html#term-code-manager"><span class="xref std std-term">Code Manager</span></a> are products that automate the development
@@ -337,8 +333,10 @@ Puppet server.</p>
 <h2><a class="toc-backref" href="#id4">3.4.4. Minimum classes for classification</a><a class="headerlink" href="#minimum-classes-for-classification" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="server">
 <h3><a class="toc-backref" href="#id5">3.4.4.1. Server</a><a class="headerlink" href="#server" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="open-source">
-<h4><a class="toc-backref" href="#id6">3.4.4.1.1. Open Source</a><a class="headerlink" href="#open-source" title="Permalink to this headline">¶</a></h4>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">These instructions are for SIMP users who are not using Puppet Enterprise. Please refer to &#8216;Installing SIMP on Puppet Enterprise&#8217;_ for detailed documentation</p>
+</div>
 <p>Because SIMP will manage the puppetserver, just include the following classes:</p>
 <ul class="simple">
 <li><code class="docutils literal"><span class="pre">simp</span></code></li>
@@ -346,26 +344,15 @@ Puppet server.</p>
 <li><code class="docutils literal"><span class="pre">pupmod::master</span></code></li>
 </ul>
 </div>
-<div class="section" id="pe">
-<h4><a class="toc-backref" href="#id7">3.4.4.1.2. PE</a><a class="headerlink" href="#pe" title="Permalink to this headline">¶</a></h4>
-<p>In a PE environment, The SIMP Server will normally be the Master of Masters (MoM).
-Currently, Compile Masters (CMs) are not automatically supported out of the box,
-and require extra configuration to ensure they remain in sync.</p>
-<ul class="simple">
-<li><code class="docutils literal"><span class="pre">simp</span></code></li>
-<li><code class="docutils literal"><span class="pre">simp::server</span></code></li>
-</ul>
-</div>
-</div>
 <div class="section" id="agents">
-<h3><a class="toc-backref" href="#id8">3.4.4.2. Agents</a><a class="headerlink" href="#agents" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id6">3.4.4.2. Agents</a><a class="headerlink" href="#agents" title="Permalink to this headline">¶</a></h3>
 <p>Other agent will require the <code class="docutils literal"><span class="pre">simp</span></code> class or profile at a minimum. Other
 classes or profiles may be included on top of this baseline for the desired
 functionality. Check the <code class="docutils literal"><span class="pre">simp</span></code> scenario for a full list of classes.</p>
 </div>
 </div>
 <div class="section" id="running-puppet-for-the-first-time">
-<h2><a class="toc-backref" href="#id9">3.4.5. Running Puppet for the first time</a><a class="headerlink" href="#running-puppet-for-the-first-time" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id7">3.4.5. Running Puppet for the first time</a><a class="headerlink" href="#running-puppet-for-the-first-time" title="Permalink to this headline">¶</a></h2>
 <p>SIMP doesn&#8217;t configure the puppetserver to listen on the typical port and CA
 port, so the first time the puppet agent is run, you may have to specify the
 <code class="docutils literal"><span class="pre">ca_port</span></code> and <code class="docutils literal"><span class="pre">server</span></code>. An example:</p>
@@ -400,7 +387,7 @@ it sudo powers:</p>
 </div>
 </div>
 <div class="section" id="notes-about-simp-infrastructure">
-<h2><a class="toc-backref" href="#id10">3.4.6. Notes about SIMP Infrastructure</a><a class="headerlink" href="#notes-about-simp-infrastructure" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id8">3.4.6. Notes about SIMP Infrastructure</a><a class="headerlink" href="#notes-about-simp-infrastructure" title="Permalink to this headline">¶</a></h2>
 <p>SIMP, when installed from the ISO, moves packages into <code class="docutils literal"><span class="pre">/var/www/yum</span></code> and
 creates a <code class="docutils literal"><span class="pre">yum</span></code> repo in itself. SIMP modules, notably the <code class="docutils literal"><span class="pre">simp::yum</span></code> class,
 assumes this. You will have to set <code class="docutils literal"><span class="pre">simp::yum::os_update_url</span></code> to a CentOS

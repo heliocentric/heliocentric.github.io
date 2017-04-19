@@ -179,26 +179,14 @@ Minimum classes for classification
 
 Server
 ------
-
-Open Source
-~~~~~~~~~~~
+.. WARNING::
+  These instructions are for SIMP users who are not using Puppet Enterprise. Please refer to 'Installing SIMP on Puppet Enterprise'_ for detailed documentation
 
 Because SIMP will manage the puppetserver, just include the following classes:
 
 * ``simp``
 * ``simp::server``
 * ``pupmod::master``
-
-PE
-~~
-
-In a PE environment, The SIMP Server will normally be the Master of Masters (MoM).
-Currently, Compile Masters (CMs) are not automatically supported out of the box,
-and require extra configuration to ensure they remain in sync.
-
-* ``simp``
-* ``simp::server``
-
 
 Agents
 ------
