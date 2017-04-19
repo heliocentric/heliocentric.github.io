@@ -5,3 +5,5 @@ Installing SIMP on Puppet Enterprise
 
 .. contents:: Contents:
   :local:
+
+To install SIMP on Puppet Enterprise 

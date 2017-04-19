@@ -256,7 +256,7 @@ updating and developing on your Puppet infrastructure.</p>
 <p>The modules are defined in a <a class="reference internal" href="../glossary.html#term-puppetfile"><span class="xref std std-term">Puppetfile</span></a>, which SIMP uses as a development
 tool. We keep an up-to-date Puppetfile in the core of our repo, which you can
 download using this snippet:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -o Puppetfile https://github.com/simp/simp-core/blob/&lt;release&gt;/Puppetfile.stable
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -o Puppetfile https://github.com/simp/simp-core/blob/<span class="p">|</span>simp_version<span class="p">|</span>/Puppetfile.stable
 </pre></div>
 </div>
 <p>The example Puppetfile is labeled <em>stable</em>, meaning that the versions of the

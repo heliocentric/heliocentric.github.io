@@ -87,7 +87,7 @@ download using this snippet:
 
 .. code-block:: bash
 
-  $ curl -o Puppetfile https://github.com/simp/simp-core/blob/<release>/Puppetfile.stable
+  $ curl -o Puppetfile https://github.com/simp/simp-core/blob/|simp_version|/Puppetfile.stable
 
 The example Puppetfile is labeled *stable*, meaning that the versions of the
 modules it contains are the ones contained in the last SIMP release. You can go
