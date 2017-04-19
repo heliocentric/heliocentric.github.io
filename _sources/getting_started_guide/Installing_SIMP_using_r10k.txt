@@ -180,7 +180,7 @@ Minimum classes for classification
 Server
 ------
 .. WARNING::
-  These instructions are for SIMP users who are not using Puppet Enterprise. Please refer to 'Installing SIMP on Puppet Enterprise'_ for detailed documentation
+  These instructions are for SIMP users who are not using Puppet Enterprise. Please refer to `Installing SIMP on Puppet Enterprise`_ for detailed documentation
 
 Because SIMP will manage the puppetserver, just include the following classes:
 
