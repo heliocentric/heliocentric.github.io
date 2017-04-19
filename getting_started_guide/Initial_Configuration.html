@@ -1,0 +1,543 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3.8. Initial Configuration &mdash; SIMP 5.2.1-0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="https://media.readthedocs.org/css/sphinx_rtd_theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="https://media.readthedocs.org/css/readthedocs-doc-embed.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css_overrides.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="SIMP 5.2.1-0 documentation" href="../index.html"/>
+        <link rel="up" title="3. SIMP Getting Started Guide" href="index.html"/>
+        <link rel="next" title="4. SIMP User Guide" href="../user_guide/index.html"/>
+        <link rel="prev" title="3.7.3. Disk Encryption" href="ISO_Install/Disk_Encryption.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html">
+        
+
+        
+          
+          <img src="../_static/SIMP_Logo.png" class="logo" />
+        
+        </a>
+
+        
+          
+          
+            <div class="version">
+              5.2.1
+            </div>
+          
+        
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to the SIMP documentation!</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Just_Install.html">1. For the Impatient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dynamic/Changelog.html">2. Changelog</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">3. Getting Started</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Introduction.html">3.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dynamic/Known_OS_Compatibility.html">3.2. Known OS Compatibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Installing_SIMP_From_A_Repository.html">3.3. Installing SIMP From A Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Installing_SIMP_using_r10k.html">3.4. Installing SIMP using r10k or Code Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Installing_SIMP_on_PE.html">3.5. Installing SIMP on PE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Building_A_SIMP_ISO.html">3.6. Building a SIMP ISO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ISO_Install/index.html">3.7. SIMP Server ISO Installation Guide</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.8. Initial Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installation-variables">3.8.1. Installation Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#simp-config-actions">3.8.2. simp config Actions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">4. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributors_guide/index.html">5. Contributing to SIMP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security_conop/index.html">6. Security Concept of Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security_mapping/index.html">7. Security Control Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/index.html">8. Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">9. License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html#contact">10. Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">11. Glossary of Terms</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">SIMP</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">3. SIMP Getting Started Guide</a> &raquo;</li>
+      
+    <li>3.8. Initial Configuration</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/getting_started_guide/Initial_Configuration.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="initial-configuration">
+<span id="id1"></span><h1>3.8. Initial Configuration<a class="headerlink" href="#initial-configuration" title="Permalink to this headline">¶</a></h1>
+<p>The goal of <code class="docutils literal"><span class="pre">simp</span> <span class="pre">config</span></code> is to allow the user to quickly configure the
+SIMP server with minimal user input/operations.  To that end <code class="docutils literal"><span class="pre">simp</span> <span class="pre">config</span></code>
+sets installation variables based on information gathered from the user,
+existing system settings, and SIMP security requirements. It then
+applies the smallest subset of these system settings that is required to
+bootstrap the system with Puppet.  Both the installation variables and
+their application via <code class="docutils literal"><span class="pre">simp</span> <span class="pre">config</span></code> are described in subsections that
+follow.</p>
+<div class="section" id="installation-variables">
+<span id="list-of-installation-variables"></span><h2>3.8.1. Installation Variables<a class="headerlink" href="#installation-variables" title="Permalink to this headline">¶</a></h2>
+<p>This section describes the installation variables set by <code class="docutils literal"><span class="pre">simp</span> <span class="pre">config</span></code>.
+Although the table that follows list all, possible, installation variables,
+the user will not be prompted for all of them, nor will all of them
+appear in the configuration files generated by <code class="docutils literal"><span class="pre">simp</span> <span class="pre">config</span></code>.  Some
+of these variables will be automatically set based on other installation
+variables, system settings, or SIMP security requirements.  Others will
+be omitted because either they are unnecessary for a particular site
+configuration, or their defaults are appropriate. Also, please note
+that variables beginning with &#8216;cli::&#8217; are only used internally by
+<code class="docutils literal"><span class="pre">simp</span> <span class="pre">config</span></code>, itself.  The &#8216;cli::&#8217; variables are written to
+<code class="docutils literal"><span class="pre">simp_conf.yaml</span></code>, but not persisted to any Puppet hieradata files.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="43%" />
+<col width="57%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>cli::is_ldap_server</td>
+<td>Whether the SIMP server will also be
+the LDAP server.</td>
+</tr>
+<tr class="row-odd"><td>cli::network::dhcp</td>
+<td>Whether to use DHCP for the network;
+<em>dhcp</em> to enable DHCP, <em>static</em> otherwise</td>
+</tr>
+<tr class="row-even"><td>cli::network::gateway</td>
+<td>Default gateway</td>
+</tr>
+<tr class="row-odd"><td>cli::network::hostname</td>
+<td>FQDN of server</td>
+</tr>
+<tr class="row-even"><td>cli::network::interface</td>
+<td>Network interface to use</td>
+</tr>
+<tr class="row-odd"><td>cli::network::ipaddress</td>
+<td>IP address of server</td>
+</tr>
+<tr class="row-even"><td>cli::network::netmask</td>
+<td>Netmask of the system</td>
+</tr>
+<tr class="row-odd"><td>cli::network::set_up_nic</td>
+<td>Whether to set up the network interface;
+<em>true</em> or <em>false</em></td>
+</tr>
+<tr class="row-even"><td>cli::set_grub_password</td>
+<td>Whether to set a GRUB password on the
+server; <em>true</em> or <em>false</em></td>
+</tr>
+<tr class="row-odd"><td>cli::set_production_to_simp</td>
+<td>Whether to set default Puppet environment
+to &#8216;simp&#8217;; <em>true</em> or <em>false</em></td>
+</tr>
+<tr class="row-even"><td>cli::simp::scenario</td>
+<td>SIMP scenario; <em>simp</em> = full SIMP system,
+<em>simp_lite</em> = SIMP system with some
+security features disabled for clients,
+<em>poss</em> = SIMP system with all security
+features disabled for clients.</td>
+</tr>
+<tr class="row-odd"><td>grub::password</td>
+<td>GRUB password hash</td>
+</tr>
+<tr class="row-even"><td>puppetdb::master::config::puppetdb_port</td>
+<td>Port used by the puppet database</td>
+</tr>
+<tr class="row-odd"><td>puppetdb::master::config::puppetdb_server</td>
+<td>DNS name or IP of puppet database server</td>
+</tr>
+<tr class="row-even"><td>simp_openldap::server::conf::rootpw</td>
+<td>LDAP Root password hash</td>
+</tr>
+<tr class="row-odd"><td>simp_options::dns::search</td>
+<td>Search domain for DNS</td>
+</tr>
+<tr class="row-even"><td>simp_options::dns::servers</td>
+<td>List of DNS servers for the managed hosts</td>
+</tr>
+<tr class="row-odd"><td>simp_options::fips</td>
+<td>Enable FIPS-140-2 compliance; <em>true</em>
+or <em>false</em>; value automatically set to
+detected system FIPS status</td>
+</tr>
+<tr class="row-even"><td>simp_options::ldap</td>
+<td>Whether to use LDAP; <em>true</em> or <em>false</em></td>
+</tr>
+<tr class="row-odd"><td>simp_options::ldap::base_dn</td>
+<td>LDAP Server Base Distinguished Name</td>
+</tr>
+<tr class="row-even"><td>simp_options::ldap::bind_dn</td>
+<td>LDAP Bind Distinguished Name</td>
+</tr>
+<tr class="row-odd"><td>simp_options::ldap::bind_hash</td>
+<td>LDAP Bind password hash</td>
+</tr>
+<tr class="row-even"><td>simp_options::ldap::bind_pw</td>
+<td>LDAP Bind password</td>
+</tr>
+<tr class="row-odd"><td>simp_options::ldap::master</td>
+<td>LDAP master URI</td>
+</tr>
+<tr class="row-even"><td>simp_options::ldap::sync_dn</td>
+<td>LDAP Sync Distinguished Name</td>
+</tr>
+<tr class="row-odd"><td>simp_options::ldap::sync_hash</td>
+<td>LDAP Sync password hash</td>
+</tr>
+<tr class="row-even"><td>simp_options::ldap::sync_pw</td>
+<td>LDAP Sync password</td>
+</tr>
+<tr class="row-odd"><td>simp_options::ldap::uri</td>
+<td>List of LDAP server URIs</td>
+</tr>
+<tr class="row-even"><td>simp_options::ntpd::servers</td>
+<td>NTP servers</td>
+</tr>
+<tr class="row-odd"><td>simp_options::puppet::ca</td>
+<td>FQDN of Puppet Certificate Authority (CA)</td>
+</tr>
+<tr class="row-even"><td>simp_options::puppet::ca_port</td>
+<td>Port Puppet CA will listen on</td>
+</tr>
+<tr class="row-odd"><td>simp_options::puppet::server</td>
+<td>FQDN of the puppet server</td>
+</tr>
+<tr class="row-even"><td>simp_options::sssd</td>
+<td>Whether to use SSSD</td>
+</tr>
+<tr class="row-odd"><td>simp_options::syslog::failover_log_servers</td>
+<td>IP addresses of failover log servers</td>
+</tr>
+<tr class="row-even"><td>simp_options::syslog::log_servers</td>
+<td>IP addresses of primary log servers</td>
+</tr>
+<tr class="row-odd"><td>simp_options::trusted_nets</td>
+<td>Subnet used for clients managed by the
+puppet server</td>
+</tr>
+<tr class="row-even"><td>simp::runlevel</td>
+<td>Default system run level; 1-5</td>
+</tr>
+<tr class="row-odd"><td>simp::yum::enable_os_repos</td>
+<td>Whether to enable remote OS YUM
+repositories</td>
+</tr>
+<tr class="row-even"><td>simp::yum::enable_simp_repos</td>
+<td>Whether to enable remote SIMP YUM
+repositories</td>
+</tr>
+<tr class="row-odd"><td>simp::yum::os_update_url</td>
+<td>Full URL to a YUM repo for OS packages</td>
+</tr>
+<tr class="row-even"><td>simp::yum::servers</td>
+<td>YUM server(s) for OS and SIMP packages</td>
+</tr>
+<tr class="row-odd"><td>simp::yum::simp_update_url</td>
+<td>Full URL to a YUM repo for SIMP packages</td>
+</tr>
+<tr class="row-even"><td>sssd::domains</td>
+<td>List of SSSD domains</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="simp-config-actions">
+<span id="id2"></span><h2>3.8.2. simp config Actions<a class="headerlink" href="#simp-config-actions" title="Permalink to this headline">¶</a></h2>
+<p>In addition to creating the three configuration, YAML files, <code class="docutils literal"><span class="pre">simp</span> <span class="pre">config</span></code>
+performs a limited set of actions in order to prepare the system for
+bootstrapping.  Although the table that follows list all, possible,
+<code class="docutils literal"><span class="pre">simp</span> <span class="pre">config</span></code> actions, not all of these actions will apply for all site
+configurations.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="22%" />
+<col width="58%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Category</th>
+<th class="head" colspan="2">Actions Performed</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Certificates</td>
+<td colspan="2">If no certificates for the host are found in
+<code class="docutils literal"><span class="pre">/var/simp/environments/simp/site_files/pki_files/</span></code>
+<code class="docutils literal"><span class="pre">files/keydist</span></code>, <code class="docutils literal"><span class="pre">simp</span> <span class="pre">config</span></code> will use SIMP&#8217;s FakeCA
+to generate interim host certificates.  These certificates,
+which are independent of the certificates managed by Puppet,
+are required by SIMP and should be replaced by certificates
+from an official <a class="reference internal" href="../glossary.html#term-certificate-authority"><span class="xref std std-term">Certificate Authority</span></a>, as soon as
+is practical.</td>
+</tr>
+<tr class="row-odd"><td>Digest
+Algorithm for
+FIPS</td>
+<td colspan="2">When the system is in <a class="reference internal" href="../glossary.html#term-fips"><span class="xref std std-term">FIPS</span></a> mode,
+<code class="docutils literal"><span class="pre">simp</span> <span class="pre">config</span></code> will set the Puppet digest algorithm to
+<em>sha256</em> to prevent any Puppet-related actions executed by
+<code class="docutils literal"><span class="pre">simp</span> <span class="pre">config</span></code> from using MD5 checksums. Note that this is
+<strong>not</strong> all that must be done to enable FIPS. The complete
+set of actions required to support FIPS is handled by
+<code class="docutils literal"><span class="pre">simp</span> <span class="pre">bootstrap</span></code>.</td>
+</tr>
+<tr class="row-even"><td>GRUB</td>
+<td colspan="2">When the user selects to set the GRUB password
+<code class="docutils literal"><span class="pre">simp</span> <span class="pre">config</span></code> will set the password in the appropriate
+grub configuration file, <code class="docutils literal"><span class="pre">/etc/grub.conf</span></code> or
+<code class="docutils literal"><span class="pre">/etc/grub2.cfg</span></code>.</td>
+</tr>
+<tr class="row-odd"><td>LDAP</td>
+<td colspan="2"><p class="first">When the SIMP server is also an LDAP server, <code class="docutils literal"><span class="pre">simp</span> <span class="pre">config</span></code></p>
+<ul class="last simple">
+<li>Adds <code class="docutils literal"><span class="pre">simp::server::ldap</span></code> to the SIMP server host YAML
+file, which allows the SIMP server to act as a LDAP server</li>
+<li>Adds the hash of the user-supplied LDAP root password to
+the SIMP server host YAML file as
+<code class="docutils literal"><span class="pre">simp_openldap::server::conf::rootpw</span></code> to the SIMP</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td>Network</td>
+<td colspan="2"><ul class="first last simple">
+<li>When the user selects to configure the network interface,
+<code class="docutils literal"><span class="pre">simp</span> <span class="pre">config</span></code> uses Puppet to set the network interface
+parameters in system networking files and to bring up the
+interface.</li>
+<li><code class="docutils literal"><span class="pre">simp</span> <span class="pre">config</span></code> sets the hostname.</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>Puppet</td>
+<td colspan="2"><ul class="first last simple">
+<li>Copies SIMP modules installed via RPM in
+<code class="docutils literal"><span class="pre">/usr/share/simp</span></code> into the Puppet environments directory
+<code class="docutils literal"><span class="pre">/etc/puppetlabs/code/environments</span></code> if necessary.</li>
+<li>When selected, sets the default Puppet environment to
+&#8216;simp&#8217;, backing up the existing &#8216;production&#8217; environment,
+if it exists.</li>
+<li>Creates/updates <code class="docutils literal"><span class="pre">/etc/puppetlabs/puppet/autosign.conf</span></code>.</li>
+<li>Updates the following Puppet settings:
+<code class="docutils literal"><span class="pre">digest_algorithm</span></code>, <code class="docutils literal"><span class="pre">keylength</span></code>, <code class="docutils literal"><span class="pre">server</span></code>,
+<code class="docutils literal"><span class="pre">ca_server</span></code>, <code class="docutils literal"><span class="pre">ca_port</span></code>, and <code class="docutils literal"><span class="pre">trusted_server_facts</span></code>.</li>
+<li>Updates <code class="docutils literal"><span class="pre">/etc/hosts</span></code> to ensure a puppet server entry
+exists.</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td>SIMP Hiera and
+Site Manifest</td>
+<td colspan="2"><ul class="first last simple">
+<li>Sets the <code class="docutils literal"><span class="pre">$simp_scenario</span></code> variable in the site.pp of the
+&#8216;simp&#8217; environment to the user-selected scenario.</li>
+<li>If a host YAML file for the SIMP server does not already
+exist in
+<code class="docutils literal"><span class="pre">/etc/puppetlabs/code/environments/simp/hieradata/hosts</span></code>
+does not already exist, <code class="docutils literal"><span class="pre">simp</span> <span class="pre">config</span></code> will create one
+from a SIMP template.</li>
+<li>Updates the SIMP server host YAML file with appropriate
+PuppetDB settings.</li>
+<li>Creates YAML file containing global hieradata relevant to
+both the SIMP server and SIMP clients in the &#8216;simp&#8217;,
+environment, <code class="docutils literal"><span class="pre">simp/hieradata/simp_config_settings.yaml</span></code></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>YUM</td>
+<td colspan="2"><ul class="first last simple">
+<li>When the local, SIMP-specific YUM repo exists
+(<code class="docutils literal"><span class="pre">/etc/yum.repos.d/simp_filesystem.repo</span></code>),
+<code class="docutils literal"><span class="pre">simp</span> <span class="pre">config</span></code><ul>
+<li>Updates the appropriate OS YUM Updates repository,
+contained at <code class="docutils literal"><span class="pre">/var/www/yum/OSTYPE/MAJORRELEASE/ARCH</span></code></li>
+<li>Disables any default CentOS repos</li>
+<li>Adds  simp::server::yum class to the SIMP server host
+YAML file, which allows the SIMP server to act as a
+YUM server for that repo</li>
+</ul>
+</li>
+<li>When the local SIMP-specific YUM repo does not exist,
+<code class="docutils literal"><span class="pre">simp</span> <span class="pre">config</span></code><ul>
+<li>Enables remote YUM repos in the SIMP server host YAML
+file</li>
+<li>Checks whether OS and SIMP packages can be found in
+user-configured remote YUM repos via <code class="docutils literal"><span class="pre">repoquery</span></code>.  If
+this check fails, <code class="docutils literal"><span class="pre">simp</span> <span class="pre">bootstrap</span></code> will be prevented
+from running until the user manually fixes the issue.</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../user_guide/index.html" class="btn btn-neutral float-right" title="4. SIMP User Guide" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ISO_Install/Disk_Encryption.html" class="btn btn-neutral" title="3.7.3. Disk Encryption" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, THE SIMP TEAM.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'4.2.X',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

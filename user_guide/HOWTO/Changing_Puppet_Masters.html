@@ -1,0 +1,344 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4.7.3. HOWTO Change Puppet Servers &mdash; SIMP 5.2.1-0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="https://media.readthedocs.org/css/sphinx_rtd_theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="https://media.readthedocs.org/css/readthedocs-doc-embed.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css_overrides.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="SIMP 5.2.1-0 documentation" href="../../index.html"/>
+        <link rel="up" title="4.7. SIMP HOWTO Guides" href="../HOWTO.html"/>
+        <link rel="next" title="4.7.4. HOWTO Discard Mail to Root" href="Discard_Mail_to_Root.html"/>
+        <link rel="prev" title="4.7.2.2. Elasticsearch, Logstash, and Grafana" href="Central_Log_Collection/Logstash.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html">
+        
+
+        
+          
+          <img src="../../_static/SIMP_Logo.png" class="logo" />
+        
+        </a>
+
+        
+          
+          
+            <div class="version">
+              5.2.1
+            </div>
+          
+        
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Welcome to the SIMP documentation!</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started_guide/Just_Install.html">1. For the Impatient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dynamic/Changelog.html">2. Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started_guide/index.html">3. Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">4. User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Introduction.html">4.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Client_Management.html">4.2. Client Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SIMP_Administration.html">4.3. General Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../User_Management.html">4.4. User Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Hiera_Overview.html">4.5. Hiera Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Troubleshooting.html">4.6. Troubleshooting Common Issues</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../HOWTO.html">4.7. SIMP HOWTO Guides</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Work_With_Rsync.html">4.7.1. Work with the SIMP Rsync Shares</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Central_Log_Collection.html">4.7.2. Setup Central Log Collection</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">4.7.3. Change Puppet Masters</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#on-the-old-puppet-server">4.7.3.1. On the Old Puppet Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#on-the-new-puppet-server">4.7.3.2. On the New Puppet Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#on-each-client">4.7.3.3. On Each Client</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Discard_Mail_to_Root.html">4.7.4. Discard Mail to Root</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Exclude_Repositories.html">4.7.5. Exclude YUM Repositories from Nightly Updates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NFS.html">4.7.6. Configure NFS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IPTables_NAT_Rules.html">4.7.7. Configure IPTables NAT Rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Kerberos.html">4.7.8. Enable Kerberos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Managing_Workstation_Infrastructures.html">4.7.9. Manage Workstation Infrastructures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Network_Build.html">4.7.10. Kickstart the Initial Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Puppetmaster_Backup.html">4.7.11. Backup the Puppet Master</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Puppet_Server_NAT.html">4.7.12. Configure a Puppet Server Behind a NAT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Redundant_LDAP.html">4.7.13. Enable Redundent LDAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SFTP_Restricted_Accounts.html">4.7.14. Enable SFTP Restricted Accounts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SSH_Keys.html">4.7.15. Setup SSH Authorized Keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SSH_Restrict_Network_Access.html">4.7.16. Restrict SSH Network Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Upgrade_SIMP.html">4.7.17. Upgrade SIMP (Coming Soon!)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Manage_TPM.html">4.7.18. Manage TPM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../SIMP_Package_Data.html">4.8. Package Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#indices-and-tables">4.9. Indices and tables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributors_guide/index.html">5. Contributing to SIMP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_conop/index.html">6. Security Concept of Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_mapping/index.html">7. Security Control Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../help/index.html">8. Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">9. License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html#contact">10. Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">11. Glossary of Terms</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">SIMP</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">4. SIMP User Guide</a> &raquo;</li>
+      
+          <li><a href="../HOWTO.html">4.7. SIMP HOWTO Guides</a> &raquo;</li>
+      
+    <li>4.7.3. HOWTO Change Puppet Servers</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/user_guide/HOWTO/Changing_Puppet_Masters.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="howto-change-puppet-servers">
+<h1>4.7.3. HOWTO Change Puppet Servers<a class="headerlink" href="#howto-change-puppet-servers" title="Permalink to this headline">¶</a></h1>
+<p>It may be necessary to change the Puppet Server. To point a particular
+client to a new Puppet Server, follow the steps in the sections below.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">All commands in this section should be run as the <code class="docutils literal"><span class="pre">root</span></code> user.</p>
+</div>
+<div class="section" id="on-the-old-puppet-server">
+<h2>4.7.3.1. On the Old Puppet Server<a class="headerlink" href="#on-the-old-puppet-server" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="collect-the-client-s-server-side-artifacts">
+<h3>4.7.3.1.1. Collect the Client&#8217;s Server-Side Artifacts<a class="headerlink" href="#collect-the-client-s-server-side-artifacts" title="Permalink to this headline">¶</a></h3>
+<p>Until SIMP implements a shared Puppet data store (expected 2017-Q2), you will
+need to manually copy some artifacts from the old server to the new server</p>
+<p>To do this, run:</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>$ find <span class="sb">`</span>puppet config --section master print vardir<span class="sb">`</span>/simp -name <span class="s2">&quot;*&lt;client-fqdn&gt;*&quot;</span> -exec tar --selinux --xattrs -rpvf &lt;client-fqdn&gt;_transfer.tar <span class="o">{}</span> <span class="se">\;</span>
+$ find /var/simp/environments -name <span class="s2">&quot;*&lt;client-fqdn&gt;*&quot;</span> -exec tar --selinux --xattrs -rpvf &lt;client-fqdn&gt;_transfer.tar <span class="o">{}</span> <span class="se">\;</span>
+</pre></div>
+</div>
+<p>Then, pull all of the relevant Hiera configuration for the node:</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>$ find /etc/puppetlabs/code/environments -name <span class="s2">&quot;&lt;client-hostname&gt;.yaml&quot;</span> -exec tar --selinux --xattrs -rpvf &lt;client-hostname&gt;_transfer.tar <span class="o">{}</span> <span class="se">\;</span>
+$ find /etc/puppetlabs/code/environments -name <span class="s2">&quot;&lt;client-fqdn&gt;.yaml&quot;</span> -exec tar --selinux --xattrs -rpvf &lt;client-hostname&gt;_transfer.tar <span class="o">{}</span> <span class="se">\;</span>
+</pre></div>
+</div>
+<p>Remove all of the node specific Hiera data:</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>$ find /etc/puppetlabs/code/environments -name <span class="s2">&quot;&lt;client-fqdn&gt;.yaml&quot;</span> --delete
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You may have Hiera YAML files with the short name of the host still in place
+but those are too dangerous to automatically delete since they may match
+multiple hosts.</p>
+</div>
+<p>Reload the <code class="docutils literal"><span class="pre">puppetserver</span></code> process:</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>$ puppetserver_reload
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="on-the-new-puppet-server">
+<h2>4.7.3.2. On the New Puppet Server<a class="headerlink" href="#on-the-new-puppet-server" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This assumes that the new Puppet Server is set up identically to the old
+Puppet Server. If it is not, you will need to verify that the artifacts in
+the <code class="docutils literal"><span class="pre">tar</span></code> file are correctly placed.</p>
+</div>
+<p>Unpack the <code class="docutils literal"><span class="pre">&lt;client-hostname&gt;_tansfer.tar</span></code> archive onto the system:</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>tar --selinux --xattrs -C / -xvf &lt;client-hostname&gt;_transfer.tar
+</pre></div>
+</div>
+<p>Reload the <code class="docutils literal"><span class="pre">puppetserver</span></code> process:</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>puppetserver_reload
+</pre></div>
+</div>
+</div>
+<div class="section" id="on-each-client">
+<h2>4.7.3.3. On Each Client<a class="headerlink" href="#on-each-client" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Make sure you are running these commands <strong>on the client</strong>. If you run them
+on the server, you have a very high risk of making your Puppet
+infrastructure inoperable.</p>
+</div>
+<div class="section" id="update-the-puppet-config">
+<h3>4.7.3.3.1. Update the Puppet Config<a class="headerlink" href="#update-the-puppet-config" title="Permalink to this headline">¶</a></h3>
+<p>Enter the following changes into <code class="docutils literal"><span class="pre">/etc/puppetlabs/puppet/puppet.conf</span></code>.</p>
+<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="na">server</span> <span class="o">=</span> <span class="s">new.puppet.master.fqdn</span>
+<span class="na">ca_server</span> <span class="o">=</span> <span class="s">new.puppet.master.fqdn</span>
+<span class="na">ca_port</span> <span class="o">=</span> <span class="s">8141</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="remove-the-client-puppet-certificates">
+<h3>4.7.3.3.2. Remove the Client Puppet Certificates<a class="headerlink" href="#remove-the-client-puppet-certificates" title="Permalink to this headline">¶</a></h3>
+<p>To remove all legacy SSL material, run <code class="docutils literal"><span class="pre">rm</span> <span class="pre">-rf</span> <span class="pre">`puppet</span> <span class="pre">config</span> <span class="pre">--section</span> <span class="pre">agent</span> <span class="pre">ssldir`</span></code></p>
+</div>
+<div class="section" id="run-puppet">
+<h3>4.7.3.3.3. Run Puppet<a class="headerlink" href="#run-puppet" title="Permalink to this headline">¶</a></h3>
+<p>Assuming the new Puppet Server has been set up to properly accept the
+client, execute a full Puppet run using <code class="docutils literal"><span class="pre">puppet</span> <span class="pre">agent</span> <span class="pre">--test</span></code>.</p>
+<p>If everything was done properly, the client will now be synchronized with the
+new Puppet Server.</p>
+<p>If you find issues, refer to the <a class="reference internal" href="../Client_Management.html#client-management"><span class="std std-ref">Client Management</span></a> section of the
+documentation and ensure that the new Puppet Server was set up properly.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Discard_Mail_to_Root.html" class="btn btn-neutral float-right" title="4.7.4. HOWTO Discard Mail to Root" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Central_Log_Collection/Logstash.html" class="btn btn-neutral" title="4.7.2.2. Elasticsearch, Logstash, and Grafana" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, THE SIMP TEAM.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'4.2.X',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

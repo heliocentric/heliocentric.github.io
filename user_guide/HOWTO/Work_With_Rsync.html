@@ -1,0 +1,434 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4.7.1. HOWTO Work with the SIMP Rsync Shares &mdash; SIMP 5.2.1-0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="https://media.readthedocs.org/css/sphinx_rtd_theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="https://media.readthedocs.org/css/readthedocs-doc-embed.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css_overrides.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="SIMP 5.2.1-0 documentation" href="../../index.html"/>
+        <link rel="up" title="4.7. SIMP HOWTO Guides" href="../HOWTO.html"/>
+        <link rel="next" title="4.7.2. HOWTO Setup Central Log Collection" href="Central_Log_Collection.html"/>
+        <link rel="prev" title="4.7. SIMP HOWTO Guides" href="../HOWTO.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html">
+        
+
+        
+          
+          <img src="../../_static/SIMP_Logo.png" class="logo" />
+        
+        </a>
+
+        
+          
+          
+            <div class="version">
+              5.2.1
+            </div>
+          
+        
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Welcome to the SIMP documentation!</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started_guide/Just_Install.html">1. For the Impatient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dynamic/Changelog.html">2. Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started_guide/index.html">3. Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">4. User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Introduction.html">4.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Client_Management.html">4.2. Client Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SIMP_Administration.html">4.3. General Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../User_Management.html">4.4. User Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Hiera_Overview.html">4.5. Hiera Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Troubleshooting.html">4.6. Troubleshooting Common Issues</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../HOWTO.html">4.7. SIMP HOWTO Guides</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">4.7.1. Work with the SIMP Rsync Shares</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#why-simp-uses-rsync">4.7.1.1. Why SIMP Uses Rsync</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#standard-capabilities">4.7.1.2. Standard Capabilities</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#supporting-additional-environments">4.7.1.3. Supporting Additional Environments</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Central_Log_Collection.html">4.7.2. Setup Central Log Collection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Changing_Puppet_Masters.html">4.7.3. Change Puppet Masters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Discard_Mail_to_Root.html">4.7.4. Discard Mail to Root</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Exclude_Repositories.html">4.7.5. Exclude YUM Repositories from Nightly Updates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NFS.html">4.7.6. Configure NFS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IPTables_NAT_Rules.html">4.7.7. Configure IPTables NAT Rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Kerberos.html">4.7.8. Enable Kerberos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Managing_Workstation_Infrastructures.html">4.7.9. Manage Workstation Infrastructures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Network_Build.html">4.7.10. Kickstart the Initial Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Puppetmaster_Backup.html">4.7.11. Backup the Puppet Master</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Puppet_Server_NAT.html">4.7.12. Configure a Puppet Server Behind a NAT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Redundant_LDAP.html">4.7.13. Enable Redundent LDAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SFTP_Restricted_Accounts.html">4.7.14. Enable SFTP Restricted Accounts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SSH_Keys.html">4.7.15. Setup SSH Authorized Keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SSH_Restrict_Network_Access.html">4.7.16. Restrict SSH Network Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Upgrade_SIMP.html">4.7.17. Upgrade SIMP (Coming Soon!)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Manage_TPM.html">4.7.18. Manage TPM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../SIMP_Package_Data.html">4.8. Package Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#indices-and-tables">4.9. Indices and tables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributors_guide/index.html">5. Contributing to SIMP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_conop/index.html">6. Security Concept of Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_mapping/index.html">7. Security Control Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../help/index.html">8. Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">9. License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html#contact">10. Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">11. Glossary of Terms</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">SIMP</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">4. SIMP User Guide</a> &raquo;</li>
+      
+          <li><a href="../HOWTO.html">4.7. SIMP HOWTO Guides</a> &raquo;</li>
+      
+    <li>4.7.1. HOWTO Work with the SIMP Rsync Shares</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/user_guide/HOWTO/Work_With_Rsync.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="howto-work-with-the-simp-rsync-shares">
+<h1>4.7.1. HOWTO Work with the SIMP Rsync Shares<a class="headerlink" href="#howto-work-with-the-simp-rsync-shares" title="Permalink to this headline">¶</a></h1>
+<p>When we added support for multiple environments, the SIMP rsync space in
+<code class="docutils literal"><span class="pre">/var/simp/environments/simp/rsync</span></code> became quite complex.</p>
+<p>This will guide you through the new rsync layout as well as providing guidance
+on setting up new rsync shares for your various components.</p>
+<p>This is very SIMP-specific and does not preclude you from using rsync however
+you like. However, if you want multi-environment support, you&#8217;ll need to
+replicate something like what we&#8217;ve done for your custom directories.</p>
+<div class="section" id="why-simp-uses-rsync">
+<h2>4.7.1.1. Why SIMP Uses Rsync<a class="headerlink" href="#why-simp-uses-rsync" title="Permalink to this headline">¶</a></h2>
+<p>Rsync support was introduced in SIMP in the early days due to the fact that the
+Puppet native file synchronization mechanisms were relatively horrible at
+syncing large files (too much in memory) and large numbers of files in a
+directory tree (too many resources and system load).</p>
+<p>Rsync neatly solves both of these issues and is present on all SIMP systems by
+default.</p>
+<p>By default, SIMP wraps all rsync connections in an Stunnel connection to
+provide encrypted connections. Additionally, SIMP adds randomly generated
+passwords to sensitive shares to prevent unauthorized connections.</p>
+<p>You can restrict this as far as necessary in your environment but the defaults
+should suit most needs.</p>
+</div>
+<div class="section" id="standard-capabilities">
+<h2>4.7.1.2. Standard Capabilities<a class="headerlink" href="#standard-capabilities" title="Permalink to this headline">¶</a></h2>
+<p>The standard SIMP rsync shares exist at <code class="docutils literal"><span class="pre">/var/simp/environments/simp/rsync</span></code>.
+This is an assumed path and changing this path will break some aspects of the
+system.</p>
+<p>Within this directory, you will find a set of files with the name <code class="docutils literal"><span class="pre">.shares</span></code>.
+This file is used by the fact <code class="docutils literal"><span class="pre">simp_rsync_environments</span></code> to indicate that all
+directories at the given location should be added as rsync shared directories.</p>
+<p>The data structure in the <code class="docutils literal"><span class="pre">simp_rsync_environments</span></code> is based on the <strong>lower
+cased</strong> name of the containing directory. This means that there should
+<strong>NEVER</strong> be two directories with the same name at the same level of the
+directory hierarchy. In this case, the last one present alphabetically will
+win.</p>
+<p>As a concrete example, given the following directory structure:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>var
+└── simp
+    └── environments
+        └── simp
+            └── rsync
+                ├── Global
+                │   ├── .shares
+                │   └── clamav
+                │       ├── main.cvd
+                │       ├── daily.cld
+                │       └── bytecode.cld
+                ├── .rsync.facl
+                ├── README
+                └── RedHat
+                    ├── Global
+                    │   ├── freeradius
+                    │   ├── .shares
+                    │   ├── tftpboot
+                    │   │   └── linux-install
+                    │   │       └── README
+                    │   ├── dhcpd
+                    │   │   ├── dhcpd.conf
+                    │   │   └── LICENSE
+                    │   ├── snmp
+                    │   │   ├── mibs
+                    │   │   └── dlmod
+                    │   └── apache
+                    │       └── www
+                    │           ├── cgi-bin
+                    │           ├── error
+                    │           │   └── include
+                    │           ├── icons
+                    │           │   └── small
+                    │           └── html
+                    ├── <span class="m">6</span>
+                    │   ├── bind_dns
+                    │   │   └── LICENSE
+                    │   └── .shares
+                    └── <span class="m">7</span>
+                        ├── bind_dns
+                        │   └── LICENSE
+                        └── .shares
+</pre></div>
+</div>
+<p>The following would be returned by the <code class="docutils literal"><span class="pre">simp_rsync_environments</span></code> fact:</p>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;simp&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;simp&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;rsync&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;rsync&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;global&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;Global&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;shares&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="s2">&quot;clamav&quot;</span>
+        <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;redhat&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;RedHat&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;6&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;6&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;shares&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;bind_dns&quot;</span>
+          <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;7&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;7&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;shares&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;bind_dns&quot;</span>
+          <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;global&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;Global&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;shares&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;freeradius&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;tftpboot&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;dhcpd&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;snmp&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;apache&quot;</span>
+          <span class="p">]</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Breaking this down, the following data is shown:</p>
+<div class="highlight-json"><div class="highlight"><pre><span></span> <span class="p">{</span>
+  <span class="nt">&quot;downcased_directory_name&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;Original_Directory_Name&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;downcased_subdirectory_name&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;Original_Subdirectory_Name&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;shares&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;Directory One&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;directory two&quot;</span>
+      <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The presence of the <code class="docutils literal"><span class="pre">.shares</span></code> file in the directory tree tells the
+<code class="docutils literal"><span class="pre">simp_rsync_environments</span></code> fact that all directories at that level are to
+be exposed as shares in the returned data structure.</p>
+<p>That said, it is up to your Puppet logic to actually expose them as such!</p>
+<p class="last">See the <code class="docutils literal"><span class="pre">simp::server::rsync_shares</span></code> class to see how we do this for the
+default rsync shares.</p>
+</div>
+</div>
+<div class="section" id="supporting-additional-environments">
+<h2>4.7.1.3. Supporting Additional Environments<a class="headerlink" href="#supporting-additional-environments" title="Permalink to this headline">¶</a></h2>
+<p>Generally, in a SIMP environment, you are going to want to start with the
+directory structure that we have and simply copy the entire data structure to a
+directory with your custom name.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Be sure not to copy any sensitive information into the space!</p>
+</div>
+<p>For example, if you wanted to create the standard dev/test/prod structure, and
+assuming that <code class="docutils literal"><span class="pre">production</span></code> is already symlinked to <code class="docutils literal"><span class="pre">simp</span></code>:</p>
+<p><code class="docutils literal"><span class="pre">`bash</span>
+<span class="pre">cd</span> <span class="pre">/var/simp/environments</span>
+<span class="pre">cp</span> <span class="pre">-a</span> <span class="pre">simp</span> <span class="pre">dev</span>
+<span class="pre">cp</span> <span class="pre">-a</span> <span class="pre">simp</span> <span class="pre">test</span>
+<span class="pre">`</span></code></p>
+<p>After this, you will now have an enhanced <code class="docutils literal"><span class="pre">simp_rsync_environments</span></code> data
+structure that holds all of the information for the <code class="docutils literal"><span class="pre">dev</span></code>, <code class="docutils literal"><span class="pre">test</span></code>,
+<code class="docutils literal"><span class="pre">production</span></code>, and <code class="docutils literal"><span class="pre">simp</span></code> environments.</p>
+<p>You can then manipulate the contents of the different environments to suit your
+needs.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The contents of the various rsync directories are not under version control
+by default. While you may add them to a VCS of your choosing (SVN, Git,
+etc...), there may be some VERY large files present in these directories.</p>
+<p class="last">Make sure your system can handle the load before adding rsync content into a
+VCS!</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Central_Log_Collection.html" class="btn btn-neutral float-right" title="4.7.2. HOWTO Setup Central Log Collection" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../HOWTO.html" class="btn btn-neutral" title="4.7. SIMP HOWTO Guides" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, THE SIMP TEAM.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'4.2.X',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
