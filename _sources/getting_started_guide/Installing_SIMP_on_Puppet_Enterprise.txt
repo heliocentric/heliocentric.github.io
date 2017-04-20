@@ -14,7 +14,18 @@ Puppet Enterprise installation. Once installed SIMP will
 configure itself to add the necessary firewall rules, and service
 level exclusions based only on changes made to the PE Console.
 
-Installing SIMP on top of Puppet Enterprise is a multi-step process
+Installing SIMP on top of Puppet Enterprise is a multi-step process,
+involving changes at the following places in your environment:
+
+* Control Repo
+* Global Hiera
+* Console Classifier
+* Some manual shell commands on the Master of Masters.
+
+As of 6.0, multiple compile masters and PE HA is not supported out
+of the box in SIMP. We are currently working on a Technology Preview in
+succeeding 6 versions to support HA configurations. At this time HA support
+requires manual configuration and only supports manual failover.
 
 System Requirements
 ^^^^^^^^^^^^^^^^^^^
@@ -27,8 +38,8 @@ The following versions of Puppet Enterprise are currently supported:
  PE Version    SIMP Version    Notes
 ============  ==============  =============================================
  2016.4        6.0
- 2016.5        6.0             SIMP on PE HA requires manual configuration
- 2017.1        6.0             SIMP on PE HA requires manual configuration
+ 2016.5        6.0             
+ 2017.1        6.0             
 ============  ==============  =============================================
 
 If you are configuring a PE HA setup, it is strongly recommended to configure
@@ -53,7 +64,12 @@ Pre-install tasks
 
 .. include:: Creating_A_SIMP_Control_Repo.rst
 
-XXX TODO Setting hiera simp_options::server_distribution
+Configuring Hiera
+^^^^^^^^^^^^^^^^^
+
+In order to configure a working SIMP environment under Puppet Enterprise,
+you will need to add some variables to Hiera
+
 
 XXX TODO Node Classification recommendations
 
