@@ -226,8 +226,10 @@ level exclusions based only on changes made to the PE Console.</p>
 </tr>
 </tbody>
 </table>
-<p>The following yum repositories are required for SIMP modules, that are
-currently not being managed by SIMP</p>
+<p>If you are configuring a PE HA setup, it is strongly recommended to configure
+the replica master before installing SIMP. The replica provision process makes
+a lot of single time changes to the system to configure the replication, and
+SIMP&#8217;s security restrictions may prevent it from working properly.</p>
 </div>
 <div class="section" id="enable-epel">
 <h3><a class="toc-backref" href="#id4">3.5.2.2. Enable EPEL</a><a class="headerlink" href="#enable-epel" title="Permalink to this headline">¶</a></h3>
