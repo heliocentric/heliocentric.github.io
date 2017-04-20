@@ -47,7 +47,7 @@ added to ``$PATH``):
 
   $ /opt/puppetlabs/puppet/bin/r10k help
 
-.. include:: Creating_SIMP_Control_Repo.rst
+.. include:: Creating_A_SIMP_Control_Repo.rst
 
 Minimum classes for classification
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
