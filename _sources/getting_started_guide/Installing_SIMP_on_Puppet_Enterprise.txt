@@ -22,8 +22,10 @@ The following versions of Puppet Enterprise are currently supported:
  2016.5        6.0             SIMP on PE HA requires manual configuration
  2017.1        6.0             SIMP on PE HA requires manual configuration
 ============  ==============  =============================================
+
 Disclaimer
 ^^^^^^^^^^
+
 SIMP will attempt to make minor compliance changes to Puppet
 Enterprise on certain versions. However we have not made major changes
 to bring it in-line with FIPS 140-2 to ensure that SIMP users who have
