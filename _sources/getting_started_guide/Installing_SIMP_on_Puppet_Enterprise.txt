@@ -15,15 +15,13 @@ configure itself to add the necessary firewall rules, and service
 level exclusions based only on changes made to the PE Console.
 
 The following versions of Puppet Enterprise are currently supported:
-
-+------------+--------------+-------------------------------------------------------+
-| PE Version | SIMP Version | Notes                                                 | 
-+===================================================================================+
-| 2016.4     | 6.0          |                                                       |
-| 2016.5     | 6.0          | SIMP does not support HA without manual configuration |
-| 2017.1     | 6.0          | SIMP does not support HA without manual configuration |
-+------------+--------------+-------------------------------------------------------+
-
+============  ==============  =======
+ PE Version    SIMP Version    Notes
+============  ==============  =======
+ 2016.4        6.0
+ 2016.5        6.0             SIMP on PE HA requires manual configuration
+ 2017.1        6.0             SIMP on PE HA requires manual configuration
+============  ==============  ========
 Disclaimer
 ^^^^^^^^^^
 SIMP will attempt to make minor compliance changes to Puppet
