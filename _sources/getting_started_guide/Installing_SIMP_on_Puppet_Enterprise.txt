@@ -6,13 +6,18 @@ Installing SIMP on Puppet Enterprise
 .. contents:: Contents:
   :local:
 
-Prerequisites
+Overview
 ^^^^^^^^^^^^^
 
 As of 6.0, SIMP can now be installed on top of an existing
 Puppet Enterprise installation. Once installed SIMP will 
 configure itself to add the necessary firewall rules, and service
 level exclusions based only on changes made to the PE Console.
+
+Installing SIMP on top of Puppet Enterprise is a multi-step process
+
+System Requirements
+^^^^^^^^^^^^^^^^^^^
 
 The following versions of Puppet Enterprise are currently supported:
 
@@ -34,10 +39,9 @@ a valid support license do not invalidate their support by using SIMP.
 
 XXX TODO Insert further information relevant to the disclaimer
 
-Procedure
-^^^^^^^^^
+Pre-install tasks
+^^^^^^^^^^^^^^^^^
 
-Installing SIMP on top of Puppet Enterprise is a multi-step process
 
 .. include:: Creating_A_SIMP_Control_Repo.rst
 
