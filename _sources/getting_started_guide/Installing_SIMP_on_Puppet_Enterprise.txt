@@ -19,6 +19,8 @@ Installing SIMP on top of Puppet Enterprise is a multi-step process
 System Requirements
 ^^^^^^^^^^^^^^^^^^^
 
+Puppet Enterprise
+~~~~~~~~~~~~~~~~~
 The following versions of Puppet Enterprise are currently supported:
 
 ============  ==============  =============================================
