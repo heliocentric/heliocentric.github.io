@@ -15,6 +15,7 @@ configure itself to add the necessary firewall rules, and service
 level exclusions based only on changes made to the PE Console.
 
 The following versions of Puppet Enterprise are currently supported:
+
 ============  ==============  =============================================
  PE Version    SIMP Version    Notes
 ============  ==============  =============================================
