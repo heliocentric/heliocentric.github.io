@@ -29,8 +29,12 @@ being used:
    what that should look like either see the :ref:`simp-installation-guide` or
    check out the `Kickstart`_ files in the `simp-core Git repository`_.
 
+System Requirements
+^^^^^^^^^^^^^^^^^^^
+.. include:: Yum_Repos.rst
+
 Installation of r10k
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 On the system intended to be the Puppet server, run the following command to
 install the ``r10k`` ruby gem into the vendor ruby that comes with the
