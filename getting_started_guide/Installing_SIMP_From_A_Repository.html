@@ -100,7 +100,11 @@
 <li class="toctree-l2"><a class="reference internal" href="Introduction.html">3.1. Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dynamic/Known_OS_Compatibility.html">3.2. Known OS Compatibility</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">3.3. Installing SIMP From A Repository</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#system-requirements">3.3.1. System Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#system-requirements">3.3.1. System Requirements</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#enable-epel">3.3.1.1. Enable EPEL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#install-the-simp-project-dependencies-repository">3.3.1.2. Install The SIMP-project_dependencies Repository</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#install-the-simp-project-repository">3.3.2. Install The SIMP-Project Repository</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#rebuild-the-yum-cache">3.3.3. Rebuild The Yum Cache</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#install-the-simp-server">3.3.4. Install the SIMP Server</a></li>
@@ -178,6 +182,47 @@ check out the <a class="reference external" href="http://pykickstart.readthedocs
 </div>
 <div class="section" id="system-requirements">
 <h2>3.3.1. System Requirements<a class="headerlink" href="#system-requirements" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="enable-epel">
+<h3>3.3.1.1. Enable EPEL<a class="headerlink" href="#enable-epel" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo yum install epel-release -y
+$ sudo yum install pygpgme yum-utils
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-the-simp-project-dependencies-repository">
+<h3>3.3.1.2. Install The SIMP-project_dependencies Repository<a class="headerlink" href="#install-the-simp-project-dependencies-repository" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The repository may contain items from external vendors, most notably Puppet,
+Inc. and EPEL but may also contain non-SIMP project files that have been
+compiled for distribution.</p>
+</div>
+<p>Add the following to <code class="docutils literal"><span class="pre">/etc/yum.repos.d/simp-project_dependencies.repo</span></code>,
+replacing <code class="docutils literal"><span class="pre">6</span></code> with the appropriate version of SIMP. If the repo file
+does not exist, create it. The repo file for <code class="docutils literal"><span class="pre">SIMP</span> <span class="pre">6.X</span></code> is shown below.</p>
+<p>If you don&#8217;t know what versions map together, please see the
+<a class="reference internal" href="../help/FAQ/SIMP_Version_Guide.html#faq-simp-version-guide"><span class="std std-ref">SIMP Version Guide</span></a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <strong>whitespace</strong> and <strong>alignment</strong> shown before the additional <code class="docutils literal"><span class="pre">gpgkey</span></code>
+values <strong>must be preserved</strong></p>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>simp-project_6_X_dependencies<span class="o">]</span>
+<span class="nv">name</span><span class="o">=</span>simp-project_6_X_dependencies
+<span class="nv">baseurl</span><span class="o">=</span>https://packagecloud.io/simp-project/6_X_Dependencies/el/<span class="nv">$releasever</span>/<span class="nv">$basearch</span>
+<span class="nv">gpgcheck</span><span class="o">=</span><span class="m">1</span>
+<span class="nv">enabled</span><span class="o">=</span><span class="m">1</span>
+<span class="nv">gpgkey</span><span class="o">=</span>https://raw.githubusercontent.com/NationalSecurityAgency/SIMP/master/GPGKEYS/RPM-GPG-KEY-SIMP
+       https://yum.puppetlabs.com/RPM-GPG-KEY-puppetlabs
+       https://yum.puppetlabs.com/RPM-GPG-KEY-puppet
+       https://apt.postgresql.org/pub/repos/yum/RPM-GPG-KEY-PGDG-94
+       https://getfedora.org/static/352C64E5.txt
+<span class="nv">sslverify</span><span class="o">=</span><span class="m">1</span>
+<span class="nv">sslcacert</span><span class="o">=</span>/etc/pki/tls/certs/ca-bundle.crt
+<span class="nv">metadata_expire</span><span class="o">=</span><span class="m">300</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="install-the-simp-project-repository">
 <h2>3.3.2. Install The SIMP-Project Repository<a class="headerlink" href="#install-the-simp-project-repository" title="Permalink to this headline">¶</a></h2>

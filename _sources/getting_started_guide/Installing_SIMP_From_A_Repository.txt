@@ -18,6 +18,8 @@ stack, this is the method that you will almost definitely want to use.
 System Requirements
 -------------------
 
+.. include:: Yum_Repos.rst
+
 Install The SIMP-Project Repository
 -----------------------------------
 
