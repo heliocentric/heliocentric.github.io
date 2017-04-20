@@ -21,7 +21,7 @@ XXX TODO Insert further information relevant to the disclaimer
 To install SIMP, you need to first add the modules to your control repo.
 At this time only all SIMP modules at once is a supported configuration.
 
-XXX TODO insert relevant sections of Install_Simp_from_r10k_
+.. include:: Creating_A_SIMP_Control_Repo.rst
 
 XXX TODO Setting hiera simp_options::server_distribution
 
