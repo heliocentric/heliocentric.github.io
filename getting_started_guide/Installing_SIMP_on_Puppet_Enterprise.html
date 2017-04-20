@@ -197,14 +197,16 @@ level exclusions based only on changes made to the PE Console.</p>
 <p>Installing SIMP on top of Puppet Enterprise is a multi-step process,
 involving changes at the following places in your environment:</p>
 <ul class="simple">
-<li>Control Repo</li>
-<li>Global Hiera</li>
-<li>Console Classifier</li>
-<li>Some manual shell commands on the Master of Masters.</li>
+<li>control repo</li>
+<li>global hiera</li>
+<li>console classifier</li>
+<li>Some manual shell commands on the Master of Masters (MoM).</li>
 </ul>
-<p>As of 6.0, multiple compile masters and PE HA is not supported out
+<p>It is highly recommended to perform these steps in sequence to prevent
+loss of connectivity.</p>
+<p>At this time multiple compile masters and PE HA is not supported out
 of the box in SIMP. We are currently working on a Technology Preview in
-succeeding 6 versions to support HA configurations. At this time HA support
+succeeding 6.x versions to support HA configurations out of the box. At this time HA support
 requires manual configuration and only supports manual failover.</p>
 </div>
 <div class="section" id="system-requirements">
