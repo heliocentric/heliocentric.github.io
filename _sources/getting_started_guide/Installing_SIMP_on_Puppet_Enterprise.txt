@@ -74,6 +74,7 @@ In order to configure a working SIMP environment under Puppet Enterprise,
 you will need to add some variables to Hiera
 
 .. code:: bash
+
   test
   test
 
