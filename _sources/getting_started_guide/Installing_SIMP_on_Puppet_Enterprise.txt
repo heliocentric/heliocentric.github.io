@@ -37,13 +37,13 @@ Puppet Enterprise
 ~~~~~~~~~~~~~~~~~
 The following versions of Puppet Enterprise are currently supported:
 
-============  ==============  =============================================
- PE Version    SIMP Version    Notes
-============  ==============  =============================================
+============  ==============
+ PE Version    SIMP Version
+============  ==============
  2016.4        6.0
  2016.5        6.0             
  2017.1        6.0             
-============  ==============  =============================================
+============  ==============
 
 If you are configuring a PE HA setup, it is strongly recommended to configure
 the replica master before installing SIMP. The replica provision process makes
