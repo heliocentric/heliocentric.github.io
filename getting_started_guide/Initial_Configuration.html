@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.9. Initial Configuration &mdash; SIMP 5.2.1-0 documentation</title>
+  <title>3.8. Initial Configuration &mdash; SIMP 5.2.1-0 documentation</title>
   
 
   
@@ -39,7 +39,7 @@
     <link rel="top" title="SIMP 5.2.1-0 documentation" href="../index.html"/>
         <link rel="up" title="3. SIMP Getting Started Guide" href="index.html"/>
         <link rel="next" title="4. SIMP User Guide" href="../user_guide/index.html"/>
-        <link rel="prev" title="3.8.3. Disk Encryption" href="ISO_Install/Disk_Encryption.html"/> 
+        <link rel="prev" title="3.7.3. Disk Encryption" href="ISO_Install/Disk_Encryption.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -101,13 +101,12 @@
 <li class="toctree-l2"><a class="reference internal" href="../dynamic/Known_OS_Compatibility.html">3.2. Known OS Compatibility</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Installing_SIMP_From_A_Repository.html">3.3. Installing SIMP From A Repository</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Installing_SIMP_using_r10k.html">3.4. Installing SIMP using r10k or Code Manager</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Installing_SIMP_using_r10k.html#id1">3.5. Installing SIMP using r10k or Code Manager</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Installing_SIMP_on_Puppet_Enterprise.html">3.6. Installing SIMP on Puppet Enterprise</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Building_A_SIMP_ISO.html">3.7. Building a SIMP ISO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ISO_Install/index.html">3.8. SIMP Server ISO Installation Guide</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">3.9. Initial Configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#installation-variables">3.9.1. Installation Variables</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#simp-config-actions">3.9.2. simp config Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Installing_SIMP_on_Puppet_Enterprise.html">3.5. Installing SIMP on Puppet Enterprise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Building_A_SIMP_ISO.html">3.6. Building a SIMP ISO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ISO_Install/index.html">3.7. SIMP Server ISO Installation Guide</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.8. Initial Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installation-variables">3.8.1. Installation Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#simp-config-actions">3.8.2. simp config Actions</a></li>
 </ul>
 </li>
 </ul>
@@ -146,7 +145,7 @@
       
           <li><a href="index.html">3. SIMP Getting Started Guide</a> &raquo;</li>
       
-    <li>3.9. Initial Configuration</li>
+    <li>3.8. Initial Configuration</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -161,7 +160,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="initial-configuration">
-<span id="id1"></span><h1>3.9. Initial Configuration<a class="headerlink" href="#initial-configuration" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>3.8. Initial Configuration<a class="headerlink" href="#initial-configuration" title="Permalink to this headline">¶</a></h1>
 <p>The goal of <code class="docutils literal"><span class="pre">simp</span> <span class="pre">config</span></code> is to allow the user to quickly configure the
 SIMP server with minimal user input/operations.  To that end <code class="docutils literal"><span class="pre">simp</span> <span class="pre">config</span></code>
 sets installation variables based on information gathered from the user,
@@ -171,7 +170,7 @@ bootstrap the system with Puppet.  Both the installation variables and
 their application via <code class="docutils literal"><span class="pre">simp</span> <span class="pre">config</span></code> are described in subsections that
 follow.</p>
 <div class="section" id="installation-variables">
-<span id="list-of-installation-variables"></span><h2>3.9.1. Installation Variables<a class="headerlink" href="#installation-variables" title="Permalink to this headline">¶</a></h2>
+<span id="list-of-installation-variables"></span><h2>3.8.1. Installation Variables<a class="headerlink" href="#installation-variables" title="Permalink to this headline">¶</a></h2>
 <p>This section describes the installation variables set by <code class="docutils literal"><span class="pre">simp</span> <span class="pre">config</span></code>.
 Although the table that follows list all, possible, installation variables,
 the user will not be prompted for all of them, nor will all of them
@@ -341,7 +340,7 @@ repositories</td>
 </table>
 </div>
 <div class="section" id="simp-config-actions">
-<span id="id2"></span><h2>3.9.2. simp config Actions<a class="headerlink" href="#simp-config-actions" title="Permalink to this headline">¶</a></h2>
+<span id="id2"></span><h2>3.8.2. simp config Actions<a class="headerlink" href="#simp-config-actions" title="Permalink to this headline">¶</a></h2>
 <p>In addition to creating the three configuration, YAML files, <code class="docutils literal"><span class="pre">simp</span> <span class="pre">config</span></code>
 performs a limited set of actions in order to prepare the system for
 bootstrapping.  Although the table that follows list all, possible,
@@ -483,7 +482,7 @@ from running until the user manually fixes the issue.</li>
         <a href="../user_guide/index.html" class="btn btn-neutral float-right" title="4. SIMP User Guide" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="ISO_Install/Disk_Encryption.html" class="btn btn-neutral" title="3.8.3. Disk Encryption" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="ISO_Install/Disk_Encryption.html" class="btn btn-neutral" title="3.7.3. Disk Encryption" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
