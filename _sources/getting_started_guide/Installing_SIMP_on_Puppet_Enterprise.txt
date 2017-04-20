@@ -29,6 +29,10 @@ The following versions of Puppet Enterprise are currently supported:
  2017.1        6.0             SIMP on PE HA requires manual configuration
 ============  ==============  =============================================
 
+The following yum repositories are required for SIMP modules, that are 
+currently not being managed by SIMP
+
+
 Disclaimer
 ^^^^^^^^^^
 

@@ -1,0 +1,244 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Enable EPEL &mdash; SIMP 5.2.1-0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="https://media.readthedocs.org/css/sphinx_rtd_theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="https://media.readthedocs.org/css/readthedocs-doc-embed.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css_overrides.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="SIMP 5.2.1-0 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html">
+        
+
+        
+          
+          <img src="../_static/SIMP_Logo.png" class="logo" />
+        
+        </a>
+
+        
+          
+          
+            <div class="version">
+              5.2.1
+            </div>
+          
+        
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to the SIMP documentation!</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Just_Install.html">1. For the Impatient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dynamic/Changelog.html">2. Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">3. Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">4. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributors_guide/index.html">5. Contributing to SIMP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security_conop/index.html">6. Security Concept of Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security_mapping/index.html">7. Security Control Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/index.html">8. Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">9. License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html#contact">10. Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">11. Glossary of Terms</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">SIMP</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Enable EPEL</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/getting_started_guide/Yum_Repos.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="enable-epel">
+<h1>Enable EPEL<a class="headerlink" href="#enable-epel" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo yum install epel-release -y
+$ sudo yum install pygpgme yum-utils
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-the-simp-project-dependencies-repository">
+<h1>Install The SIMP-project_dependencies Repository<a class="headerlink" href="#install-the-simp-project-dependencies-repository" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The repository may contain items from external vendors, most notably Puppet,
+Inc. and EPEL but may also contain non-SIMP project files that have been
+compiled for distribution.</p>
+</div>
+<p>Add the following to <code class="docutils literal"><span class="pre">/etc/yum.repos.d/simp-project_dependencies.repo</span></code>,
+replacing <code class="docutils literal"><span class="pre">6</span></code> with the appropriate version of SIMP. If the repo file
+does not exist, create it. The repo file for <code class="docutils literal"><span class="pre">SIMP</span> <span class="pre">6.X</span></code> is shown below.</p>
+<p>If you don&#8217;t know what versions map together, please see the
+<a class="reference internal" href="../help/FAQ/SIMP_Version_Guide.html#faq-simp-version-guide"><span class="std std-ref">SIMP Version Guide</span></a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <strong>whitespace</strong> and <strong>alignment</strong> shown before the additional <code class="docutils literal"><span class="pre">gpgkey</span></code>
+values <strong>must be preserved</strong></p>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>simp-project_6_X_dependencies<span class="o">]</span>
+<span class="nv">name</span><span class="o">=</span>simp-project_6_X_dependencies
+<span class="nv">baseurl</span><span class="o">=</span>https://packagecloud.io/simp-project/6_X_Dependencies/el/<span class="nv">$releasever</span>/<span class="nv">$basearch</span>
+<span class="nv">gpgcheck</span><span class="o">=</span><span class="m">1</span>
+<span class="nv">enabled</span><span class="o">=</span><span class="m">1</span>
+<span class="nv">gpgkey</span><span class="o">=</span>https://raw.githubusercontent.com/NationalSecurityAgency/SIMP/master/GPGKEYS/RPM-GPG-KEY-SIMP
+       https://yum.puppetlabs.com/RPM-GPG-KEY-puppetlabs
+       https://yum.puppetlabs.com/RPM-GPG-KEY-puppet
+       https://apt.postgresql.org/pub/repos/yum/RPM-GPG-KEY-PGDG-94
+       https://getfedora.org/static/352C64E5.txt
+<span class="nv">sslverify</span><span class="o">=</span><span class="m">1</span>
+<span class="nv">sslcacert</span><span class="o">=</span>/etc/pki/tls/certs/ca-bundle.crt
+<span class="nv">metadata_expire</span><span class="o">=</span><span class="m">300</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, THE SIMP TEAM.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'4.2.X',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
