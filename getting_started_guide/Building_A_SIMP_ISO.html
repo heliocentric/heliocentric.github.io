@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.5. Building a SIMP ISO &mdash; SIMP 5.2.1-0 documentation</title>
+  <title>3.6. Building a SIMP ISO &mdash; SIMP 5.2.1-0 documentation</title>
   
 
   
@@ -38,8 +38,8 @@
   
     <link rel="top" title="SIMP 5.2.1-0 documentation" href="../index.html"/>
         <link rel="up" title="3. SIMP Getting Started Guide" href="index.html"/>
-        <link rel="next" title="3.5.1. Environment Preparation" href="ISO_Build/Environment_Preparation.html"/>
-        <link rel="prev" title="3.4. Installing SIMP using r10k or Code Manager" href="Installing_SIMP_using_r10k.html"/> 
+        <link rel="next" title="3.6.1. Environment Preparation" href="ISO_Build/Environment_Preparation.html"/>
+        <link rel="prev" title="3.5. Installing SIMP on Puppet Enterprise" href="Installing_SIMP_on_Puppet_Enterprise.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -101,15 +101,16 @@
 <li class="toctree-l2"><a class="reference internal" href="../dynamic/Known_OS_Compatibility.html">3.2. Known OS Compatibility</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Installing_SIMP_From_A_Repository.html">3.3. Installing SIMP From A Repository</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Installing_SIMP_using_r10k.html">3.4. Installing SIMP using r10k or Code Manager</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">3.5. Building a SIMP ISO</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="ISO_Build/Environment_Preparation.html">3.5.1. Environment Preparation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ISO_Build/Building_SIMP_From_Tarball.html">3.5.2. Building SIMP From Tarball</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ISO_Build/Building_SIMP_From_Source.html">3.5.3. Building SIMP From Source</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ISO_Build/Building_SIMP_Via_Rake.html">3.5.4. Building SIMP via Rake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Installing_SIMP_on_Puppet_Enterprise.html">3.5. Installing SIMP on Puppet Enterprise</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.6. Building a SIMP ISO</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ISO_Build/Environment_Preparation.html">3.6.1. Environment Preparation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ISO_Build/Building_SIMP_From_Tarball.html">3.6.2. Building SIMP From Tarball</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ISO_Build/Building_SIMP_From_Source.html">3.6.3. Building SIMP From Source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ISO_Build/Building_SIMP_Via_Rake.html">3.6.4. Building SIMP via Rake</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="ISO_Install/index.html">3.6. SIMP Server ISO Installation Guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Initial_Configuration.html">3.7. Initial Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ISO_Install/index.html">3.7. SIMP Server ISO Installation Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Initial_Configuration.html">3.8. Initial Configuration</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">4. User Guide</a></li>
@@ -146,7 +147,7 @@
       
           <li><a href="index.html">3. SIMP Getting Started Guide</a> &raquo;</li>
       
-    <li>3.5. Building a SIMP ISO</li>
+    <li>3.6. Building a SIMP ISO</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -161,7 +162,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="building-a-simp-iso">
-<h1>3.5. Building a SIMP ISO<a class="headerlink" href="#building-a-simp-iso" title="Permalink to this headline">¶</a></h1>
+<h1>3.6. Building a SIMP ISO<a class="headerlink" href="#building-a-simp-iso" title="Permalink to this headline">¶</a></h1>
 <p>If you want the full SIMP experience where you maximize compliance with the
 widest selection of targeted standards, you&#8217;ll want to build and install from a
 SIMP ISO.</p>
@@ -173,32 +174,32 @@ the instructions in <a class="reference internal" href="ISO_Build/Environment_Pr
 </div>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="ISO_Build/Environment_Preparation.html">3.5.1. Environment Preparation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ISO_Build/Environment_Preparation.html#getting-started">3.5.1.1. Getting Started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ISO_Build/Environment_Preparation.html#set-up-ruby">3.5.1.2. Set Up Ruby</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ISO_Build/Environment_Preparation.html#configure-mock">3.5.1.3. Configure Mock</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ISO_Build/Environment_Preparation.html#prepare-to-work">3.5.1.4. Prepare to Work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ISO_Build/Environment_Preparation.html">3.6.1. Environment Preparation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ISO_Build/Environment_Preparation.html#getting-started">3.6.1.1. Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ISO_Build/Environment_Preparation.html#set-up-ruby">3.6.1.2. Set Up Ruby</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ISO_Build/Environment_Preparation.html#configure-mock">3.6.1.3. Configure Mock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ISO_Build/Environment_Preparation.html#prepare-to-work">3.6.1.4. Prepare to Work</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="ISO_Build/Building_SIMP_From_Tarball.html">3.5.2. Building SIMP From Tarball</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ISO_Build/Building_SIMP_From_Tarball.html#getting-started">3.5.2.1. Getting Started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ISO_Build/Building_SIMP_From_Tarball.html#generating-the-iso">3.5.2.2. Generating The ISO!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ISO_Build/Building_SIMP_From_Tarball.html">3.6.2. Building SIMP From Tarball</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ISO_Build/Building_SIMP_From_Tarball.html#getting-started">3.6.2.1. Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ISO_Build/Building_SIMP_From_Tarball.html#generating-the-iso">3.6.2.2. Generating The ISO!</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="ISO_Build/Building_SIMP_From_Source.html">3.5.3. Building SIMP From Source</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ISO_Build/Building_SIMP_From_Source.html#getting-started">3.5.3.1. Getting Started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ISO_Build/Building_SIMP_From_Source.html#generating-the-iso">3.5.3.2. Generating The ISO!</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ISO_Build/Building_SIMP_From_Source.html#after-you-build">3.5.3.3. After You Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ISO_Build/Building_SIMP_From_Source.html">3.6.3. Building SIMP From Source</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ISO_Build/Building_SIMP_From_Source.html#getting-started">3.6.3.1. Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ISO_Build/Building_SIMP_From_Source.html#generating-the-iso">3.6.3.2. Generating The ISO!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ISO_Build/Building_SIMP_From_Source.html#after-you-build">3.6.3.3. After You Build</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="ISO_Build/Building_SIMP_Via_Rake.html">3.5.4. Building SIMP via Rake</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ISO_Build/Building_SIMP_Via_Rake.html#getting-started">3.5.4.1. Getting Started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ISO_Build/Building_SIMP_Via_Rake.html#install-either-docker-or-virtualbox">3.5.4.2. Install Either Docker or VirtualBox</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ISO_Build/Building_SIMP_Via_Rake.html#download-the-appropriate-el-iso">3.5.4.3. Download the Appropriate EL ISO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ISO_Build/Building_SIMP_Via_Rake.html#required-environment-variables">3.5.4.4. Required Environment Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ISO_Build/Building_SIMP_Via_Rake.html#build-using-docker">3.5.4.5. Build Using Docker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ISO_Build/Building_SIMP_Via_Rake.html#build-using-virtualbox">3.5.4.6. Build Using VirtualBox</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ISO_Build/Building_SIMP_Via_Rake.html#results">3.5.4.7. Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ISO_Build/Building_SIMP_Via_Rake.html">3.6.4. Building SIMP via Rake</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ISO_Build/Building_SIMP_Via_Rake.html#getting-started">3.6.4.1. Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ISO_Build/Building_SIMP_Via_Rake.html#install-either-docker-or-virtualbox">3.6.4.2. Install Either Docker or VirtualBox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ISO_Build/Building_SIMP_Via_Rake.html#download-the-appropriate-el-iso">3.6.4.3. Download the Appropriate EL ISO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ISO_Build/Building_SIMP_Via_Rake.html#required-environment-variables">3.6.4.4. Required Environment Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ISO_Build/Building_SIMP_Via_Rake.html#build-using-docker">3.6.4.5. Build Using Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ISO_Build/Building_SIMP_Via_Rake.html#build-using-virtualbox">3.6.4.6. Build Using VirtualBox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ISO_Build/Building_SIMP_Via_Rake.html#results">3.6.4.7. Results</a></li>
 </ul>
 </li>
 </ul>
@@ -212,10 +213,10 @@ the instructions in <a class="reference internal" href="ISO_Build/Environment_Pr
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="ISO_Build/Environment_Preparation.html" class="btn btn-neutral float-right" title="3.5.1. Environment Preparation" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="ISO_Build/Environment_Preparation.html" class="btn btn-neutral float-right" title="3.6.1. Environment Preparation" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Installing_SIMP_using_r10k.html" class="btn btn-neutral" title="3.4. Installing SIMP using r10k or Code Manager" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Installing_SIMP_on_Puppet_Enterprise.html" class="btn btn-neutral" title="3.5. Installing SIMP on Puppet Enterprise" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

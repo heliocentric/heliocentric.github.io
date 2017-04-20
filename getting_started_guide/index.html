@@ -100,9 +100,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../dynamic/Known_OS_Compatibility.html">3.2. Known OS Compatibility</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Installing_SIMP_From_A_Repository.html">3.3. Installing SIMP From A Repository</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Installing_SIMP_using_r10k.html">3.4. Installing SIMP using r10k or Code Manager</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Building_A_SIMP_ISO.html">3.5. Building a SIMP ISO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ISO_Install/index.html">3.6. SIMP Server ISO Installation Guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Initial_Configuration.html">3.7. Initial Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Installing_SIMP_on_Puppet_Enterprise.html">3.5. Installing SIMP on Puppet Enterprise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Building_A_SIMP_ISO.html">3.6. Building a SIMP ISO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ISO_Install/index.html">3.7. SIMP Server ISO Installation Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Initial_Configuration.html">3.8. Initial Configuration</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">4. User Guide</a></li>
@@ -163,13 +164,12 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../dynamic/Known_OS_Compatibility.html">3.2. Known OS Compatibility</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Installing_SIMP_From_A_Repository.html">3.3. Installing SIMP From A Repository</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Installing_SIMP_From_A_Repository.html#enable-epel">3.3.1. Enable EPEL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Installing_SIMP_From_A_Repository.html#system-requirements">3.3.1. System Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Installing_SIMP_From_A_Repository.html#install-the-simp-project-repository">3.3.2. Install The SIMP-Project Repository</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Installing_SIMP_From_A_Repository.html#install-the-simp-project-dependencies-repository">3.3.3. Install The SIMP-project_dependencies Repository</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Installing_SIMP_From_A_Repository.html#rebuild-the-yum-cache">3.3.4. Rebuild The Yum Cache</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Installing_SIMP_From_A_Repository.html#install-the-simp-server">3.3.5. Install the SIMP Server</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Installing_SIMP_From_A_Repository.html#configure-and-bootstrap-the-simp-server">3.3.6. Configure and Bootstrap the SIMP Server</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Installing_SIMP_From_A_Repository.html#bootstrap-simp-clients">3.3.7. Bootstrap SIMP Clients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Installing_SIMP_From_A_Repository.html#rebuild-the-yum-cache">3.3.3. Rebuild The Yum Cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Installing_SIMP_From_A_Repository.html#install-the-simp-server">3.3.4. Install the SIMP Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Installing_SIMP_From_A_Repository.html#configure-and-bootstrap-the-simp-server">3.3.5. Configure and Bootstrap the SIMP Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Installing_SIMP_From_A_Repository.html#bootstrap-simp-clients">3.3.6. Bootstrap SIMP Clients</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Installing_SIMP_using_r10k.html">3.4. Installing SIMP using r10k or Code Manager</a><ul>
@@ -181,22 +181,31 @@
 <li class="toctree-l2"><a class="reference internal" href="Installing_SIMP_using_r10k.html#notes-about-simp-infrastructure">3.4.6. Notes about SIMP Infrastructure</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Building_A_SIMP_ISO.html">3.5. Building a SIMP ISO</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ISO_Build/Environment_Preparation.html">3.5.1. Environment Preparation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ISO_Build/Building_SIMP_From_Tarball.html">3.5.2. Building SIMP From Tarball</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ISO_Build/Building_SIMP_From_Source.html">3.5.3. Building SIMP From Source</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ISO_Build/Building_SIMP_Via_Rake.html">3.5.4. Building SIMP via Rake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Installing_SIMP_on_Puppet_Enterprise.html">3.5. Installing SIMP on Puppet Enterprise</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Installing_SIMP_on_Puppet_Enterprise.html#overview">3.5.1. Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Installing_SIMP_on_Puppet_Enterprise.html#system-requirements">3.5.2. System Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Installing_SIMP_on_Puppet_Enterprise.html#disclaimer">3.5.3. Disclaimer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Installing_SIMP_on_Puppet_Enterprise.html#pre-install-tasks">3.5.4. Pre-install tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Installing_SIMP_on_Puppet_Enterprise.html#setting-up-your-control-repo">3.5.5. Setting up your Control Repo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Installing_SIMP_on_Puppet_Enterprise.html#keydist-rsync-and-the-alternate-module-path">3.5.6. Keydist, Rsync, and the Alternate Module Path</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="ISO_Install/index.html">3.6. SIMP Server ISO Installation Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ISO_Install/Introduction.html">3.6.1. Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ISO_Install/SIMP_Server_Installation.html">3.6.2. SIMP Server Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ISO_Install/Disk_Encryption.html">3.6.3. Disk Encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Building_A_SIMP_ISO.html">3.6. Building a SIMP ISO</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ISO_Build/Environment_Preparation.html">3.6.1. Environment Preparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ISO_Build/Building_SIMP_From_Tarball.html">3.6.2. Building SIMP From Tarball</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ISO_Build/Building_SIMP_From_Source.html">3.6.3. Building SIMP From Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ISO_Build/Building_SIMP_Via_Rake.html">3.6.4. Building SIMP via Rake</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Initial_Configuration.html">3.7. Initial Configuration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Initial_Configuration.html#installation-variables">3.7.1. Installation Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Initial_Configuration.html#simp-config-actions">3.7.2. simp config Actions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ISO_Install/index.html">3.7. SIMP Server ISO Installation Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ISO_Install/Introduction.html">3.7.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ISO_Install/SIMP_Server_Installation.html">3.7.2. SIMP Server Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ISO_Install/Disk_Encryption.html">3.7.3. Disk Encryption</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Initial_Configuration.html">3.8. Initial Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Initial_Configuration.html#installation-variables">3.8.1. Installation Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Initial_Configuration.html#simp-config-actions">3.8.2. simp config Actions</a></li>
 </ul>
 </li>
 </ul>
