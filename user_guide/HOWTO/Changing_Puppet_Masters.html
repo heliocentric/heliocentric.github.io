@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.7.3. HOWTO Change Puppet Servers &mdash; SIMP 5.2.1-0 documentation</title>
+  <title>4.8.3. HOWTO Change Puppet Servers &mdash; SIMP 5.2.1-0 documentation</title>
   
 
   
@@ -37,9 +37,9 @@
 
   
     <link rel="top" title="SIMP 5.2.1-0 documentation" href="../../index.html"/>
-        <link rel="up" title="4.7. SIMP HOWTO Guides" href="../HOWTO.html"/>
-        <link rel="next" title="4.7.4. HOWTO Discard Mail to Root" href="Discard_Mail_to_Root.html"/>
-        <link rel="prev" title="4.7.2.2. Elasticsearch, Logstash, and Grafana" href="Central_Log_Collection/Logstash.html"/> 
+        <link rel="up" title="4.8. SIMP HOWTO Guides" href="../HOWTO.html"/>
+        <link rel="next" title="4.8.4. HOWTO Discard Mail to Root" href="Discard_Mail_to_Root.html"/>
+        <link rel="prev" title="4.8.2.2. Elasticsearch, Logstash, and Grafana" href="Central_Log_Collection/Logstash.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -100,38 +100,38 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">4. User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../Introduction.html">4.1. Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Client_Management.html">4.2. Client Management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../SIMP_Administration.html">4.3. General Administration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../User_Management.html">4.4. User Management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Hiera_Overview.html">4.5. Hiera Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Troubleshooting.html">4.6. Troubleshooting Common Issues</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../HOWTO.html">4.7. SIMP HOWTO Guides</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="Work_With_Rsync.html">4.7.1. Work with the SIMP Rsync Shares</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Central_Log_Collection.html">4.7.2. Setup Central Log Collection</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">4.7.3. Change Puppet Masters</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#on-the-old-puppet-server">4.7.3.1. On the Old Puppet Server</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#on-the-new-puppet-server">4.7.3.2. On the New Puppet Server</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#on-each-client">4.7.3.3. On Each Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Client_Management.html#configure-pxe-boot">4.3. Configure PXE Boot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Client_Management.html#apply-certificates">4.4. Apply Certificates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SIMP_Administration.html">4.5. SIMP Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../User_Management.html">4.6. User Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Troubleshooting.html">4.7. Troubleshooting Common Issues</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../HOWTO.html">4.8. SIMP HOWTO Guides</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Work_With_Rsync.html">4.8.1. Work with the SIMP Rsync Shares</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Central_Log_Collection.html">4.8.2. Setup Central Log Collection</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">4.8.3. Change Puppet Masters</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#on-the-old-puppet-server">4.8.3.1. On the Old Puppet Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#on-the-new-puppet-server">4.8.3.2. On the New Puppet Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#on-each-client">4.8.3.3. On Each Client</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="Discard_Mail_to_Root.html">4.7.4. Discard Mail to Root</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Exclude_Repositories.html">4.7.5. Exclude YUM Repositories from Nightly Updates</a></li>
-<li class="toctree-l3"><a class="reference internal" href="NFS.html">4.7.6. Configure NFS</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IPTables_NAT_Rules.html">4.7.7. Configure IPTables NAT Rules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Kerberos.html">4.7.8. Enable Kerberos</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Managing_Workstation_Infrastructures.html">4.7.9. Manage Workstation Infrastructures</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Network_Build.html">4.7.10. Kickstart the Initial Server</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Puppetmaster_Backup.html">4.7.11. Backup the Puppet Master</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Puppet_Server_NAT.html">4.7.12. Configure a Puppet Server Behind a NAT</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Redundant_LDAP.html">4.7.13. Enable Redundent LDAP</a></li>
-<li class="toctree-l3"><a class="reference internal" href="SFTP_Restricted_Accounts.html">4.7.14. Enable SFTP Restricted Accounts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="SSH_Keys.html">4.7.15. Setup SSH Authorized Keys</a></li>
-<li class="toctree-l3"><a class="reference internal" href="SSH_Restrict_Network_Access.html">4.7.16. Restrict SSH Network Access</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Upgrade_SIMP.html">4.7.17. Upgrade SIMP (Coming Soon!)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Manage_TPM.html">4.7.18. Manage TPM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Discard_Mail_to_Root.html">4.8.4. Discard Mail to Root</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Exclude_Repositories.html">4.8.5. Exclude YUM Repositories from Nightly Updates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NFS.html">4.8.6. Configure NFS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IPTables_NAT_Rules.html">4.8.7. Configure IPTables NAT Rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Kerberos.html">4.8.8. Enable Kerberos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Managing_Workstation_Infrastructures.html">4.8.9. Manage Workstation Infrastructures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Puppetmaster_Backup.html">4.8.10. Backup the Puppet Master</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Puppet_Server_NAT.html">4.8.11. Configure a Puppet Server Behind a NAT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Redundant_LDAP.html">4.8.12. Enable Redundent LDAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SFTP_Restricted_Accounts.html">4.8.13. Enable SFTP Restricted Accounts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SSH_Keys.html">4.8.14. Setup SSH Authorized Keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SSH_Restrict_Network_Access.html">4.8.15. Restrict SSH Network Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Upgrade_SIMP.html">4.8.16. Upgrade SIMP (Coming Soon!)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Manage_TPM.html">4.8.17. Manage TPM</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../SIMP_Package_Data.html">4.8. Package Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#indices-and-tables">4.9. Indices and tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SIMP_Package_Data.html">4.9. Package Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#indices-and-tables">4.10. Indices and tables</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../contributors_guide/index.html">5. Contributing to SIMP</a></li>
@@ -167,9 +167,9 @@
       
           <li><a href="../index.html">4. SIMP User Guide</a> &raquo;</li>
       
-          <li><a href="../HOWTO.html">4.7. SIMP HOWTO Guides</a> &raquo;</li>
+          <li><a href="../HOWTO.html">4.8. SIMP HOWTO Guides</a> &raquo;</li>
       
-    <li>4.7.3. HOWTO Change Puppet Servers</li>
+    <li>4.8.3. HOWTO Change Puppet Servers</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -184,7 +184,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="howto-change-puppet-servers">
-<h1>4.7.3. HOWTO Change Puppet Servers<a class="headerlink" href="#howto-change-puppet-servers" title="Permalink to this headline">¶</a></h1>
+<h1>4.8.3. HOWTO Change Puppet Servers<a class="headerlink" href="#howto-change-puppet-servers" title="Permalink to this headline">¶</a></h1>
 <p>It may be necessary to change the Puppet Server. To point a particular
 client to a new Puppet Server, follow the steps in the sections below.</p>
 <div class="admonition note">
@@ -192,9 +192,9 @@ client to a new Puppet Server, follow the steps in the sections below.</p>
 <p class="last">All commands in this section should be run as the <code class="docutils literal"><span class="pre">root</span></code> user.</p>
 </div>
 <div class="section" id="on-the-old-puppet-server">
-<h2>4.7.3.1. On the Old Puppet Server<a class="headerlink" href="#on-the-old-puppet-server" title="Permalink to this headline">¶</a></h2>
+<h2>4.8.3.1. On the Old Puppet Server<a class="headerlink" href="#on-the-old-puppet-server" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="collect-the-client-s-server-side-artifacts">
-<h3>4.7.3.1.1. Collect the Client&#8217;s Server-Side Artifacts<a class="headerlink" href="#collect-the-client-s-server-side-artifacts" title="Permalink to this headline">¶</a></h3>
+<h3>4.8.3.1.1. Collect the Client&#8217;s Server-Side Artifacts<a class="headerlink" href="#collect-the-client-s-server-side-artifacts" title="Permalink to this headline">¶</a></h3>
 <p>Until SIMP implements a shared Puppet data store (expected 2017-Q2), you will
 need to manually copy some artifacts from the old server to the new server</p>
 <p>To do this, run:</p>
@@ -224,7 +224,7 @@ multiple hosts.</p>
 </div>
 </div>
 <div class="section" id="on-the-new-puppet-server">
-<h2>4.7.3.2. On the New Puppet Server<a class="headerlink" href="#on-the-new-puppet-server" title="Permalink to this headline">¶</a></h2>
+<h2>4.8.3.2. On the New Puppet Server<a class="headerlink" href="#on-the-new-puppet-server" title="Permalink to this headline">¶</a></h2>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">This assumes that the new Puppet Server is set up identically to the old
@@ -241,7 +241,7 @@ the <code class="docutils literal"><span class="pre">tar</span></code> file are 
 </div>
 </div>
 <div class="section" id="on-each-client">
-<h2>4.7.3.3. On Each Client<a class="headerlink" href="#on-each-client" title="Permalink to this headline">¶</a></h2>
+<h2>4.8.3.3. On Each Client<a class="headerlink" href="#on-each-client" title="Permalink to this headline">¶</a></h2>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">Make sure you are running these commands <strong>on the client</strong>. If you run them
@@ -249,7 +249,7 @@ on the server, you have a very high risk of making your Puppet
 infrastructure inoperable.</p>
 </div>
 <div class="section" id="update-the-puppet-config">
-<h3>4.7.3.3.1. Update the Puppet Config<a class="headerlink" href="#update-the-puppet-config" title="Permalink to this headline">¶</a></h3>
+<h3>4.8.3.3.1. Update the Puppet Config<a class="headerlink" href="#update-the-puppet-config" title="Permalink to this headline">¶</a></h3>
 <p>Enter the following changes into <code class="docutils literal"><span class="pre">/etc/puppetlabs/puppet/puppet.conf</span></code>.</p>
 <div class="highlight-ini"><div class="highlight"><pre><span></span><span class="na">server</span> <span class="o">=</span> <span class="s">new.puppet.master.fqdn</span>
 <span class="na">ca_server</span> <span class="o">=</span> <span class="s">new.puppet.master.fqdn</span>
@@ -258,11 +258,11 @@ infrastructure inoperable.</p>
 </div>
 </div>
 <div class="section" id="remove-the-client-puppet-certificates">
-<h3>4.7.3.3.2. Remove the Client Puppet Certificates<a class="headerlink" href="#remove-the-client-puppet-certificates" title="Permalink to this headline">¶</a></h3>
+<h3>4.8.3.3.2. Remove the Client Puppet Certificates<a class="headerlink" href="#remove-the-client-puppet-certificates" title="Permalink to this headline">¶</a></h3>
 <p>To remove all legacy SSL material, run <code class="docutils literal"><span class="pre">rm</span> <span class="pre">-rf</span> <span class="pre">`puppet</span> <span class="pre">config</span> <span class="pre">--section</span> <span class="pre">agent</span> <span class="pre">ssldir`</span></code></p>
 </div>
 <div class="section" id="run-puppet">
-<h3>4.7.3.3.3. Run Puppet<a class="headerlink" href="#run-puppet" title="Permalink to this headline">¶</a></h3>
+<h3>4.8.3.3.3. Run Puppet<a class="headerlink" href="#run-puppet" title="Permalink to this headline">¶</a></h3>
 <p>Assuming the new Puppet Server has been set up to properly accept the
 client, execute a full Puppet run using <code class="docutils literal"><span class="pre">puppet</span> <span class="pre">agent</span> <span class="pre">--test</span></code>.</p>
 <p>If everything was done properly, the client will now be synchronized with the
@@ -280,10 +280,10 @@ documentation and ensure that the new Puppet Server was set up properly.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Discard_Mail_to_Root.html" class="btn btn-neutral float-right" title="4.7.4. HOWTO Discard Mail to Root" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Discard_Mail_to_Root.html" class="btn btn-neutral float-right" title="4.8.4. HOWTO Discard Mail to Root" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Central_Log_Collection/Logstash.html" class="btn btn-neutral" title="4.7.2.2. Elasticsearch, Logstash, and Grafana" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Central_Log_Collection/Logstash.html" class="btn btn-neutral" title="4.8.2.2. Elasticsearch, Logstash, and Grafana" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

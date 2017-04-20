@@ -142,11 +142,23 @@
             
   <div class="section" id="configure-pxe-boot">
 <h1>Configure PXE Boot<a class="headerlink" href="#configure-pxe-boot" title="Permalink to this headline">¶</a></h1>
-<p>Sample kickstart templates have been provided in the <code class="docutils literal"><span class="pre">/var/www/ks</span></code> directory on the SIMP server  and on the SIMP DVD under <code class="docutils literal"><span class="pre">/ks</span></code>.  Pre-boot images are located in the DVD under <code class="docutils literal"><span class="pre">/images/pxeboot</span></code>.  If you have an existing <a class="reference internal" href="../glossary.html#term-preboot-execution-environment"><span class="xref std std-term">Preboot Execution Environment</span></a> (PXE) setup you can use these to PXE a SIMP client. Follow your own sites procedures for this.</p>
-<p>In this section we describe how to configure the Kickstart and TFTP servers to PXE boot a SIMP client.  (The DHCP server setup, also required for PXE booting, is discussed in and earlier chapter.)</p>
+<p>Sample kickstart templates have been provided in the <code class="docutils literal"><span class="pre">/var/www/ks</span></code> directory
+on the SIMP server  and on the SIMP DVD under <code class="docutils literal"><span class="pre">/ks</span></code>.  Pre-boot images are
+located in the DVD under <code class="docutils literal"><span class="pre">/images/pxeboot</span></code>.  If you have an existing
+<a class="reference internal" href="../glossary.html#term-preboot-execution-environment"><span class="xref std std-term">Preboot Execution Environment</span></a> (PXE) setup you can use these to PXE a
+SIMP client. Follow your own sites procedures for this.</p>
+<p>In this section we describe how to configure the Kickstart and TFTP servers to
+PXE boot a SIMP client.  (The DHCP server setup, also required for PXE booting,
+is discussed in and earlier chapter.)</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">This example sets up a PXE boot for a system that is the same OS as the SIMP Server. If you are setting up a PXE boot for a different OS then you must make sure that the OS packages are available for all systems you are trying to PXE boot through YUM. There are notes throughout the instructions to help in setting multiple OS but they are not comprehensive.  You should understand DHCP, KS, YUM and TFTP relationships for PXE booting before attempting this.</p>
+<p class="last">This example sets up a PXE boot for a system that is the same OS as the SIMP
+Server. If you are setting up a PXE boot for a different OS then you must
+make sure that the OS packages are available for all systems you are trying
+to PXE boot through YUM. There are notes throughout the instructions to help
+in setting multiple OS but they are not comprehensive.  You should
+understand DHCP, KS, YUM and TFTP relationships for PXE booting before
+attempting this.</p>
 </div>
 <div class="section" id="setting-up-kickstart">
 <h2>Setting Up Kickstart<a class="headerlink" href="#setting-up-kickstart" title="Permalink to this headline">¶</a></h2>
@@ -157,46 +169,64 @@
 <li><code class="docutils literal"><span class="pre">diskdetect.sh</span></code></li>
 </ul>
 </li>
-<li>Open each of the files and follow the instructions provided within them to replace the variables.
-You need to know the IP Addresses of the YUM, Kickstart, and TFTPserver. (They default to the simp server in simp config).<ul>
-<li><code class="docutils literal"><span class="pre">pupclient_x86_64.cfg</span></code>: Replace the variables noted at the top and generate and
-enter the passwords.</li>
-<li><code class="docutils literal"><span class="pre">diskdetect.sh</span></code>:  The <code class="docutils literal"><span class="pre">diskdetect.sh</span></code> script is responsible for detecting the first active disk
-and applying a disk configuration. Edit this file to meet any necessary requirements or use this file
-as a starting point for further work. It will work as is for most systems as long as your disk device names are in the list.</li>
+<li>Open each of the files and follow the instructions provided within them to
+replace the variables.  You need to know the IP Addresses of the YUM,
+Kickstart, and TFTPserver. (They default to the simp server in
+<code class="docutils literal"><span class="pre">simp</span> <span class="pre">config</span></code>).<ul>
+<li><code class="docutils literal"><span class="pre">pupclient_x86_64.cfg</span></code>: Replace the variables noted at the top and
+generate and enter the passwords.</li>
+<li><code class="docutils literal"><span class="pre">diskdetect.sh</span></code>:  The <code class="docutils literal"><span class="pre">diskdetect.sh</span></code> script is responsible for
+detecting the first active disk and applying a disk configuration. Edit
+this file to meet any necessary requirements or use this file as a
+starting point for further work. It will work as is for most systems as
+long as your disk device names are in the list.</li>
 </ul>
 </li>
-<li>Type <code class="docutils literal"><span class="pre">chown</span> <span class="pre">root.apache</span> <span class="pre">/var/www/ks/*</span></code> to ensure that all files are owned by <code class="docutils literal"><span class="pre">root</span></code> and in the <code class="docutils literal"><span class="pre">apache</span></code> group.</li>
-<li>Type <code class="docutils literal"><span class="pre">chmod</span> <span class="pre">640</span> <span class="pre">/var/www/ks/*</span></code> to change the permissions so the owner can read and write the file and the <code class="docutils literal"><span class="pre">apache</span></code> group can only read.</li>
+<li>Type <code class="docutils literal"><span class="pre">chown</span> <span class="pre">root.apache</span> <span class="pre">/var/www/ks/*</span></code> to ensure that all files are owned
+by <code class="docutils literal"><span class="pre">root</span></code> and in the <code class="docutils literal"><span class="pre">apache</span></code> group.</li>
+<li>Type <code class="docutils literal"><span class="pre">chmod</span> <span class="pre">640</span> <span class="pre">/var/www/ks/*</span></code> to change the permissions so the owner can
+read and write the file and the <code class="docutils literal"><span class="pre">apache</span></code> group can only read.</li>
 </ol>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">The URLs and locations in the file are setup for a default SIMP install. That means the same OS and version as the SIMP server, all servers in one location (on the SIMP server) and in specific directories. If you have installed these servers in a different location than the defaults, you may need to edit URLs or directories.</p>
+<p class="last">The URLs and locations in the file are setup for a default SIMP install.
+That means the same OS and version as the SIMP server, all servers in one
+location (on the SIMP server) and in specific directories. If you have
+installed these servers in a different location than the defaults, you may
+need to edit URLs or directories.</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">If you want to PXE boot more than this operating system, make a copy of these files, name them appropriately and update URLS and links inside and anything else you may need. (You must know what you are doing before attempting this.) If you are booting more than one OS you must also make sure your YUM server has the OS packages for the other OSs. By default the YUM server on SIMP has the packages only for the version of OS installed on the SIMP server.</p>
+<p class="last">If you want to PXE boot more than this operating system, make a copy of
+these files, name them appropriately and update URLS and links inside and
+anything else you may need. (You must know what you are doing before
+attempting this.) If you are booting more than one OS you must also make
+sure your YUM server has the OS packages for the other OSs. By default the
+YUM server on SIMP has the packages only for the version of OS installed on
+the SIMP server.</p>
 </div>
 </div>
 <div class="section" id="setting-up-tftp">
 <h2>Setting up TFTP<a class="headerlink" href="#setting-up-tftp" title="Permalink to this headline">¶</a></h2>
-<p>This section describes the process of setting up static files and
-manifests for TFTP.</p>
+<p>This section describes the process of setting up static files and manifests for
+<a class="reference internal" href="../glossary.html#term-tftp"><span class="xref std std-term">TFTP</span></a>.</p>
 <div class="section" id="static-files">
 <h3>Static Files<a class="headerlink" href="#static-files" title="Permalink to this headline">¶</a></h3>
 <p>Verify the static files are in the correct location:</p>
 <p>Type <code class="docutils literal"><span class="pre">cd</span> <span class="pre">/var/simp/environments/simp/rsync/&lt;OSTYPE&gt;/Global/tftpboot</span></code></p>
 <p>(&lt;OSTYPE&gt; and &lt;MAJORRELEASE&gt; under rsync are the type and version of the SIMP <strong>server</strong>)</p>
 <p>Verify there is a <code class="docutils literal"><span class="pre">linux-install</span></code> directory and cd to this directory.</p>
-<p>Under the linux-install directory you should find a directory named <code class="docutils literal"><span class="pre">OSTYPE-MAJORRELEASE.MINORRELEASE-ARCH</span></code>
-and a link to this directory named <code class="docutils literal"><span class="pre">OSTYPE-MAJORRELEASE-ARCH</span></code>.</p>
+<p>Under the linux-install directory you should find a directory named
+<code class="docutils literal"><span class="pre">OSTYPE-MAJORRELEASE.MINORRELEASE-ARCH</span></code> and a link to this directory named
+<code class="docutils literal"><span class="pre">OSTYPE-MAJORRELEASE-ARCH</span></code>.</p>
 <p>Under OSTYPE-MAJORRELEASE.MINORRELEASE-ARCH you should find the files:</p>
 <ul class="simple">
 <li>initrd.img</li>
 <li>vmlinuz</li>
 </ul>
-<p>If these are not there then you must create the directories as needed and copy the files from
-<code class="docutils literal"><span class="pre">/var/www/yum/&lt;OSTYPE&gt;/&lt;MAJORRELEASE&gt;/&lt;ARCH&gt;/images/pxeboot</span></code> or from the images directory on the SIMP DVD.</p>
+<p>If these are not there then you must create the directories as needed and copy
+the files from <code class="docutils literal"><span class="pre">/var/www/yum/&lt;OSTYPE&gt;/&lt;MAJORRELEASE&gt;/&lt;ARCH&gt;/images/pxeboot</span></code>
+or from the images directory on the SIMP DVD.</p>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
 <p class="last">The link is what is used in the TFTP configuration files.</p>
@@ -206,10 +236,15 @@ and a link to this directory named <code class="docutils literal"><span class="p
 <h3>Manifest<a class="headerlink" href="#manifest" title="Permalink to this headline">¶</a></h3>
 <p>Create a site manifest for the TFTP server on the Puppet server.</p>
 <ol class="arabic simple">
-<li>Create the file <code class="docutils literal"><span class="pre">/etc/puppetlabs/code/environments/simp/modules/site/manifests/tftpboot.pp</span></code>.  Use the source code example below.<ul>
-<li>Replace KSSERVER with the IP address of Kickstart server (or the code to look up the IP Address using Hiera).</li>
-<li>Replace OSTYPE, MAJORRELEASE and ARCH with the correct values for the systems you will be PXE booting.</li>
-<li>MODEL NAME is usually of the form OSTYPE-MAJORRELEASE-ARCH for consistency.</li>
+<li>Create the file
+<code class="docutils literal"><span class="pre">/etc/puppetlabs/code/environments/simp/modules/site/manifests/tftpboot.pp</span></code>.
+Use the source code example below.<ul>
+<li>Replace <code class="docutils literal"><span class="pre">KSSERVER</span></code> with the IP address of Kickstart server (or the code
+to look up the IP Address using <a class="reference internal" href="../glossary.html#term-hiera"><span class="xref std std-term">Hiera</span></a>).</li>
+<li>Replace <code class="docutils literal"><span class="pre">OSTYPE</span></code>, <code class="docutils literal"><span class="pre">MAJORRELEASE</span></code> and <code class="docutils literal"><span class="pre">ARCH</span></code> with the correct values
+for the systems you will be PXE booting.</li>
+<li><code class="docutils literal"><span class="pre">MODEL</span> <span class="pre">NAME</span></code> is usually of the form <code class="docutils literal"><span class="pre">OSTYPE-MAJORRELEASE-ARCH</span></code> for
+consistency.</li>
 </ul>
 </li>
 </ol>
@@ -245,10 +280,11 @@ and a link to this directory named <code class="docutils literal"><span class="p
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
-<li>Add the tftpboot site manifest on your puppet server node via Hiera.
-Create the file (or edit if it exists):  <code class="docutils literal"><span class="pre">/etc/puppetlabs/code/environments/simp/hieradata/hosts/&lt;tftp.server.fqdn&gt;.yaml</span></code>.
-(By default the TFTP server is the same as your puppet server so it should exist.)
-Add the following example code to that yaml file.</li>
+<li>Add the tftpboot site manifest on your puppet server node via Hiera.  Create
+the file (or edit if it exists):
+<code class="docutils literal"><span class="pre">/etc/puppetlabs/code/environments/simp/hieradata/hosts/&lt;tftp.server.fqdn&gt;.yaml</span></code>.
+(By default the TFTP server is the same as your puppet server so it should
+exist.) Add the following example code to that yaml file.</li>
 </ol>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="nn">---</span>
 <span class="l l-Scalar l-Scalar-Plain">classes</span><span class="p p-Indicator">:</span>
@@ -256,16 +292,16 @@ Add the following example code to that yaml file.</li>
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
-<li>After updating the above file, type <code class="docutils literal"><span class="pre">puppet</span> <span class="pre">agent</span> <span class="pre">-t</span> <span class="pre">--tags</span> <span class="pre">tftpboot</span></code>
-on the Puppet server.</li>
+<li>After updating the above file, type <code class="docutils literal"><span class="pre">puppet</span> <span class="pre">agent</span> <span class="pre">-t</span> <span class="pre">--tags</span> <span class="pre">tftpboot</span></code> on
+the Puppet server.</li>
 </ol>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">To PXE boot more OSs, create, in the tftpboot.pp file, a tftpboot::linux_model
-block for each OS type using the extra directories and kickstart files
-created using the notes in previous sections. Point individual systems to
-them by adding assign_host lines with their MAC pointing to the appropriate
-model name.</p>
+<p class="last">To PXE boot more OSs, create, in the tftpboot.pp file, a
+<code class="docutils literal"><span class="pre">tftpboot::linux_model</span></code> block for each OS type using the extra directories
+and kickstart files created using the notes in previous sections. Point
+individual systems to them by adding assign_host lines with their MAC
+pointing to the appropriate model name.</p>
 </div>
 </div>
 </div>

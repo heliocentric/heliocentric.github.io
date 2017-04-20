@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.8. Initial Configuration &mdash; SIMP 5.2.1-0 documentation</title>
+  <title>3.7. Initial Configuration &mdash; SIMP 5.2.1-0 documentation</title>
   
 
   
@@ -39,7 +39,7 @@
     <link rel="top" title="SIMP 5.2.1-0 documentation" href="../index.html"/>
         <link rel="up" title="3. SIMP Getting Started Guide" href="index.html"/>
         <link rel="next" title="4. SIMP User Guide" href="../user_guide/index.html"/>
-        <link rel="prev" title="3.7.3. Disk Encryption" href="ISO_Install/Disk_Encryption.html"/> 
+        <link rel="prev" title="3.6.3. Disk Encryption" href="ISO_Install/Disk_Encryption.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -101,12 +101,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../dynamic/Known_OS_Compatibility.html">3.2. Known OS Compatibility</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Installing_SIMP_From_A_Repository.html">3.3. Installing SIMP From A Repository</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Installing_SIMP_using_r10k.html">3.4. Installing SIMP using r10k or Code Manager</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Installing_SIMP_on_Puppet_Enterprise.html">3.5. Installing SIMP on Puppet Enterprise</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Building_A_SIMP_ISO.html">3.6. Building a SIMP ISO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ISO_Install/index.html">3.7. SIMP Server ISO Installation Guide</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">3.8. Initial Configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#installation-variables">3.8.1. Installation Variables</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#simp-config-actions">3.8.2. simp config Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Building_A_SIMP_ISO.html">3.5. Building a SIMP ISO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ISO_Install/index.html">3.6. SIMP Server ISO Installation Guide</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.7. Initial Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installation-variables">3.7.1. Installation Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#simp-config-actions">3.7.2. simp config Actions</a></li>
 </ul>
 </li>
 </ul>
@@ -145,7 +144,7 @@
       
           <li><a href="index.html">3. SIMP Getting Started Guide</a> &raquo;</li>
       
-    <li>3.8. Initial Configuration</li>
+    <li>3.7. Initial Configuration</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -160,7 +159,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="initial-configuration">
-<span id="id1"></span><h1>3.8. Initial Configuration<a class="headerlink" href="#initial-configuration" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>3.7. Initial Configuration<a class="headerlink" href="#initial-configuration" title="Permalink to this headline">¶</a></h1>
 <p>The goal of <code class="docutils literal"><span class="pre">simp</span> <span class="pre">config</span></code> is to allow the user to quickly configure the
 SIMP server with minimal user input/operations.  To that end <code class="docutils literal"><span class="pre">simp</span> <span class="pre">config</span></code>
 sets installation variables based on information gathered from the user,
@@ -170,7 +169,7 @@ bootstrap the system with Puppet.  Both the installation variables and
 their application via <code class="docutils literal"><span class="pre">simp</span> <span class="pre">config</span></code> are described in subsections that
 follow.</p>
 <div class="section" id="installation-variables">
-<span id="list-of-installation-variables"></span><h2>3.8.1. Installation Variables<a class="headerlink" href="#installation-variables" title="Permalink to this headline">¶</a></h2>
+<span id="list-of-installation-variables"></span><h2>3.7.1. Installation Variables<a class="headerlink" href="#installation-variables" title="Permalink to this headline">¶</a></h2>
 <p>This section describes the installation variables set by <code class="docutils literal"><span class="pre">simp</span> <span class="pre">config</span></code>.
 Although the table that follows list all, possible, installation variables,
 the user will not be prompted for all of them, nor will all of them
@@ -235,112 +234,118 @@ security features disabled for clients,
 <em>poss</em> = SIMP system with all security
 features disabled for clients.</td>
 </tr>
-<tr class="row-odd"><td>grub::password</td>
+<tr class="row-odd"><td>cli::use_internet_simp_yum_repos</td>
+<td>Whether to configure SIMP nodes to use
+internet SIMP and SIMP dependency YUM
+repositories.</td>
+</tr>
+<tr class="row-even"><td>grub::password</td>
 <td>GRUB password hash</td>
 </tr>
-<tr class="row-even"><td>puppetdb::master::config::puppetdb_port</td>
+<tr class="row-odd"><td>puppetdb::master::config::puppetdb_port</td>
 <td>Port used by the puppet database</td>
 </tr>
-<tr class="row-odd"><td>puppetdb::master::config::puppetdb_server</td>
+<tr class="row-even"><td>puppetdb::master::config::puppetdb_server</td>
 <td>DNS name or IP of puppet database server</td>
 </tr>
-<tr class="row-even"><td>simp_openldap::server::conf::rootpw</td>
+<tr class="row-odd"><td>simp_openldap::server::conf::rootpw</td>
 <td>LDAP Root password hash</td>
 </tr>
-<tr class="row-odd"><td>simp_options::dns::search</td>
+<tr class="row-even"><td>simp_options::dns::search</td>
 <td>Search domain for DNS</td>
 </tr>
-<tr class="row-even"><td>simp_options::dns::servers</td>
+<tr class="row-odd"><td>simp_options::dns::servers</td>
 <td>List of DNS servers for the managed hosts</td>
 </tr>
-<tr class="row-odd"><td>simp_options::fips</td>
+<tr class="row-even"><td>simp_options::fips</td>
 <td>Enable FIPS-140-2 compliance; <em>true</em>
 or <em>false</em>; value automatically set to
 detected system FIPS status</td>
 </tr>
-<tr class="row-even"><td>simp_options::ldap</td>
+<tr class="row-odd"><td>simp_options::ldap</td>
 <td>Whether to use LDAP; <em>true</em> or <em>false</em></td>
 </tr>
-<tr class="row-odd"><td>simp_options::ldap::base_dn</td>
+<tr class="row-even"><td>simp_options::ldap::base_dn</td>
 <td>LDAP Server Base Distinguished Name</td>
 </tr>
-<tr class="row-even"><td>simp_options::ldap::bind_dn</td>
+<tr class="row-odd"><td>simp_options::ldap::bind_dn</td>
 <td>LDAP Bind Distinguished Name</td>
 </tr>
-<tr class="row-odd"><td>simp_options::ldap::bind_hash</td>
+<tr class="row-even"><td>simp_options::ldap::bind_hash</td>
 <td>LDAP Bind password hash</td>
 </tr>
-<tr class="row-even"><td>simp_options::ldap::bind_pw</td>
+<tr class="row-odd"><td>simp_options::ldap::bind_pw</td>
 <td>LDAP Bind password</td>
 </tr>
-<tr class="row-odd"><td>simp_options::ldap::master</td>
+<tr class="row-even"><td>simp_options::ldap::master</td>
 <td>LDAP master URI</td>
 </tr>
-<tr class="row-even"><td>simp_options::ldap::sync_dn</td>
+<tr class="row-odd"><td>simp_options::ldap::sync_dn</td>
 <td>LDAP Sync Distinguished Name</td>
 </tr>
-<tr class="row-odd"><td>simp_options::ldap::sync_hash</td>
+<tr class="row-even"><td>simp_options::ldap::sync_hash</td>
 <td>LDAP Sync password hash</td>
 </tr>
-<tr class="row-even"><td>simp_options::ldap::sync_pw</td>
+<tr class="row-odd"><td>simp_options::ldap::sync_pw</td>
 <td>LDAP Sync password</td>
 </tr>
-<tr class="row-odd"><td>simp_options::ldap::uri</td>
+<tr class="row-even"><td>simp_options::ldap::uri</td>
 <td>List of LDAP server URIs</td>
 </tr>
-<tr class="row-even"><td>simp_options::ntpd::servers</td>
+<tr class="row-odd"><td>simp_options::ntpd::servers</td>
 <td>NTP servers</td>
 </tr>
-<tr class="row-odd"><td>simp_options::puppet::ca</td>
+<tr class="row-even"><td>simp_options::puppet::ca</td>
 <td>FQDN of Puppet Certificate Authority (CA)</td>
 </tr>
-<tr class="row-even"><td>simp_options::puppet::ca_port</td>
+<tr class="row-odd"><td>simp_options::puppet::ca_port</td>
 <td>Port Puppet CA will listen on</td>
 </tr>
-<tr class="row-odd"><td>simp_options::puppet::server</td>
+<tr class="row-even"><td>simp_options::puppet::server</td>
 <td>FQDN of the puppet server</td>
 </tr>
-<tr class="row-even"><td>simp_options::sssd</td>
+<tr class="row-odd"><td>simp_options::sssd</td>
 <td>Whether to use SSSD</td>
 </tr>
-<tr class="row-odd"><td>simp_options::syslog::failover_log_servers</td>
+<tr class="row-even"><td>simp_options::syslog::failover_log_servers</td>
 <td>IP addresses of failover log servers</td>
 </tr>
-<tr class="row-even"><td>simp_options::syslog::log_servers</td>
+<tr class="row-odd"><td>simp_options::syslog::log_servers</td>
 <td>IP addresses of primary log servers</td>
 </tr>
-<tr class="row-odd"><td>simp_options::trusted_nets</td>
+<tr class="row-even"><td>simp_options::trusted_nets</td>
 <td>Subnet used for clients managed by the
 puppet server</td>
 </tr>
-<tr class="row-even"><td>simp::runlevel</td>
+<tr class="row-odd"><td>simp::runlevel</td>
 <td>Default system run level; 1-5</td>
 </tr>
-<tr class="row-odd"><td>simp::yum::enable_os_repos</td>
-<td>Whether to enable remote OS YUM
-repositories</td>
+<tr class="row-even"><td>simp::yum::repo::local_os_updates::servers</td>
+<td>YUM server(s) for SIMP-managed, OS Update
+packages</td>
 </tr>
-<tr class="row-even"><td>simp::yum::enable_simp_repos</td>
-<td>Whether to enable remote SIMP YUM
-repositories</td>
-</tr>
-<tr class="row-odd"><td>simp::yum::os_update_url</td>
-<td>Full URL to a YUM repo for OS packages</td>
-</tr>
-<tr class="row-even"><td>simp::yum::servers</td>
-<td>YUM server(s) for OS and SIMP packages</td>
-</tr>
-<tr class="row-odd"><td>simp::yum::simp_update_url</td>
-<td>Full URL to a YUM repo for SIMP packages</td>
+<tr class="row-odd"><td>simp::yum::repo::local_simp::servers</td>
+<td>YUM server(s) for SIMP-managed, SIMP and
+SIMP dependency packages</td>
 </tr>
 <tr class="row-even"><td>sssd::domains</td>
 <td>List of SSSD domains</td>
+</tr>
+<tr class="row-odd"><td>svckill::mode</td>
+<td>Strategy svckill should use when it
+encounters undeclared services;
+<em>enforcing</em> = shutdown and disable all
+services not listed in your manifests or
+the exclusion file <em>warning</em> = only
+report what undeclared services should be
+shut down and disabled, without actually
+making the changes to the system</td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="simp-config-actions">
-<span id="id2"></span><h2>3.8.2. simp config Actions<a class="headerlink" href="#simp-config-actions" title="Permalink to this headline">¶</a></h2>
+<span id="id2"></span><h2>3.7.2. simp config Actions<a class="headerlink" href="#simp-config-actions" title="Permalink to this headline">¶</a></h2>
 <p>In addition to creating the three configuration, YAML files, <code class="docutils literal"><span class="pre">simp</span> <span class="pre">config</span></code>
 performs a limited set of actions in order to prepare the system for
 bootstrapping.  Although the table that follows list all, possible,
@@ -396,7 +401,26 @@ the SIMP server host YAML file as
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td>Network</td>
+<tr class="row-even"><td>Lockout
+Prevention</td>
+<td colspan="2"><p class="first">When the SIMP server is installed from ISO, the install
+creates a local <em>simp</em> user that the SIMP server configures
+to have both su and ssh privileges. (This user is provided
+to prevent server lockout, as, per security policy, SIMP by
+default disables logins via ssh for all users, including
+&#8216;root&#8217;.) So, when SIMP is <strong>not</strong> installed from ISO,
+<code class="docutils literal"><span class="pre">simp</span> <span class="pre">config</span></code> does the following:</p>
+<ul class="last simple">
+<li>Warns the operator of this problem</li>
+<li>Writes a lock file containing details on how to rectify
+the problem.  This lock file prevents <code class="docutils literal"><span class="pre">simp</span> <span class="pre">bootstrap</span></code>
+from running until the user manually fixes the problem.</li>
+<li>Turns off the SIMP server configuration that allows
+su and ssh privileges for an inapplicable <em>simp</em> user.</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>Network</td>
 <td colspan="2"><ul class="first last simple">
 <li>When the user selects to configure the network interface,
 <code class="docutils literal"><span class="pre">simp</span> <span class="pre">config</span></code> uses Puppet to set the network interface
@@ -406,7 +430,7 @@ interface.</li>
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td>Puppet</td>
+<tr class="row-even"><td>Puppet</td>
 <td colspan="2"><ul class="first last simple">
 <li>Copies SIMP modules installed via RPM in
 <code class="docutils literal"><span class="pre">/usr/share/simp</span></code> into the Puppet environments directory
@@ -423,7 +447,7 @@ exists.</li>
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td>SIMP Hiera and
+<tr class="row-odd"><td>SIMP Hiera &amp;
 Site Manifest</td>
 <td colspan="2"><ul class="first last simple">
 <li>Sets the <code class="docutils literal"><span class="pre">$simp_scenario</span></code> variable in the site.pp of the
@@ -441,27 +465,47 @@ environment, <code class="docutils literal"><span class="pre">simp/hieradata/sim
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td>YUM</td>
+<tr class="row-even"><td>YUM</td>
 <td colspan="2"><ul class="first last simple">
-<li>When the local, SIMP-specific YUM repo exists
-(<code class="docutils literal"><span class="pre">/etc/yum.repos.d/simp_filesystem.repo</span></code>),
+<li>When the SIMP filesystem YUM repo from an ISO install
+exists (<code class="docutils literal"><span class="pre">/etc/yum.repos.d/simp_filesystem.repo</span></code>),
 <code class="docutils literal"><span class="pre">simp</span> <span class="pre">config</span></code><ul>
+<li>Configures SIMP server to act as a YUM server for the
+on-server repo, by adding the <code class="docutils literal"><span class="pre">simp::server::yum</span></code>
+class to the SIMP server host YAML file.</li>
+<li>Configures SIMP clients to use the SIMP server&#8217;s YUM
+repos by adding <code class="docutils literal"><span class="pre">simp::yum::repo::local_os_updates</span></code>
+and <code class="docutils literal"><span class="pre">simp::yum::repo::local_simp</span></code> classes to
+<code class="docutils literal"><span class="pre">simp_config_settings.yaml</span></code>.</li>
+<li>Disables the use of the <code class="docutils literal"><span class="pre">simp::yum::repo::local*</span></code>
+repos in the SIMP server&#8217;s host YAML file, as it is
+already configured to use the more efficent, filesystem
+repo.</li>
 <li>Updates the appropriate OS YUM Updates repository,
-contained at <code class="docutils literal"><span class="pre">/var/www/yum/OSTYPE/MAJORRELEASE/ARCH</span></code></li>
-<li>Disables any default CentOS repos</li>
-<li>Adds  simp::server::yum class to the SIMP server host
-YAML file, which allows the SIMP server to act as a
-YUM server for that repo</li>
+contained at <code class="docutils literal"><span class="pre">/var/www/yum/OSTYPE/MAJORRELEASE/ARCH</span></code>.</li>
+<li>Disables any default CentOS repos.</li>
 </ul>
 </li>
-<li>When the local SIMP-specific YUM repo does not exist,
+<li>When the SIMP filesystem YUM repo does not exist, but the
+user wants to use internet repos <code class="docutils literal"><span class="pre">simp</span> <span class="pre">config</span></code><ul>
+<li>Enables internet SIMP server repos in the SIMP server
+host YAML file by adding the
+<code class="docutils literal"><span class="pre">simp::yum::repo::internet_simp_server</span></code> class.</li>
+<li>Enables internet SIMP dependency repos for both SIMP
+clients and in the SIMP server by adding the
+<code class="docutils literal"><span class="pre">simp::yum::repo::internet_simp_dependencies</span></code> class
+to <code class="docutils literal"><span class="pre">simp_config_settings.yaml</span></code>.</li>
+</ul>
+</li>
+<li>When the SIMP filesystem YUM repo does not exist and the
+user does not want to use internet repos,
 <code class="docutils literal"><span class="pre">simp</span> <span class="pre">config</span></code><ul>
-<li>Enables remote YUM repos in the SIMP server host YAML
-file</li>
-<li>Checks whether OS and SIMP packages can be found in
-user-configured remote YUM repos via <code class="docutils literal"><span class="pre">repoquery</span></code>.  If
-this check fails, <code class="docutils literal"><span class="pre">simp</span> <span class="pre">bootstrap</span></code> will be prevented
-from running until the user manually fixes the issue.</li>
+<li>Checks the configuration of the  SIMP server&#8217;s YUM repos
+via <code class="docutils literal"><span class="pre">repoquery</span></code>.  If this check fails, writes a lock
+to prevent <code class="docutils literal"><span class="pre">simp</span> <span class="pre">bootstrap</span></code> from running until the
+user manually fixes the issue.</li>
+<li>Reminds the user to (manually) set up YUM repos for SIMP
+clients.</li>
 </ul>
 </li>
 </ul>
@@ -482,7 +526,7 @@ from running until the user manually fixes the issue.</li>
         <a href="../user_guide/index.html" class="btn btn-neutral float-right" title="4. SIMP User Guide" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="ISO_Install/Disk_Encryption.html" class="btn btn-neutral" title="3.7.3. Disk Encryption" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="ISO_Install/Disk_Encryption.html" class="btn btn-neutral" title="3.6.3. Disk Encryption" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

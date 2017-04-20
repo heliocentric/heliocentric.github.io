@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.7.2.2. Elasticsearch, Logstash, and Grafana &mdash; SIMP 5.2.1-0 documentation</title>
+  <title>4.8.2.2. Elasticsearch, Logstash, and Grafana &mdash; SIMP 5.2.1-0 documentation</title>
   
 
   
@@ -37,9 +37,9 @@
 
   
     <link rel="top" title="SIMP 5.2.1-0 documentation" href="../../../index.html"/>
-        <link rel="up" title="4.7.2. HOWTO Setup Central Log Collection" href="../Central_Log_Collection.html"/>
-        <link rel="next" title="4.7.3. HOWTO Change Puppet Servers" href="../Changing_Puppet_Masters.html"/>
-        <link rel="prev" title="4.7.2.1. Centralized Rsyslog" href="Rsyslog.html"/> 
+        <link rel="up" title="4.8.2. HOWTO Setup Central Log Collection" href="../Central_Log_Collection.html"/>
+        <link rel="next" title="4.8.3. HOWTO Change Puppet Servers" href="../Changing_Puppet_Masters.html"/>
+        <link rel="prev" title="4.8.2.1. Centralized Rsyslog" href="Rsyslog.html"/> 
 
   
   <script src="../../../_static/js/modernizr.min.js"></script>
@@ -100,37 +100,37 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">4. User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../Introduction.html">4.1. Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../Client_Management.html">4.2. Client Management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../SIMP_Administration.html">4.3. General Administration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../User_Management.html">4.4. User Management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../Hiera_Overview.html">4.5. Hiera Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../Troubleshooting.html">4.6. Troubleshooting Common Issues</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../../HOWTO.html">4.7. SIMP HOWTO Guides</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../Work_With_Rsync.html">4.7.1. Work with the SIMP Rsync Shares</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="../Central_Log_Collection.html">4.7.2. Setup Central Log Collection</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="Rsyslog.html">4.7.2.1. Centralized Rsyslog</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">4.7.2.2. Elasticsearch, Logstash, and Grafana</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Client_Management.html#configure-pxe-boot">4.3. Configure PXE Boot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Client_Management.html#apply-certificates">4.4. Apply Certificates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../SIMP_Administration.html">4.5. SIMP Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../User_Management.html">4.6. User Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Troubleshooting.html">4.7. Troubleshooting Common Issues</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../HOWTO.html">4.8. SIMP HOWTO Guides</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Work_With_Rsync.html">4.8.1. Work with the SIMP Rsync Shares</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../Central_Log_Collection.html">4.8.2. Setup Central Log Collection</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="Rsyslog.html">4.8.2.1. Centralized Rsyslog</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">4.8.2.2. Elasticsearch, Logstash, and Grafana</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../Changing_Puppet_Masters.html">4.7.3. Change Puppet Masters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Discard_Mail_to_Root.html">4.7.4. Discard Mail to Root</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Exclude_Repositories.html">4.7.5. Exclude YUM Repositories from Nightly Updates</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../NFS.html">4.7.6. Configure NFS</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../IPTables_NAT_Rules.html">4.7.7. Configure IPTables NAT Rules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Kerberos.html">4.7.8. Enable Kerberos</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Managing_Workstation_Infrastructures.html">4.7.9. Manage Workstation Infrastructures</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Network_Build.html">4.7.10. Kickstart the Initial Server</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Puppetmaster_Backup.html">4.7.11. Backup the Puppet Master</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Puppet_Server_NAT.html">4.7.12. Configure a Puppet Server Behind a NAT</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Redundant_LDAP.html">4.7.13. Enable Redundent LDAP</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../SFTP_Restricted_Accounts.html">4.7.14. Enable SFTP Restricted Accounts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../SSH_Keys.html">4.7.15. Setup SSH Authorized Keys</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../SSH_Restrict_Network_Access.html">4.7.16. Restrict SSH Network Access</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Upgrade_SIMP.html">4.7.17. Upgrade SIMP (Coming Soon!)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Manage_TPM.html">4.7.18. Manage TPM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Changing_Puppet_Masters.html">4.8.3. Change Puppet Masters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Discard_Mail_to_Root.html">4.8.4. Discard Mail to Root</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Exclude_Repositories.html">4.8.5. Exclude YUM Repositories from Nightly Updates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../NFS.html">4.8.6. Configure NFS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../IPTables_NAT_Rules.html">4.8.7. Configure IPTables NAT Rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Kerberos.html">4.8.8. Enable Kerberos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Managing_Workstation_Infrastructures.html">4.8.9. Manage Workstation Infrastructures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Puppetmaster_Backup.html">4.8.10. Backup the Puppet Master</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Puppet_Server_NAT.html">4.8.11. Configure a Puppet Server Behind a NAT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Redundant_LDAP.html">4.8.12. Enable Redundent LDAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SFTP_Restricted_Accounts.html">4.8.13. Enable SFTP Restricted Accounts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SSH_Keys.html">4.8.14. Setup SSH Authorized Keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SSH_Restrict_Network_Access.html">4.8.15. Restrict SSH Network Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Upgrade_SIMP.html">4.8.16. Upgrade SIMP (Coming Soon!)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Manage_TPM.html">4.8.17. Manage TPM</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../SIMP_Package_Data.html">4.8. Package Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../index.html#indices-and-tables">4.9. Indices and tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../SIMP_Package_Data.html">4.9. Package Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#indices-and-tables">4.10. Indices and tables</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../contributors_guide/index.html">5. Contributing to SIMP</a></li>
@@ -166,11 +166,11 @@
       
           <li><a href="../../index.html">4. SIMP User Guide</a> &raquo;</li>
       
-          <li><a href="../../HOWTO.html">4.7. SIMP HOWTO Guides</a> &raquo;</li>
+          <li><a href="../../HOWTO.html">4.8. SIMP HOWTO Guides</a> &raquo;</li>
       
-          <li><a href="../Central_Log_Collection.html">4.7.2. HOWTO Setup Central Log Collection</a> &raquo;</li>
+          <li><a href="../Central_Log_Collection.html">4.8.2. HOWTO Setup Central Log Collection</a> &raquo;</li>
       
-    <li>4.7.2.2. Elasticsearch, Logstash, and Grafana</li>
+    <li>4.8.2.2. Elasticsearch, Logstash, and Grafana</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -185,14 +185,14 @@
            <div itemprop="articleBody">
             
   <div class="section" id="elasticsearch-logstash-and-grafana">
-<span id="id1"></span><h1>4.7.2.2. Elasticsearch, Logstash, and Grafana<a class="headerlink" href="#elasticsearch-logstash-and-grafana" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>4.8.2.2. Elasticsearch, Logstash, and Grafana<a class="headerlink" href="#elasticsearch-logstash-and-grafana" title="Permalink to this headline">¶</a></h1>
 <p>This chapter provides instruction for getting a basic configuration of
 <a class="reference internal" href="../../../glossary.html#term-logstash"><span class="xref std std-term">Logstash</span></a> working in a SIMP environment.</p>
 <p>If these instructions don&#8217;t work for you, please take a look at the README in
 the <a class="reference external" href="https://github.com/simp/pupmod-simp-simp_logstash">SIMP Logstash module</a>, particularly the acceptance tests in the
 <code class="docutils literal"><span class="pre">spec/acceptance</span></code> directory.</p>
 <div class="section" id="obtaining-the-required-packages">
-<h2>4.7.2.2.1. Obtaining the Required Packages<a class="headerlink" href="#obtaining-the-required-packages" title="Permalink to this headline">¶</a></h2>
+<h2>4.8.2.2.1. Obtaining the Required Packages<a class="headerlink" href="#obtaining-the-required-packages" title="Permalink to this headline">¶</a></h2>
 <p>As an optional component in the SIMP infrastructure, the <a class="reference internal" href="../../../glossary.html#term-elg"><span class="xref std std-term">ELG</span></a> packages
 are not included in the SIMP distribution.</p>
 <p>You will need to proceed to the vendor sites to obtain the require RPMs and
@@ -209,7 +209,7 @@ your installations.</p>
 </div></blockquote>
 </div>
 <div class="section" id="logstash">
-<h2>4.7.2.2.2. Logstash<a class="headerlink" href="#logstash" title="Permalink to this headline">¶</a></h2>
+<h2>4.8.2.2.2. Logstash<a class="headerlink" href="#logstash" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://www.elastic.co/products/logstash">Logstash</a> is an Open Source tool that provides a means for SIMP
 implementations to have logs and events collected, filtered, and forwarded
 to another host. SIMP comes with three separate but related modules. The
@@ -230,7 +230,7 @@ class!</p>
 </div>
 </div>
 <div class="section" id="logstash-architecture">
-<h2>4.7.2.2.3. Logstash Architecture<a class="headerlink" href="#logstash-architecture" title="Permalink to this headline">¶</a></h2>
+<h2>4.8.2.2.3. Logstash Architecture<a class="headerlink" href="#logstash-architecture" title="Permalink to this headline">¶</a></h2>
 <p>The Logstash architecture is quite straightforward. It takes inputs from
 various sources, optionally applies filters, and outputs the results to a
 specified target. It&#8217;s likely that you can already forward logs to Logstash and
@@ -242,7 +242,7 @@ manipulation that is desired, there is likely a filter and
 <a class="reference external" href="https://www.elastic.co/guide/en/logstash/current/index.html">Logstash documentation</a> that already exists.</p>
 </div>
 <div class="section" id="simp-logstash-architecture">
-<h2>4.7.2.2.4. SIMP Logstash Architecture<a class="headerlink" href="#simp-logstash-architecture" title="Permalink to this headline">¶</a></h2>
+<h2>4.8.2.2.4. SIMP Logstash Architecture<a class="headerlink" href="#simp-logstash-architecture" title="Permalink to this headline">¶</a></h2>
 <p>Combining the SIMP <a class="reference internal" href="../../../glossary.html#term-logstash"><span class="xref std std-term">Logstash</span></a>, <a class="reference internal" href="../../../glossary.html#term-elasticsearch"><span class="xref std std-term">Elasticsearch</span></a>, and <a class="reference internal" href="../../../glossary.html#term-grafana"><span class="xref std std-term">Grafana</span></a>
 modules provides a functioning log collection, reduction, and search
 capability. Unless scale dictates otherwise, these three modules can easily be
@@ -261,9 +261,9 @@ system.</p>
 <a class="reference internal image-reference" href="../../../_images/Logstash.png"><img alt="Logstash Data Flow" class="align-center" src="../../../_images/Logstash.png" style="width: 413.7px; height: 770.7px;" /></a>
 </div>
 <div class="section" id="simp-logstash-deployment">
-<h2>4.7.2.2.5. SIMP Logstash Deployment<a class="headerlink" href="#simp-logstash-deployment" title="Permalink to this headline">¶</a></h2>
+<h2>4.8.2.2.5. SIMP Logstash Deployment<a class="headerlink" href="#simp-logstash-deployment" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="logstash-simp-and-security">
-<h3>4.7.2.2.5.1. Logstash, SIMP, and Security<a class="headerlink" href="#logstash-simp-and-security" title="Permalink to this headline">¶</a></h3>
+<h3>4.8.2.2.5.1. Logstash, SIMP, and Security<a class="headerlink" href="#logstash-simp-and-security" title="Permalink to this headline">¶</a></h3>
 <p>The provided SIMP modules for Logstash, Elasticsearch, and Grafana have been
 built with connection security in mind. Overriding these settings could
 adversely affect the security of the logging infrastructure. The following list
@@ -308,9 +308,9 @@ both security and functionality of the system.</p>
 </div>
 </div>
 <div class="section" id="logstash-setup">
-<h2>4.7.2.2.6. Logstash Setup<a class="headerlink" href="#logstash-setup" title="Permalink to this headline">¶</a></h2>
+<h2>4.8.2.2.6. Logstash Setup<a class="headerlink" href="#logstash-setup" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="logstash-system-requirements">
-<h3>4.7.2.2.6.1. Logstash System Requirements<a class="headerlink" href="#logstash-system-requirements" title="Permalink to this headline">¶</a></h3>
+<h3>4.8.2.2.6.1. Logstash System Requirements<a class="headerlink" href="#logstash-system-requirements" title="Permalink to this headline">¶</a></h3>
 <p>The storage requirements for Logstash and Elasticsearch vary depending on how
 long you plan on keeping logs. When using Elasticsearch, the logs are formatted
 for Elasticsearch and stored in <code class="docutils literal"><span class="pre">/var/elasticsearch</span></code>. You can also configure
@@ -331,7 +331,7 @@ infrastructure as both tend to use large amounts of system resources.</p>
 </div>
 </div>
 <div class="section" id="recommended-simp-logstash-setup">
-<h3>4.7.2.2.6.2. Recommended SIMP Logstash Setup<a class="headerlink" href="#recommended-simp-logstash-setup" title="Permalink to this headline">¶</a></h3>
+<h3>4.8.2.2.6.2. Recommended SIMP Logstash Setup<a class="headerlink" href="#recommended-simp-logstash-setup" title="Permalink to this headline">¶</a></h3>
 <p>The following example can be applied to a single host with a large <code class="docutils literal"><span class="pre">/var</span></code>
 volume and 4GB of memory.</p>
 <p>You can extend and replicate this setup on as many systems as necessary to
@@ -409,7 +409,7 @@ your initial cluster.</p>
 </div>
 </div>
 <div class="section" id="deploying-additional-elasticsearch-nodes">
-<h3>4.7.2.2.6.3. Deploying Additional Elasticsearch Nodes<a class="headerlink" href="#deploying-additional-elasticsearch-nodes" title="Permalink to this headline">¶</a></h3>
+<h3>4.8.2.2.6.3. Deploying Additional Elasticsearch Nodes<a class="headerlink" href="#deploying-additional-elasticsearch-nodes" title="Permalink to this headline">¶</a></h3>
 <p>In the case of the Elasticsearch node setup below, it may be better to use a
 group match to pull your <a class="reference internal" href="../../../glossary.html#term-hiera"><span class="xref std std-term">Hiera</span></a> settings. To do this, you should add the
 following to your <code class="docutils literal"><span class="pre">site.pp</span></code> file for your environment.</p>
@@ -447,7 +447,7 @@ content.</p>
 to ensure logs are sent to Logstash stunnel listener.</p>
 </div>
 <div class="section" id="deploying-grafana">
-<h3>4.7.2.2.6.4. Deploying Grafana<a class="headerlink" href="#deploying-grafana" title="Permalink to this headline">¶</a></h3>
+<h3>4.8.2.2.6.4. Deploying Grafana<a class="headerlink" href="#deploying-grafana" title="Permalink to this headline">¶</a></h3>
 <p>Now that you have a functional logging setup, you&#8217;ll probably want to deploy a
 GUI to provide the ability to generate user dashboards as well as dynamic log
 analysis.</p>
@@ -462,7 +462,7 @@ to your Kibana node.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">By default, the Grafana administrative password is randomly set using
-<a class="reference external" href="https://github.com/simp/pupmod-simp-simplib/blob/master/lib/puppet/parser/functions/passgen.rb">simplib passgen()</a>. You can use the <a class="reference internal" href="../../SIMP_Administration.html#simp-passgen"><span class="std std-ref">simp passgen</span></a> command to obtain
+<a class="reference external" href="https://github.com/simp/pupmod-simp-simplib/blob/master/lib/puppet/parser/functions/passgen.rb">simplib passgen()</a>. You can use the <a class="reference internal" href="../../SIMP_Administration/General_Administration.html#simp-passgen"><span class="std std-ref">simp passgen</span></a> command to obtain
 the password for your environment.</p>
 </div>
 <div class="admonition note">
@@ -504,7 +504,7 @@ settings.</p>
 <p>After your Puppet run, you should be able to connect to port <code class="docutils literal"><span class="pre">8443</span></code> on your
 Grafana host and authenticate with the administrative user.</p>
 <div class="section" id="grafana-ldap-integration">
-<h4>4.7.2.2.6.4.1. Grafana LDAP Integration<a class="headerlink" href="#grafana-ldap-integration" title="Permalink to this headline">¶</a></h4>
+<h4>4.8.2.2.6.4.1. Grafana LDAP Integration<a class="headerlink" href="#grafana-ldap-integration" title="Permalink to this headline">¶</a></h4>
 <p>SIMP uses Grafana roles and maps them to <a class="reference internal" href="../../../glossary.html#term-ldap"><span class="xref std std-term">LDAP</span></a> groups to provide access
 control.</p>
 <p>When you apply the SIMP Grafana class, Grafana will be configured for LDAP
@@ -569,7 +569,7 @@ additional information on using the puppet module to manage Grafana LDAP
 configuration.</p>
 </div>
 <div class="section" id="grafana-dashboards">
-<h4>4.7.2.2.6.4.2. Grafana Dashboards<a class="headerlink" href="#grafana-dashboards" title="Permalink to this headline">¶</a></h4>
+<h4>4.8.2.2.6.4.2. Grafana Dashboards<a class="headerlink" href="#grafana-dashboards" title="Permalink to this headline">¶</a></h4>
 <p>SIMP can optionally install default Grafana dashboards.  To install the
 dashboards, use hiera to apply <code class="docutils literal"><span class="pre">simp_grafana::simp_dashboards:</span> <span class="pre">true</span></code> to your
 grafana node.  They will be installed in <code class="docutils literal"><span class="pre">/var/lib/grafana/dashboards</span></code>.  The
@@ -587,10 +587,10 @@ different name.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../Changing_Puppet_Masters.html" class="btn btn-neutral float-right" title="4.7.3. HOWTO Change Puppet Servers" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../Changing_Puppet_Masters.html" class="btn btn-neutral float-right" title="4.8.3. HOWTO Change Puppet Servers" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Rsyslog.html" class="btn btn-neutral" title="4.7.2.1. Centralized Rsyslog" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Rsyslog.html" class="btn btn-neutral" title="4.8.2.1. Centralized Rsyslog" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

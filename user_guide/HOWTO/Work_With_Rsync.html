@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.7.1. HOWTO Work with the SIMP Rsync Shares &mdash; SIMP 5.2.1-0 documentation</title>
+  <title>4.8.1. HOWTO Work with the SIMP Rsync Shares &mdash; SIMP 5.2.1-0 documentation</title>
   
 
   
@@ -37,9 +37,9 @@
 
   
     <link rel="top" title="SIMP 5.2.1-0 documentation" href="../../index.html"/>
-        <link rel="up" title="4.7. SIMP HOWTO Guides" href="../HOWTO.html"/>
-        <link rel="next" title="4.7.2. HOWTO Setup Central Log Collection" href="Central_Log_Collection.html"/>
-        <link rel="prev" title="4.7. SIMP HOWTO Guides" href="../HOWTO.html"/> 
+        <link rel="up" title="4.8. SIMP HOWTO Guides" href="../HOWTO.html"/>
+        <link rel="next" title="4.8.2. HOWTO Setup Central Log Collection" href="Central_Log_Collection.html"/>
+        <link rel="prev" title="4.8. SIMP HOWTO Guides" href="../HOWTO.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -100,38 +100,39 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">4. User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../Introduction.html">4.1. Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Client_Management.html">4.2. Client Management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../SIMP_Administration.html">4.3. General Administration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../User_Management.html">4.4. User Management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Hiera_Overview.html">4.5. Hiera Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Troubleshooting.html">4.6. Troubleshooting Common Issues</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../HOWTO.html">4.7. SIMP HOWTO Guides</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">4.7.1. Work with the SIMP Rsync Shares</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#why-simp-uses-rsync">4.7.1.1. Why SIMP Uses Rsync</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#standard-capabilities">4.7.1.2. Standard Capabilities</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#supporting-additional-environments">4.7.1.3. Supporting Additional Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Client_Management.html#configure-pxe-boot">4.3. Configure PXE Boot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Client_Management.html#apply-certificates">4.4. Apply Certificates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SIMP_Administration.html">4.5. SIMP Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../User_Management.html">4.6. User Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Troubleshooting.html">4.7. Troubleshooting Common Issues</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../HOWTO.html">4.8. SIMP HOWTO Guides</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">4.8.1. Work with the SIMP Rsync Shares</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#why-simp-uses-rsync">4.8.1.1. Why SIMP Uses Rsync</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#standard-capabilities">4.8.1.2. Standard Capabilities</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#supporting-additional-environments">4.8.1.3. Supporting Additional Environments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#disabling-stunnel">4.8.1.4. Disabling Stunnel</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="Central_Log_Collection.html">4.7.2. Setup Central Log Collection</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Changing_Puppet_Masters.html">4.7.3. Change Puppet Masters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Discard_Mail_to_Root.html">4.7.4. Discard Mail to Root</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Exclude_Repositories.html">4.7.5. Exclude YUM Repositories from Nightly Updates</a></li>
-<li class="toctree-l3"><a class="reference internal" href="NFS.html">4.7.6. Configure NFS</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IPTables_NAT_Rules.html">4.7.7. Configure IPTables NAT Rules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Kerberos.html">4.7.8. Enable Kerberos</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Managing_Workstation_Infrastructures.html">4.7.9. Manage Workstation Infrastructures</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Network_Build.html">4.7.10. Kickstart the Initial Server</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Puppetmaster_Backup.html">4.7.11. Backup the Puppet Master</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Puppet_Server_NAT.html">4.7.12. Configure a Puppet Server Behind a NAT</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Redundant_LDAP.html">4.7.13. Enable Redundent LDAP</a></li>
-<li class="toctree-l3"><a class="reference internal" href="SFTP_Restricted_Accounts.html">4.7.14. Enable SFTP Restricted Accounts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="SSH_Keys.html">4.7.15. Setup SSH Authorized Keys</a></li>
-<li class="toctree-l3"><a class="reference internal" href="SSH_Restrict_Network_Access.html">4.7.16. Restrict SSH Network Access</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Upgrade_SIMP.html">4.7.17. Upgrade SIMP (Coming Soon!)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Manage_TPM.html">4.7.18. Manage TPM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Central_Log_Collection.html">4.8.2. Setup Central Log Collection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Changing_Puppet_Masters.html">4.8.3. Change Puppet Masters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Discard_Mail_to_Root.html">4.8.4. Discard Mail to Root</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Exclude_Repositories.html">4.8.5. Exclude YUM Repositories from Nightly Updates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NFS.html">4.8.6. Configure NFS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IPTables_NAT_Rules.html">4.8.7. Configure IPTables NAT Rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Kerberos.html">4.8.8. Enable Kerberos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Managing_Workstation_Infrastructures.html">4.8.9. Manage Workstation Infrastructures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Puppetmaster_Backup.html">4.8.10. Backup the Puppet Master</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Puppet_Server_NAT.html">4.8.11. Configure a Puppet Server Behind a NAT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Redundant_LDAP.html">4.8.12. Enable Redundent LDAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SFTP_Restricted_Accounts.html">4.8.13. Enable SFTP Restricted Accounts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SSH_Keys.html">4.8.14. Setup SSH Authorized Keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SSH_Restrict_Network_Access.html">4.8.15. Restrict SSH Network Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Upgrade_SIMP.html">4.8.16. Upgrade SIMP (Coming Soon!)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Manage_TPM.html">4.8.17. Manage TPM</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../SIMP_Package_Data.html">4.8. Package Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#indices-and-tables">4.9. Indices and tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SIMP_Package_Data.html">4.9. Package Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#indices-and-tables">4.10. Indices and tables</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../contributors_guide/index.html">5. Contributing to SIMP</a></li>
@@ -167,9 +168,9 @@
       
           <li><a href="../index.html">4. SIMP User Guide</a> &raquo;</li>
       
-          <li><a href="../HOWTO.html">4.7. SIMP HOWTO Guides</a> &raquo;</li>
+          <li><a href="../HOWTO.html">4.8. SIMP HOWTO Guides</a> &raquo;</li>
       
-    <li>4.7.1. HOWTO Work with the SIMP Rsync Shares</li>
+    <li>4.8.1. HOWTO Work with the SIMP Rsync Shares</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -184,7 +185,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="howto-work-with-the-simp-rsync-shares">
-<h1>4.7.1. HOWTO Work with the SIMP Rsync Shares<a class="headerlink" href="#howto-work-with-the-simp-rsync-shares" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>4.8.1. HOWTO Work with the SIMP Rsync Shares<a class="headerlink" href="#howto-work-with-the-simp-rsync-shares" title="Permalink to this headline">¶</a></h1>
 <p>When we added support for multiple environments, the SIMP rsync space in
 <code class="docutils literal"><span class="pre">/var/simp/environments/simp/rsync</span></code> became quite complex.</p>
 <p>This will guide you through the new rsync layout as well as providing guidance
@@ -193,7 +194,7 @@ on setting up new rsync shares for your various components.</p>
 you like. However, if you want multi-environment support, you&#8217;ll need to
 replicate something like what we&#8217;ve done for your custom directories.</p>
 <div class="section" id="why-simp-uses-rsync">
-<h2>4.7.1.1. Why SIMP Uses Rsync<a class="headerlink" href="#why-simp-uses-rsync" title="Permalink to this headline">¶</a></h2>
+<h2>4.8.1.1. Why SIMP Uses Rsync<a class="headerlink" href="#why-simp-uses-rsync" title="Permalink to this headline">¶</a></h2>
 <p>Rsync support was introduced in SIMP in the early days due to the fact that the
 Puppet native file synchronization mechanisms were relatively horrible at
 syncing large files (too much in memory) and large numbers of files in a
@@ -207,7 +208,7 @@ passwords to sensitive shares to prevent unauthorized connections.</p>
 should suit most needs.</p>
 </div>
 <div class="section" id="standard-capabilities">
-<h2>4.7.1.2. Standard Capabilities<a class="headerlink" href="#standard-capabilities" title="Permalink to this headline">¶</a></h2>
+<h2>4.8.1.2. Standard Capabilities<a class="headerlink" href="#standard-capabilities" title="Permalink to this headline">¶</a></h2>
 <p>The standard SIMP rsync shares exist at <code class="docutils literal"><span class="pre">/var/simp/environments/simp/rsync</span></code>.
 This is an assumed path and changing this path will break some aspects of the
 system.</p>
@@ -332,7 +333,7 @@ default rsync shares.</p>
 </div>
 </div>
 <div class="section" id="supporting-additional-environments">
-<h2>4.7.1.3. Supporting Additional Environments<a class="headerlink" href="#supporting-additional-environments" title="Permalink to this headline">¶</a></h2>
+<h2>4.8.1.3. Supporting Additional Environments<a class="headerlink" href="#supporting-additional-environments" title="Permalink to this headline">¶</a></h2>
 <p>Generally, in a SIMP environment, you are going to want to start with the
 directory structure that we have and simply copy the entire data structure to a
 directory with your custom name.</p>
@@ -361,6 +362,33 @@ etc...), there may be some VERY large files present in these directories.</p>
 VCS!</p>
 </div>
 </div>
+<div class="section" id="disabling-stunnel">
+<h2>4.8.1.4. Disabling Stunnel<a class="headerlink" href="#disabling-stunnel" title="Permalink to this headline">¶</a></h2>
+<p>If you decide to disable stunnel, you will need to specify your rsync server in
+<a class="reference internal" href="../../glossary.html#term-hiera"><span class="xref std std-term">Hiera</span></a>, if it is not already specified.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">If you disable stunnel, your data and any rsync access credentials will be
+passed in the clear!</p>
+</div>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="l l-Scalar l-Scalar-Plain">simp_options::rsync::server</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;rsync_server_fqdn&gt;</span>
+</pre></div>
+</div>
+<p>Additionally, you will need to ensure your firewall is open on the rsync port.
+Include the following on the node acting as the rsync server.</p>
+<div class="highlight-ruby"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="n">site</span><span class="o">::</span><span class="n">rsync_iptables</span> <span class="p">(</span>
+  <span class="no">Simplib</span><span class="o">::</span><span class="no">Netlist</span> <span class="vg">$allow</span>      <span class="o">=</span> <span class="n">simplib</span><span class="o">::</span><span class="n">lookup</span><span class="p">(</span><span class="s1">&#39;simp_options::trusted_nets&#39;</span><span class="p">),</span>
+  <span class="no">Simplib</span><span class="o">::</span><span class="no">Port</span>    <span class="vg">$rsync_port</span> <span class="o">=</span> <span class="mi">873</span>
+<span class="p">){</span>
+  <span class="n">iptables</span><span class="o">::</span><span class="n">listen</span><span class="o">::</span><span class="n">tcp_stateful</span> <span class="p">{</span> <span class="s2">&quot;rsync_shares&quot;</span><span class="p">:</span>
+    <span class="n">trusted_nets</span> <span class="o">=&gt;</span> <span class="vg">$allow</span><span class="p">,</span>
+    <span class="n">dports</span>       <span class="o">=&gt;</span> <span class="vg">$rsync_port</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -370,10 +398,10 @@ VCS!</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Central_Log_Collection.html" class="btn btn-neutral float-right" title="4.7.2. HOWTO Setup Central Log Collection" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Central_Log_Collection.html" class="btn btn-neutral float-right" title="4.8.2. HOWTO Setup Central Log Collection" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../HOWTO.html" class="btn btn-neutral" title="4.7. SIMP HOWTO Guides" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../HOWTO.html" class="btn btn-neutral" title="4.8. SIMP HOWTO Guides" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.7.9. HOWTO Manage Workstation Infrastructures &mdash; SIMP 5.2.1-0 documentation</title>
+  <title>4.8.9. HOWTO Manage Workstation Infrastructures &mdash; SIMP 5.2.1-0 documentation</title>
   
 
   
@@ -37,9 +37,9 @@
 
   
     <link rel="top" title="SIMP 5.2.1-0 documentation" href="../../index.html"/>
-        <link rel="up" title="4.7. SIMP HOWTO Guides" href="../HOWTO.html"/>
-        <link rel="next" title="4.7.10. HOWTO Kickstart the Initial Server" href="Network_Build.html"/>
-        <link rel="prev" title="4.7.8. HOWTO Enable Kerberos" href="Kerberos.html"/> 
+        <link rel="up" title="4.8. SIMP HOWTO Guides" href="../HOWTO.html"/>
+        <link rel="next" title="4.8.10. HOWTO Back up the Puppet Master" href="Puppetmaster_Backup.html"/>
+        <link rel="prev" title="4.8.8. HOWTO Enable Kerberos" href="Kerberos.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -100,41 +100,41 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">4. User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../Introduction.html">4.1. Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Client_Management.html">4.2. Client Management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../SIMP_Administration.html">4.3. General Administration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../User_Management.html">4.4. User Management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Hiera_Overview.html">4.5. Hiera Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Troubleshooting.html">4.6. Troubleshooting Common Issues</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../HOWTO.html">4.7. SIMP HOWTO Guides</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="Work_With_Rsync.html">4.7.1. Work with the SIMP Rsync Shares</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Central_Log_Collection.html">4.7.2. Setup Central Log Collection</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Changing_Puppet_Masters.html">4.7.3. Change Puppet Masters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Discard_Mail_to_Root.html">4.7.4. Discard Mail to Root</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Exclude_Repositories.html">4.7.5. Exclude YUM Repositories from Nightly Updates</a></li>
-<li class="toctree-l3"><a class="reference internal" href="NFS.html">4.7.6. Configure NFS</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IPTables_NAT_Rules.html">4.7.7. Configure IPTables NAT Rules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Kerberos.html">4.7.8. Enable Kerberos</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">4.7.9. Manage Workstation Infrastructures</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#user-workstation-setup">4.7.9.1. User Workstation Setup</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#graphical-desktop-setup">4.7.9.2. Graphical Desktop Setup</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#workstation-repositories">4.7.9.3. Workstation Repositories</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#virtualization-on-user-workstations">4.7.9.4. Virtualization on User Workstations</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#printer-setup">4.7.9.5. Printer Setup</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#vnc-setup">4.7.9.6. VNC Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Client_Management.html#configure-pxe-boot">4.3. Configure PXE Boot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Client_Management.html#apply-certificates">4.4. Apply Certificates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SIMP_Administration.html">4.5. SIMP Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../User_Management.html">4.6. User Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Troubleshooting.html">4.7. Troubleshooting Common Issues</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../HOWTO.html">4.8. SIMP HOWTO Guides</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Work_With_Rsync.html">4.8.1. Work with the SIMP Rsync Shares</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Central_Log_Collection.html">4.8.2. Setup Central Log Collection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Changing_Puppet_Masters.html">4.8.3. Change Puppet Masters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Discard_Mail_to_Root.html">4.8.4. Discard Mail to Root</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Exclude_Repositories.html">4.8.5. Exclude YUM Repositories from Nightly Updates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NFS.html">4.8.6. Configure NFS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IPTables_NAT_Rules.html">4.8.7. Configure IPTables NAT Rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Kerberos.html">4.8.8. Enable Kerberos</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">4.8.9. Manage Workstation Infrastructures</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#user-workstation-setup">4.8.9.1. User Workstation Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#graphical-desktop-setup">4.8.9.2. Graphical Desktop Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#workstation-repositories">4.8.9.3. Workstation Repositories</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#virtualization-on-user-workstations">4.8.9.4. Virtualization on User Workstations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#printer-setup">4.8.9.5. Printer Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vnc-setup">4.8.9.6. VNC Setup</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="Network_Build.html">4.7.10. Kickstart the Initial Server</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Puppetmaster_Backup.html">4.7.11. Backup the Puppet Master</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Puppet_Server_NAT.html">4.7.12. Configure a Puppet Server Behind a NAT</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Redundant_LDAP.html">4.7.13. Enable Redundent LDAP</a></li>
-<li class="toctree-l3"><a class="reference internal" href="SFTP_Restricted_Accounts.html">4.7.14. Enable SFTP Restricted Accounts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="SSH_Keys.html">4.7.15. Setup SSH Authorized Keys</a></li>
-<li class="toctree-l3"><a class="reference internal" href="SSH_Restrict_Network_Access.html">4.7.16. Restrict SSH Network Access</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Upgrade_SIMP.html">4.7.17. Upgrade SIMP (Coming Soon!)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Manage_TPM.html">4.7.18. Manage TPM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Puppetmaster_Backup.html">4.8.10. Backup the Puppet Master</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Puppet_Server_NAT.html">4.8.11. Configure a Puppet Server Behind a NAT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Redundant_LDAP.html">4.8.12. Enable Redundent LDAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SFTP_Restricted_Accounts.html">4.8.13. Enable SFTP Restricted Accounts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SSH_Keys.html">4.8.14. Setup SSH Authorized Keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SSH_Restrict_Network_Access.html">4.8.15. Restrict SSH Network Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Upgrade_SIMP.html">4.8.16. Upgrade SIMP (Coming Soon!)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Manage_TPM.html">4.8.17. Manage TPM</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../SIMP_Package_Data.html">4.8. Package Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#indices-and-tables">4.9. Indices and tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SIMP_Package_Data.html">4.9. Package Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#indices-and-tables">4.10. Indices and tables</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../contributors_guide/index.html">5. Contributing to SIMP</a></li>
@@ -170,9 +170,9 @@
       
           <li><a href="../index.html">4. SIMP User Guide</a> &raquo;</li>
       
-          <li><a href="../HOWTO.html">4.7. SIMP HOWTO Guides</a> &raquo;</li>
+          <li><a href="../HOWTO.html">4.8. SIMP HOWTO Guides</a> &raquo;</li>
       
-    <li>4.7.9. HOWTO Manage Workstation Infrastructures</li>
+    <li>4.8.9. HOWTO Manage Workstation Infrastructures</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -187,12 +187,31 @@
            <div itemprop="articleBody">
             
   <div class="section" id="howto-manage-workstation-infrastructures">
-<span id="infrastructure-setup"></span><h1>4.7.9. HOWTO Manage Workstation Infrastructures<a class="headerlink" href="#howto-manage-workstation-infrastructures" title="Permalink to this headline">¶</a></h1>
+<span id="infrastructure-setup"></span><h1>4.8.9. HOWTO Manage Workstation Infrastructures<a class="headerlink" href="#howto-manage-workstation-infrastructures" title="Permalink to this headline">¶</a></h1>
 <p>This chapter describes how to manage client workstations with a SIMP
 system including GUIs, repositories, virtualization, Network File System
 (NFS), printing, and Virtual Network Computing (VNC).</p>
+<p>Most of the SIMP workstation Puppet modules are not installed on the puppet server by default.</p>
+<p>If using the SIMP RPMs, you will need to add these packages to your SIMP <strong>server</strong> using
+something like the following code snippet.</p>
+<div class="highlight-puppet"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="na">site</span><span class="p">::</span><span class="na">workstation_packages</span><span class="p">{</span>
+
+  <span class="nv">$package_list</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s">&#39;pupmod-simp-gdm&#39;</span><span class="p">,</span>
+    <span class="s">&#39;pupmod-simp-simp_nfs&#39;</span><span class="p">,</span>
+    <span class="s">&#39;pupmod-simp-vnc&#39;</span><span class="p">,</span>
+    <span class="s">&#39;pupmod-simp-libvirt&#39;</span><span class="p">,</span>
+    <span class="s">&#39;pupmod-simp-gnome&#39;</span>
+  <span class="p">]</span>
+
+  <span class="k">package</span> <span class="p">{</span> <span class="nv">$package_list</span> <span class="p">:</span>
+    <span class="na">ensure</span> <span class="o">=&gt;</span> <span class="s">&#39;latest&#39;</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <div class="section" id="user-workstation-setup">
-<h2>4.7.9.1. User Workstation Setup<a class="headerlink" href="#user-workstation-setup" title="Permalink to this headline">¶</a></h2>
+<h2>4.8.9.1. User Workstation Setup<a class="headerlink" href="#user-workstation-setup" title="Permalink to this headline">¶</a></h2>
 <p>Below is an example class,
 <code class="docutils literal"><span class="pre">/etc/puppetlabs/code/environments/simp/modules/site/manifests/workstation.pp</span></code>, that could be used to
 set up a user workstation.</p>
@@ -200,7 +219,6 @@ set up a user workstation.</p>
   <span class="k">include</span> <span class="s">&#39;site::gui&#39;</span>
   <span class="k">include</span> <span class="s">&#39;site::repos&#39;</span>
   <span class="k">include</span> <span class="s">&#39;site::virt&#39;</span>
-  <span class="k">include</span> <span class="s">&#39;site::automount&#39;</span>
   <span class="k">include</span> <span class="s">&#39;site::print::client&#39;</span><span class="c"></span>
 
 <span class="c">  # Make sure everyone can log into all nodes.</span>
@@ -241,7 +259,7 @@ set up a user workstation.</p>
 </div>
 </div>
 <div class="section" id="graphical-desktop-setup">
-<h2>4.7.9.2. Graphical Desktop Setup<a class="headerlink" href="#graphical-desktop-setup" title="Permalink to this headline">¶</a></h2>
+<span id="id1"></span><h2>4.8.9.2. Graphical Desktop Setup<a class="headerlink" href="#graphical-desktop-setup" title="Permalink to this headline">¶</a></h2>
 <p>Below is an example manifest called
 <code class="docutils literal"><span class="pre">/etc/puppetlabs/code/environments/simp/modules/site/manifests/gui.pp</span></code> for setting up a graphical
 desktop on a user workstation.</p>
@@ -265,7 +283,7 @@ desktop on a user workstation.</p>
 </div>
 </div>
 <div class="section" id="workstation-repositories">
-<h2>4.7.9.3. Workstation Repositories<a class="headerlink" href="#workstation-repositories" title="Permalink to this headline">¶</a></h2>
+<h2>4.8.9.3. Workstation Repositories<a class="headerlink" href="#workstation-repositories" title="Permalink to this headline">¶</a></h2>
 <p>Below is an example manifest called
 <code class="docutils literal"><span class="pre">/etc/puppetlabs/code/environments/simp/modules/site/manifests/repos.pp</span></code> for setting up workstation
 repositories.</p>
@@ -277,7 +295,7 @@ repositories.</p>
 </div>
 </div>
 <div class="section" id="virtualization-on-user-workstations">
-<h2>4.7.9.4. Virtualization on User Workstations<a class="headerlink" href="#virtualization-on-user-workstations" title="Permalink to this headline">¶</a></h2>
+<h2>4.8.9.4. Virtualization on User Workstations<a class="headerlink" href="#virtualization-on-user-workstations" title="Permalink to this headline">¶</a></h2>
 <p>Below is an example manifest called
 <code class="docutils literal"><span class="pre">/etc/puppetlabs/code/environments/simp/modules/site/manifests/virt.pp</span></code> for allowing virtualization
 on a user workstation.</p>
@@ -301,28 +319,28 @@ on a user workstation.</p>
     <span class="na">require</span>  <span class="o">=&gt;</span> <span class="na">Network</span><span class="p">::</span><span class="na">Eth</span><span class="p">[</span><span class="s">&#39;em1&#39;</span><span class="p">]</span>
   <span class="p">}</span>
 
-  <span class="k">class</span> <span class="p">{</span> <span class="s">&#39;swappiness&#39;</span><span class="p">:</span>
-    <span class="na">high_swappiness</span> <span class="o">=&gt;</span> <span class="mi">80</span><span class="p">,</span>
-    <span class="na">max_swappiness</span>  <span class="o">=&gt;</span> <span class="mi">100</span>
-  <span class="p">}</span><span class="c"></span>
-
-<span class="c">  # If 80% of memory is used, flush caches.</span>
   <span class="k">exec</span> <span class="p">{</span> <span class="s">&#39;flush_cache_himem&#39;</span><span class="p">:</span>
-    <span class="na">command</span> <span class="o">=&gt;</span> <span class="s">&#39;/bin/echo 1 &gt; /proc/sys/vm/drop-caches&#39;</span><span class="p">,</span>
-    <span class="na">onlyif</span> <span class="o">=&gt;</span> <span class="k">inline_template</span><span class="p">(</span><span class="s">&quot;/bin/&lt;%= memoryfree.split(/\s/)[0].</span>
-<span class="s">    to_f/memorysize.split(/\s/)[0].to_f &lt; 0.2 ? true : false %&gt;&quot;</span><span class="p">)</span>
+    <span class="na">command</span> <span class="o">=&gt;</span> <span class="s">&#39;/bin/echo 1 &gt; /proc/sys/vm/drop_caches&#39;</span><span class="p">,</span>
+    <span class="na">onlyif</span> <span class="o">=&gt;</span> <span class="k">inline_template</span><span class="p">(</span><span class="s">&quot;/bin/&lt;%= @facts[&#39;memoryfree&#39;].split(/\s/)[0].</span>
+<span class="s">    to_f/@facts[&#39;memorysize&#39;].split(/\s/)[0].to_f &lt; 0.2 ? true : false %&gt;&quot;</span><span class="p">)</span>
   <span class="p">}</span>
 
   <span class="k">package</span> <span class="p">{</span> <span class="s">&#39;virt-manager&#39;</span><span class="p">:</span> <span class="na">ensure</span> <span class="o">=&gt;</span> <span class="s">&#39;latest&#39;</span> <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
+<p>To set swappiness values use hiera:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="c1"># Settings for swap for creating/running virtual machines</span>
+<span class="l l-Scalar l-Scalar-Plain">swap::high_swappiness</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">80</span>
+<span class="l l-Scalar l-Scalar-Plain">swap::max_swappiness</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">100</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="printer-setup">
-<h2>4.7.9.5. Printer Setup<a class="headerlink" href="#printer-setup" title="Permalink to this headline">¶</a></h2>
+<h2>4.8.9.5. Printer Setup<a class="headerlink" href="#printer-setup" title="Permalink to this headline">¶</a></h2>
 <p>Below are example manifests for setting up a printing environment.</p>
 <div class="section" id="setting-up-a-print-client">
-<h3>4.7.9.5.1. Setting up a Print Client<a class="headerlink" href="#setting-up-a-print-client" title="Permalink to this headline">¶</a></h3>
+<h3>4.8.9.5.1. Setting up a Print Client<a class="headerlink" href="#setting-up-a-print-client" title="Permalink to this headline">¶</a></h3>
 <p>Below is an example manifest called
 <code class="docutils literal"><span class="pre">/etc/puppetlabs/code/environments/simp/modules/site/manifests/print/client.pp</span></code> for setting up a
 print client.</p>
@@ -344,7 +362,7 @@ print client.</p>
 </div>
 </div>
 <div class="section" id="setting-up-a-print-server">
-<h3>4.7.9.5.2. Setting up a Print Server<a class="headerlink" href="#setting-up-a-print-server" title="Permalink to this headline">¶</a></h3>
+<h3>4.8.9.5.2. Setting up a Print Server<a class="headerlink" href="#setting-up-a-print-server" title="Permalink to this headline">¶</a></h3>
 <p>Below is an example manifest called
 <code class="docutils literal"><span class="pre">/etc/puppetlabs/code/environments/simp/modules/site/manifests/print/server.pp</span></code> for setting up a
 print server.</p>
@@ -367,11 +385,11 @@ print server.</p>
 </div>
 </div>
 <div class="section" id="vnc-setup">
-<h2>4.7.9.6. VNC Setup<a class="headerlink" href="#vnc-setup" title="Permalink to this headline">¶</a></h2>
+<h2>4.8.9.6. VNC Setup<a class="headerlink" href="#vnc-setup" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="../../glossary.html#term-virtual-network-computing"><span class="xref std std-term">Virtual Network Computing</span></a> (VNC) is a tool that is used to manage desktops and workstations remotely
 through the standard setup or a proxy.</p>
 <div class="section" id="vnc-standard-setup">
-<h3>4.7.9.6.1. VNC Standard Setup<a class="headerlink" href="#vnc-standard-setup" title="Permalink to this headline">¶</a></h3>
+<h3>4.8.9.6.1. VNC Standard Setup<a class="headerlink" href="#vnc-standard-setup" title="Permalink to this headline">¶</a></h3>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">You must have the <code class="docutils literal"><span class="pre">pupmod-simp-vnc</span></code> RPM installed to use VNC on your
@@ -426,7 +444,7 @@ the manual for additional details.</p>
 </div>
 </div>
 <div class="section" id="vnc-through-a-proxy">
-<h3>4.7.9.6.2. VNC Through a Proxy<a class="headerlink" href="#vnc-through-a-proxy" title="Permalink to this headline">¶</a></h3>
+<h3>4.8.9.6.2. VNC Through a Proxy<a class="headerlink" href="#vnc-through-a-proxy" title="Permalink to this headline">¶</a></h3>
 <p>The section describes the process to VNC through a proxy. This setup
 provides the user with a persistent VNC session.</p>
 <div class="admonition important">
@@ -438,7 +456,7 @@ as the account being used for the VNC. The <code class="docutils literal"><span 
 that has access to the server, client, and proxy.</p>
 </div>
 <div class="section" id="modify-puppet">
-<h4>4.7.9.6.2.1. Modify Puppet<a class="headerlink" href="#modify-puppet" title="Permalink to this headline">¶</a></h4>
+<h4>4.8.9.6.2.1. Modify Puppet<a class="headerlink" href="#modify-puppet" title="Permalink to this headline">¶</a></h4>
 <p>If definitions for the machines involved in the VNC do not already exist
 in Hiera, create an <code class="docutils literal"><span class="pre">/etc/puppetlabs/code/environments/simp/hieradata/hosts/vserv.your.domain.yaml</span></code>
 file. In the client hosts file, modify or create the entries shown in
@@ -447,7 +465,7 @@ a VNC server and vclnt to act as a client.</p>
 <p>VNC Server node</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="c1"># vserv.your.domain.yaml</span>
 <span class="l l-Scalar l-Scalar-Plain">classes</span><span class="p p-Indicator">:</span>
-  <span class="p p-Indicator">-</span> <span class="s">&#39;windowmanager::gnome&#39;</span>
+  <span class="p p-Indicator">-</span> <span class="s">&#39;gnome&#39;</span>
   <span class="p p-Indicator">-</span> <span class="s">&#39;mozilla::firefox&#39;</span>
   <span class="p p-Indicator">-</span> <span class="s">&#39;vnc::server&#39;</span>
 </pre></div>
@@ -462,7 +480,7 @@ a VNC server and vclnt to act as a client.</p>
 </div>
 </div>
 <div class="section" id="run-the-server">
-<h4>4.7.9.6.2.2. Run the Server<a class="headerlink" href="#run-the-server" title="Permalink to this headline">¶</a></h4>
+<h4>4.8.9.6.2.2. Run the Server<a class="headerlink" href="#run-the-server" title="Permalink to this headline">¶</a></h4>
 <p>As <code class="docutils literal"><span class="pre">vuser</span></code> on <code class="docutils literal"><span class="pre">vserv.your.domain</span></code>, type <code class="docutils literal"><span class="pre">vncserver</span></code>.</p>
 <p>The output should mirror the following:</p>
 <blockquote>
@@ -475,7 +493,7 @@ is <code class="docutils literal"><span class="pre">/home/vuser/.vnc/vserv.your.
 </div>
 </div>
 <div class="section" id="set-up-an-ssh-tunnel">
-<h4>4.7.9.6.2.3. Set up an SSH Tunnel<a class="headerlink" href="#set-up-an-ssh-tunnel" title="Permalink to this headline">¶</a></h4>
+<h4>4.8.9.6.2.3. Set up an SSH Tunnel<a class="headerlink" href="#set-up-an-ssh-tunnel" title="Permalink to this headline">¶</a></h4>
 <p>Set up a tunnel from the client (vclnt), through the proxy server
 (proxy), to the server (vserv). The table below lists the steps to set
 up the tunnel.</p>
@@ -506,13 +524,13 @@ then all references below to 590<em>&lt;Port Number&gt;</em> become 5906.</p>
 </div>
 </div>
 <div class="section" id="set-up-clients">
-<h4>4.7.9.6.2.4. Set Up Clients<a class="headerlink" href="#set-up-clients" title="Permalink to this headline">¶</a></h4>
+<h4>4.8.9.6.2.4. Set Up Clients<a class="headerlink" href="#set-up-clients" title="Permalink to this headline">¶</a></h4>
 <p>On <code class="docutils literal"><span class="pre">vclnt.your.domain</span></code>, type <code class="docutils literal"><span class="pre">vncviewer</span> <span class="pre">localhost:590\</span> <span class="pre">***&lt;Port</span>
 <span class="pre">Number&gt;***</span></code> to open the Remote Desktop viewer.</p>
 </div>
 </div>
 <div class="section" id="troubleshooting-vnc-issues">
-<h3>4.7.9.6.3. Troubleshooting VNC Issues<a class="headerlink" href="#troubleshooting-vnc-issues" title="Permalink to this headline">¶</a></h3>
+<h3>4.8.9.6.3. Troubleshooting VNC Issues<a class="headerlink" href="#troubleshooting-vnc-issues" title="Permalink to this headline">¶</a></h3>
 <p>If nothing appears in the terminal window, X may have crashed. To
 determine if this is the case, type <code class="docutils literal"><span class="pre">ps</span> <span class="pre">-ef</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">XKeepsCrashing</span></code></p>
 <p>If any matches result, stop the process associated with the command and
@@ -528,10 +546,10 @@ try to restart <code class="docutils literal"><span class="pre">vncviewer</span>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Network_Build.html" class="btn btn-neutral float-right" title="4.7.10. HOWTO Kickstart the Initial Server" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Puppetmaster_Backup.html" class="btn btn-neutral float-right" title="4.8.10. HOWTO Back up the Puppet Master" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Kerberos.html" class="btn btn-neutral" title="4.7.8. HOWTO Enable Kerberos" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Kerberos.html" class="btn btn-neutral" title="4.8.8. HOWTO Enable Kerberos" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

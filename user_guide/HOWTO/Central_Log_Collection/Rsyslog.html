@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.7.2.1. Centralized Rsyslog &mdash; SIMP 5.2.1-0 documentation</title>
+  <title>4.8.2.1. Centralized Rsyslog &mdash; SIMP 5.2.1-0 documentation</title>
   
 
   
@@ -37,9 +37,9 @@
 
   
     <link rel="top" title="SIMP 5.2.1-0 documentation" href="../../../index.html"/>
-        <link rel="up" title="4.7.2. HOWTO Setup Central Log Collection" href="../Central_Log_Collection.html"/>
-        <link rel="next" title="4.7.2.2. Elasticsearch, Logstash, and Grafana" href="Logstash.html"/>
-        <link rel="prev" title="4.7.2. HOWTO Setup Central Log Collection" href="../Central_Log_Collection.html"/> 
+        <link rel="up" title="4.8.2. HOWTO Setup Central Log Collection" href="../Central_Log_Collection.html"/>
+        <link rel="next" title="4.8.2.2. Elasticsearch, Logstash, and Grafana" href="Logstash.html"/>
+        <link rel="prev" title="4.8.2. HOWTO Setup Central Log Collection" href="../Central_Log_Collection.html"/> 
 
   
   <script src="../../../_static/js/modernizr.min.js"></script>
@@ -100,37 +100,37 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">4. User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../Introduction.html">4.1. Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../Client_Management.html">4.2. Client Management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../SIMP_Administration.html">4.3. General Administration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../User_Management.html">4.4. User Management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../Hiera_Overview.html">4.5. Hiera Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../Troubleshooting.html">4.6. Troubleshooting Common Issues</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../../HOWTO.html">4.7. SIMP HOWTO Guides</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../Work_With_Rsync.html">4.7.1. Work with the SIMP Rsync Shares</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="../Central_Log_Collection.html">4.7.2. Setup Central Log Collection</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#">4.7.2.1. Centralized Rsyslog</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Logstash.html">4.7.2.2. Elasticsearch, Logstash, and Grafana</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Client_Management.html#configure-pxe-boot">4.3. Configure PXE Boot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Client_Management.html#apply-certificates">4.4. Apply Certificates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../SIMP_Administration.html">4.5. SIMP Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../User_Management.html">4.6. User Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Troubleshooting.html">4.7. Troubleshooting Common Issues</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../HOWTO.html">4.8. SIMP HOWTO Guides</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Work_With_Rsync.html">4.8.1. Work with the SIMP Rsync Shares</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../Central_Log_Collection.html">4.8.2. Setup Central Log Collection</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">4.8.2.1. Centralized Rsyslog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Logstash.html">4.8.2.2. Elasticsearch, Logstash, and Grafana</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../Changing_Puppet_Masters.html">4.7.3. Change Puppet Masters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Discard_Mail_to_Root.html">4.7.4. Discard Mail to Root</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Exclude_Repositories.html">4.7.5. Exclude YUM Repositories from Nightly Updates</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../NFS.html">4.7.6. Configure NFS</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../IPTables_NAT_Rules.html">4.7.7. Configure IPTables NAT Rules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Kerberos.html">4.7.8. Enable Kerberos</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Managing_Workstation_Infrastructures.html">4.7.9. Manage Workstation Infrastructures</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Network_Build.html">4.7.10. Kickstart the Initial Server</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Puppetmaster_Backup.html">4.7.11. Backup the Puppet Master</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Puppet_Server_NAT.html">4.7.12. Configure a Puppet Server Behind a NAT</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Redundant_LDAP.html">4.7.13. Enable Redundent LDAP</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../SFTP_Restricted_Accounts.html">4.7.14. Enable SFTP Restricted Accounts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../SSH_Keys.html">4.7.15. Setup SSH Authorized Keys</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../SSH_Restrict_Network_Access.html">4.7.16. Restrict SSH Network Access</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Upgrade_SIMP.html">4.7.17. Upgrade SIMP (Coming Soon!)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Manage_TPM.html">4.7.18. Manage TPM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Changing_Puppet_Masters.html">4.8.3. Change Puppet Masters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Discard_Mail_to_Root.html">4.8.4. Discard Mail to Root</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Exclude_Repositories.html">4.8.5. Exclude YUM Repositories from Nightly Updates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../NFS.html">4.8.6. Configure NFS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../IPTables_NAT_Rules.html">4.8.7. Configure IPTables NAT Rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Kerberos.html">4.8.8. Enable Kerberos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Managing_Workstation_Infrastructures.html">4.8.9. Manage Workstation Infrastructures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Puppetmaster_Backup.html">4.8.10. Backup the Puppet Master</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Puppet_Server_NAT.html">4.8.11. Configure a Puppet Server Behind a NAT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Redundant_LDAP.html">4.8.12. Enable Redundent LDAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SFTP_Restricted_Accounts.html">4.8.13. Enable SFTP Restricted Accounts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SSH_Keys.html">4.8.14. Setup SSH Authorized Keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SSH_Restrict_Network_Access.html">4.8.15. Restrict SSH Network Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Upgrade_SIMP.html">4.8.16. Upgrade SIMP (Coming Soon!)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Manage_TPM.html">4.8.17. Manage TPM</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../SIMP_Package_Data.html">4.8. Package Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../index.html#indices-and-tables">4.9. Indices and tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../SIMP_Package_Data.html">4.9. Package Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#indices-and-tables">4.10. Indices and tables</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../contributors_guide/index.html">5. Contributing to SIMP</a></li>
@@ -166,11 +166,11 @@
       
           <li><a href="../../index.html">4. SIMP User Guide</a> &raquo;</li>
       
-          <li><a href="../../HOWTO.html">4.7. SIMP HOWTO Guides</a> &raquo;</li>
+          <li><a href="../../HOWTO.html">4.8. SIMP HOWTO Guides</a> &raquo;</li>
       
-          <li><a href="../Central_Log_Collection.html">4.7.2. HOWTO Setup Central Log Collection</a> &raquo;</li>
+          <li><a href="../Central_Log_Collection.html">4.8.2. HOWTO Setup Central Log Collection</a> &raquo;</li>
       
-    <li>4.7.2.1. Centralized Rsyslog</li>
+    <li>4.8.2.1. Centralized Rsyslog</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -185,7 +185,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="centralized-rsyslog">
-<span id="rsyslog"></span><h1>4.7.2.1. Centralized Rsyslog<a class="headerlink" href="#centralized-rsyslog" title="Permalink to this headline">¶</a></h1>
+<span id="rsyslog"></span><h1>4.8.2.1. Centralized Rsyslog<a class="headerlink" href="#centralized-rsyslog" title="Permalink to this headline">¶</a></h1>
 <p>SIMP provides a pre-built set of classes within the <em>rsyslog</em> module for
 enabling centralized logging within the infrastructure.</p>
 <p>There are no provisions here for setting up shared storage or deduplication.
@@ -196,16 +196,16 @@ a well-known, Open Source, software collection.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">For an overview of how to use Hiera to manage class parameters, please see
-the <a class="reference internal" href="../../Hiera_Overview.html#hiera"><span class="std std-ref">Hiera Overview</span></a> section of the documentation.</p>
+<a class="reference internal" href="../../SIMP_Administration/Classification_and_Data.html#classification-and-data"><span class="std std-ref">Classification and Data</span></a>.</p>
 </div>
 <div class="section" id="preparation">
-<h2>4.7.2.1.1. Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">¶</a></h2>
+<h2>4.8.2.1.1. Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="the-simp-rsyslog-profile-module">
-<h3>4.7.2.1.1.1. The <code class="docutils literal"><span class="pre">simp_rsyslog</span></code> Profile Module<a class="headerlink" href="#the-simp-rsyslog-profile-module" title="Permalink to this headline">¶</a></h3>
+<h3>4.8.2.1.1.1. The <code class="docutils literal"><span class="pre">simp_rsyslog</span></code> Profile Module<a class="headerlink" href="#the-simp-rsyslog-profile-module" title="Permalink to this headline">¶</a></h3>
 <p>A profile module, <a class="reference external" href="https://github.com/simp/pupmod-simp-simp_rsyslog">simp_rsyslog</a>,
 is provided to help configure systems for logging.</p>
 <p>The <code class="docutils literal"><span class="pre">simp_rsyslog</span></code> class is included on systems if the <code class="docutils literal"><span class="pre">simp</span></code> or
-<code class="docutils literal"><span class="pre">simp_lite</span></code> <a class="reference internal" href="../../Hiera_Overview.html#simp-scenarios"><span class="std std-ref">scenarios</span></a> are used and by default
+<code class="docutils literal"><span class="pre">simp_lite</span></code> <a class="reference internal" href="../../SIMP_Administration/Classification_and_Data.html#simp-scenarios"><span class="std std-ref">scenarios</span></a> are used and by default
 configures local logging.</p>
 <p>If scenarios are not being used, include the <code class="docutils literal"><span class="pre">simp_rsyslog</span></code> class on all
 systems including the log server. If you&#8217;re using the default SIMP install, you
@@ -213,7 +213,7 @@ can add it to the <code class="docutils literal"><span class="pre">simp::classes
 standard Puppet <code class="docutils literal"><span class="pre">include</span></code> mechanism.</p>
 </div>
 <div class="section" id="what-is-logged">
-<h3>4.7.2.1.1.2. What is Logged<a class="headerlink" href="#what-is-logged" title="Permalink to this headline">¶</a></h3>
+<h3>4.8.2.1.1.2. What is Logged<a class="headerlink" href="#what-is-logged" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal"><span class="pre">simp_rsyslog</span></code> module uses the following parameters:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">simp_rsyslog::default_logs</span>     <span class="c1"># A Hash of the default system logs to be collected</span>
 <span class="l l-Scalar l-Scalar-Plain">simp_rsyslog::log_collection</span>   <span class="c1"># Use this Hash to add logs to the default set</span>
@@ -222,7 +222,7 @@ standard Puppet <code class="docutils literal"><span class="pre">include</span><
 <p>There are also Booleans available to enable collection of certain logs, such as
 those from OpenLDAP. See the <code class="docutils literal"><span class="pre">simp_rsyslog</span></code> module for more details.</p>
 <div class="section" id="the-log-hash-format">
-<h4>4.7.2.1.1.2.1. The Log Hash Format<a class="headerlink" href="#the-log-hash-format" title="Permalink to this headline">¶</a></h4>
+<h4>4.8.2.1.1.2.1. The Log Hash Format<a class="headerlink" href="#the-log-hash-format" title="Permalink to this headline">¶</a></h4>
 <p>The Hashes mentioned above are complex in nature but provide a clean interface to most
 aspects of log collection targeted to most users.</p>
 <p>The <a class="reference internal" href="../../../glossary.html#term-puppet-data-type"><span class="xref std std-term">Puppet Data Type</span></a> representation of the Hashes is as follows:</p>
@@ -268,7 +268,7 @@ aspects of log collection targeted to most users.</p>
 </div>
 </div>
 <div class="section" id="set-log-servers">
-<h3>4.7.2.1.1.3. Set Log Servers<a class="headerlink" href="#set-log-servers" title="Permalink to this headline">¶</a></h3>
+<h3>4.8.2.1.1.3. Set Log Servers<a class="headerlink" href="#set-log-servers" title="Permalink to this headline">¶</a></h3>
 <p>The list of log servers are usually set during <code class="docutils literal"><span class="pre">simp</span> <span class="pre">config</span></code>, and placed in
 the <code class="docutils literal"><span class="pre">simp_config_settings.yaml</span></code> <a class="reference internal" href="../../../glossary.html#term-hiera"><span class="xref std std-term">Hiera</span></a> file.</p>
 <p>If this value needs to be changed, either <code class="docutils literal"><span class="pre">simp</span> <span class="pre">config</span></code> can be run again or
@@ -299,7 +299,7 @@ is forwarding to itself.</p>
 </div>
 </div>
 <div class="section" id="tls">
-<h3>4.7.2.1.1.4. TLS<a class="headerlink" href="#tls" title="Permalink to this headline">¶</a></h3>
+<h3>4.8.2.1.1.4. TLS<a class="headerlink" href="#tls" title="Permalink to this headline">¶</a></h3>
 <p>If encryption is going to be used, make sure the certificates are in place.
 See the <a class="reference internal" href="../../Client_Management.html#certificates"><span class="std std-ref">Apply Certificates</span></a> documentation to understand how SIMP modules
 distribute certificates.</p>
@@ -308,7 +308,7 @@ used for PKI variables can be found in <code class="docutils literal"><span clas
 </div>
 </div>
 <div class="section" id="enable-the-client">
-<h2>4.7.2.1.2. Enable the Client<a class="headerlink" href="#enable-the-client" title="Permalink to this headline">¶</a></h2>
+<h2>4.8.2.1.2. Enable the Client<a class="headerlink" href="#enable-the-client" title="Permalink to this headline">¶</a></h2>
 <p>To set up the clients enter the following settings in the default.yaml or
 similar <a class="reference internal" href="../../../glossary.html#term-hiera"><span class="xref std std-term">Hiera</span></a> file to reach all clients:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="c1">#If using TLS</span>
@@ -325,7 +325,7 @@ similar <a class="reference internal" href="../../../glossary.html#term-hiera"><
 </div>
 </div>
 <div class="section" id="enable-the-server">
-<h2>4.7.2.1.3. Enable the Server<a class="headerlink" href="#enable-the-server" title="Permalink to this headline">¶</a></h2>
+<h2>4.8.2.1.3. Enable the Server<a class="headerlink" href="#enable-the-server" title="Permalink to this headline">¶</a></h2>
 <p>To set up the server enter the following in the server&#8217;s <a class="reference internal" href="../../../glossary.html#term-hiera"><span class="xref std std-term">Hiera</span></a> file:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="c1"># If using TLS</span>
 <span class="l l-Scalar l-Scalar-Plain">simp_rsyslog::is_server</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
@@ -346,7 +346,7 @@ stored in <code class="docutils literal"><span class="pre">/var/log/hosts/&lt;cl
 <p><code class="docutils literal"><span class="pre">simp_rsyslog</span></code> also sets up log rotation for these files by default using the
 <code class="docutils literal"><span class="pre">logrotate</span></code> module.</p>
 <div class="section" id="forwarding-log-files-from-a-log-server">
-<h3>4.7.2.1.3.1. Forwarding Log Files from a Log Server<a class="headerlink" href="#forwarding-log-files-from-a-log-server" title="Permalink to this headline">¶</a></h3>
+<h3>4.8.2.1.3.1. Forwarding Log Files from a Log Server<a class="headerlink" href="#forwarding-log-files-from-a-log-server" title="Permalink to this headline">¶</a></h3>
 <p>If the log server needs to forward logs to another server, edit its <a class="reference internal" href="../../../glossary.html#term-hiera"><span class="xref std std-term">Hiera</span></a> file.
 Set <code class="docutils literal"><span class="pre">simp_rsyslog::forward_logs</span></code> to <code class="docutils literal"><span class="pre">true</span></code> and  make sure that the
 <code class="docutils literal"><span class="pre">log_servers</span></code> array used on the relevant node does not include itself in the
@@ -373,10 +373,10 @@ specified servers.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Logstash.html" class="btn btn-neutral float-right" title="4.7.2.2. Elasticsearch, Logstash, and Grafana" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Logstash.html" class="btn btn-neutral float-right" title="4.8.2.2. Elasticsearch, Logstash, and Grafana" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../Central_Log_Collection.html" class="btn btn-neutral" title="4.7.2. HOWTO Setup Central Log Collection" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../Central_Log_Collection.html" class="btn btn-neutral" title="4.8.2. HOWTO Setup Central Log Collection" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.8.14. HOWTO Setup SSH Authorized Keys &mdash; SIMP 5.2.1-0 documentation</title>
+  <title>4.5.2. Integrating Applications &mdash; SIMP 5.2.1-0 documentation</title>
   
 
   
@@ -37,9 +37,9 @@
 
   
     <link rel="top" title="SIMP 5.2.1-0 documentation" href="../../index.html"/>
-        <link rel="up" title="4.8. SIMP HOWTO Guides" href="../HOWTO.html"/>
-        <link rel="next" title="4.8.15. HOWTO Restrict Network Access to SSH" href="SSH_Restrict_Network_Access.html"/>
-        <link rel="prev" title="4.8.13. HOWTO Enable SFTP Restricted Accounts" href="SFTP_Restricted_Accounts.html"/> 
+        <link rel="up" title="4.5. SIMP Administration" href="../SIMP_Administration.html"/>
+        <link rel="next" title="4.5.3. General Administration" href="General_Administration.html"/>
+        <link rel="prev" title="4.5.1. Classification and Data" href="Classification_and_Data.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -102,33 +102,20 @@
 <li class="toctree-l2"><a class="reference internal" href="../Client_Management.html">4.2. Client Management</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Client_Management.html#configure-pxe-boot">4.3. Configure PXE Boot</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Client_Management.html#apply-certificates">4.4. Apply Certificates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../SIMP_Administration.html">4.5. SIMP Administration</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../SIMP_Administration.html">4.5. SIMP Administration</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Classification_and_Data.html">4.5.1. Classification and Data</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">4.5.2. Integrating Applications</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#iptables">4.5.2.1. IPTables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#service-kill">4.5.2.2. Service Kill</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#local-access-controls">4.5.2.3. Local Access Controls</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="General_Administration.html">4.5.3. General Administration</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../User_Management.html">4.6. User Management</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Troubleshooting.html">4.7. Troubleshooting Common Issues</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../HOWTO.html">4.8. SIMP HOWTO Guides</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="Work_With_Rsync.html">4.8.1. Work with the SIMP Rsync Shares</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Central_Log_Collection.html">4.8.2. Setup Central Log Collection</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Changing_Puppet_Masters.html">4.8.3. Change Puppet Masters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Discard_Mail_to_Root.html">4.8.4. Discard Mail to Root</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Exclude_Repositories.html">4.8.5. Exclude YUM Repositories from Nightly Updates</a></li>
-<li class="toctree-l3"><a class="reference internal" href="NFS.html">4.8.6. Configure NFS</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IPTables_NAT_Rules.html">4.8.7. Configure IPTables NAT Rules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Kerberos.html">4.8.8. Enable Kerberos</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Managing_Workstation_Infrastructures.html">4.8.9. Manage Workstation Infrastructures</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Puppetmaster_Backup.html">4.8.10. Backup the Puppet Master</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Puppet_Server_NAT.html">4.8.11. Configure a Puppet Server Behind a NAT</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Redundant_LDAP.html">4.8.12. Enable Redundent LDAP</a></li>
-<li class="toctree-l3"><a class="reference internal" href="SFTP_Restricted_Accounts.html">4.8.13. Enable SFTP Restricted Accounts</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">4.8.14. Setup SSH Authorized Keys</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#ldap-enabled">4.8.14.1. LDAP Enabled</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#without-ldap">4.8.14.2. Without LDAP</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="SSH_Restrict_Network_Access.html">4.8.15. Restrict SSH Network Access</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Upgrade_SIMP.html">4.8.16. Upgrade SIMP (Coming Soon!)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Manage_TPM.html">4.8.17. Manage TPM</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../HOWTO.html">4.8. SIMP HOWTO Guides</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../SIMP_Package_Data.html">4.9. Package Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#indices-and-tables">4.10. Indices and tables</a></li>
 </ul>
@@ -166,13 +153,13 @@
       
           <li><a href="../index.html">4. SIMP User Guide</a> &raquo;</li>
       
-          <li><a href="../HOWTO.html">4.8. SIMP HOWTO Guides</a> &raquo;</li>
+          <li><a href="../SIMP_Administration.html">4.5. SIMP Administration</a> &raquo;</li>
       
-    <li>4.8.14. HOWTO Setup SSH Authorized Keys</li>
+    <li>4.5.2. Integrating Applications</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../_sources/user_guide/HOWTO/SSH_Keys.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/user_guide/SIMP_Administration/Integrating_Applications.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -182,22 +169,52 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="howto-setup-ssh-authorized-keys">
-<h1>4.8.14. HOWTO Setup SSH Authorized Keys<a class="headerlink" href="#howto-setup-ssh-authorized-keys" title="Permalink to this headline">¶</a></h1>
-<p>This section provides guidance on managing SSH keys within the SIMP
-environment.</p>
-<div class="section" id="ldap-enabled">
-<h2>4.8.14.1. LDAP Enabled<a class="headerlink" href="#ldap-enabled" title="Permalink to this headline">¶</a></h2>
-<p>When enabled, ssh keys are both stored and retrieved directly from LDAP.</p>
-<p>See Also: <a class="reference internal" href="../User_Management/LDAP.html#managing-ldap-users"><span class="std std-ref">Managing Users with LDAP</span></a></p>
+  <div class="section" id="integrating-applications">
+<h1>4.5.2. Integrating Applications<a class="headerlink" href="#integrating-applications" title="Permalink to this headline">¶</a></h1>
+<p>This section describes how to integrate external applications into the SIMP
+managed infrastructure.</p>
+<p>For most applications, there are only three SIMP control components that must
+be addressed for successful product integration.</p>
+<div class="section" id="iptables">
+<h2>4.5.2.1. IPTables<a class="headerlink" href="#iptables" title="Permalink to this headline">¶</a></h2>
+<p>By default, the SIMP system drops all <strong>incoming</strong> connections to the server,
+save port 22. Port 22 is allowed from <strong>all</strong> external sources since there is
+no safe way to restrict this that will not lock users out of freshly installed
+systems in some cases.</p>
+<p>The default SIMP <a class="reference internal" href="../../glossary.html#term-iptables"><span class="xref std std-term">IPTables</span></a> start-up sequence has been set to <em>fail
+safe</em>. This means that if the IPTables rules cannot cleanly apply, the system
+will only allow port 22 into the system for SSH troubleshooting and recovery.</p>
+<p>There are many examples of how to use the IPTables module in the source code;
+the Apache module at <code class="docutils literal"><span class="pre">/etc/puppetlabs/code/environments/simp/modules/simp_apache</span></code>
+is a particularly good example. You can also reference the Defined Types in the
+IPTables Puppet module to understand their purpose and choose the best option.</p>
 </div>
-<div class="section" id="without-ldap">
-<h2>4.8.14.2. Without LDAP<a class="headerlink" href="#without-ldap" title="Permalink to this headline">¶</a></h2>
-<p>If not using LDAP, or in addition to LDAP, SSH authorized keys can be placed in
-<code class="docutils literal"><span class="pre">/etc/ssh/local_keys/&lt;USERNAME&gt;</span></code>. This location can be changed by setting the
-<code class="docutils literal"><span class="pre">ssh::server::conf::authorizedkeysfile</span></code> parameter in <a class="reference internal" href="../../glossary.html#term-hiera"><span class="xref std std-term">Hiera</span></a> or your
-<a class="reference internal" href="../../glossary.html#term-enc"><span class="xref std std-term">ENC</span></a>.</p>
-<p>See Also: <a class="reference internal" href="../User_Management/Local_Users.html#local-user-management"><span class="std std-ref">Managing Local/Service Users</span></a></p>
+<div class="section" id="service-kill">
+<h2>4.5.2.2. Service Kill<a class="headerlink" href="#service-kill" title="Permalink to this headline">¶</a></h2>
+<p>To ensure that the system does not run unnecessary services, the SIMP team
+implemented a <code class="docutils literal"><span class="pre">svckill.rb</span></code> script has been implemented to stop any service
+(not process) that is not properly defined in the Puppet catalog.</p>
+<p>To prevent services from stopping, refer to the instructions in the
+<a class="reference internal" href="../Troubleshooting/My_Services_Are_Dying.html#services-dying"><span class="std std-ref">My Services Are Dying!</span></a> Troubleshooting section.</p>
+<p>As of SIMP 6.0.0, the <code class="docutils literal"><span class="pre">svckill</span></code> Puppet Resource will now warn you that it
+would kill items by default and you will explicitly need to enable <code class="docutils literal"><span class="pre">svckill</span></code>
+enforcement.</p>
+</div>
+<div class="section" id="local-access-controls">
+<h2>4.5.2.3. Local Access Controls<a class="headerlink" href="#local-access-controls" title="Permalink to this headline">¶</a></h2>
+<p>Following defense in depth best practice, SIMP does not trust a single system
+to determine the access that someone has to a system. All system accesses are,
+by default, restricted to users in the <code class="docutils literal"><span class="pre">administrators</span></code> group.</p>
+<p>If you have an application that needs to use a login shell for configuration,
+or to run the service, you will need to follow the guidance in
+<a class="reference internal" href="../Troubleshooting/Why_Cant_I_Login.html#pam-access-restrictions"><span class="std std-ref">PAM Access Restrictions</span></a> to ensure that your local user accounts have
+appropriate system access.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This <strong>does</strong> affect <code class="docutils literal"><span class="pre">sudo</span></code> accounts! If your application is using a
+<code class="docutils literal"><span class="pre">sudo</span></code> account in a startup script, please consider switching to
+<code class="docutils literal"><span class="pre">runuser</span></code> since it is not affected by PAM controls.</p>
+</div>
 </div>
 </div>
 
@@ -208,10 +225,10 @@ environment.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="SSH_Restrict_Network_Access.html" class="btn btn-neutral float-right" title="4.8.15. HOWTO Restrict Network Access to SSH" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="General_Administration.html" class="btn btn-neutral float-right" title="4.5.3. General Administration" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="SFTP_Restricted_Accounts.html" class="btn btn-neutral" title="4.8.13. HOWTO Enable SFTP Restricted Accounts" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Classification_and_Data.html" class="btn btn-neutral" title="4.5.1. Classification and Data" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

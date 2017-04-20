@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.7.6. HOWTO Configure NFS &mdash; SIMP 5.2.1-0 documentation</title>
+  <title>4.8.6. HOWTO Configure NFS &mdash; SIMP 5.2.1-0 documentation</title>
   
 
   
@@ -37,9 +37,9 @@
 
   
     <link rel="top" title="SIMP 5.2.1-0 documentation" href="../../index.html"/>
-        <link rel="up" title="4.7. SIMP HOWTO Guides" href="../HOWTO.html"/>
-        <link rel="next" title="4.7.7. HOWTO Configure iptables NAT Rules" href="IPTables_NAT_Rules.html"/>
-        <link rel="prev" title="4.7.5. HOWTO Exclude YUM Repositories" href="Exclude_Repositories.html"/> 
+        <link rel="up" title="4.8. SIMP HOWTO Guides" href="../HOWTO.html"/>
+        <link rel="next" title="4.8.7. HOWTO Configure iptables NAT Rules" href="IPTables_NAT_Rules.html"/>
+        <link rel="prev" title="4.8.5. HOWTO Exclude YUM Repositories" href="Exclude_Repositories.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -100,39 +100,39 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">4. User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../Introduction.html">4.1. Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Client_Management.html">4.2. Client Management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../SIMP_Administration.html">4.3. General Administration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../User_Management.html">4.4. User Management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Hiera_Overview.html">4.5. Hiera Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Troubleshooting.html">4.6. Troubleshooting Common Issues</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../HOWTO.html">4.7. SIMP HOWTO Guides</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="Work_With_Rsync.html">4.7.1. Work with the SIMP Rsync Shares</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Central_Log_Collection.html">4.7.2. Setup Central Log Collection</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Changing_Puppet_Masters.html">4.7.3. Change Puppet Masters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Discard_Mail_to_Root.html">4.7.4. Discard Mail to Root</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Exclude_Repositories.html">4.7.5. Exclude YUM Repositories from Nightly Updates</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">4.7.6. Configure NFS</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#exporting-non-home-directories">4.7.6.1. Exporting Non-Home Directories</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#exporting-home-directories">4.7.6.2. Exporting home directories</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#enabling-disabling-stunnel">4.7.6.3. Enabling/Disabling Stunnel</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#enabling-krb5">4.7.6.4. Enabling krb5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Client_Management.html#configure-pxe-boot">4.3. Configure PXE Boot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Client_Management.html#apply-certificates">4.4. Apply Certificates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SIMP_Administration.html">4.5. SIMP Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../User_Management.html">4.6. User Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Troubleshooting.html">4.7. Troubleshooting Common Issues</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../HOWTO.html">4.8. SIMP HOWTO Guides</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Work_With_Rsync.html">4.8.1. Work with the SIMP Rsync Shares</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Central_Log_Collection.html">4.8.2. Setup Central Log Collection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Changing_Puppet_Masters.html">4.8.3. Change Puppet Masters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Discard_Mail_to_Root.html">4.8.4. Discard Mail to Root</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Exclude_Repositories.html">4.8.5. Exclude YUM Repositories from Nightly Updates</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">4.8.6. Configure NFS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#exporting-arbitrary-directories">4.8.6.1. Exporting Arbitrary Directories</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exporting-home-directories">4.8.6.2. Exporting Home Directories</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enabling-disabling-stunnel">4.8.6.3. Enabling/Disabling Stunnel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enabling-kerberos">4.8.6.4. Enabling Kerberos</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="IPTables_NAT_Rules.html">4.7.7. Configure IPTables NAT Rules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Kerberos.html">4.7.8. Enable Kerberos</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Managing_Workstation_Infrastructures.html">4.7.9. Manage Workstation Infrastructures</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Network_Build.html">4.7.10. Kickstart the Initial Server</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Puppetmaster_Backup.html">4.7.11. Backup the Puppet Master</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Puppet_Server_NAT.html">4.7.12. Configure a Puppet Server Behind a NAT</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Redundant_LDAP.html">4.7.13. Enable Redundent LDAP</a></li>
-<li class="toctree-l3"><a class="reference internal" href="SFTP_Restricted_Accounts.html">4.7.14. Enable SFTP Restricted Accounts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="SSH_Keys.html">4.7.15. Setup SSH Authorized Keys</a></li>
-<li class="toctree-l3"><a class="reference internal" href="SSH_Restrict_Network_Access.html">4.7.16. Restrict SSH Network Access</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Upgrade_SIMP.html">4.7.17. Upgrade SIMP (Coming Soon!)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Manage_TPM.html">4.7.18. Manage TPM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IPTables_NAT_Rules.html">4.8.7. Configure IPTables NAT Rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Kerberos.html">4.8.8. Enable Kerberos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Managing_Workstation_Infrastructures.html">4.8.9. Manage Workstation Infrastructures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Puppetmaster_Backup.html">4.8.10. Backup the Puppet Master</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Puppet_Server_NAT.html">4.8.11. Configure a Puppet Server Behind a NAT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Redundant_LDAP.html">4.8.12. Enable Redundent LDAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SFTP_Restricted_Accounts.html">4.8.13. Enable SFTP Restricted Accounts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SSH_Keys.html">4.8.14. Setup SSH Authorized Keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SSH_Restrict_Network_Access.html">4.8.15. Restrict SSH Network Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Upgrade_SIMP.html">4.8.16. Upgrade SIMP (Coming Soon!)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Manage_TPM.html">4.8.17. Manage TPM</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../SIMP_Package_Data.html">4.8. Package Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#indices-and-tables">4.9. Indices and tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SIMP_Package_Data.html">4.9. Package Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#indices-and-tables">4.10. Indices and tables</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../contributors_guide/index.html">5. Contributing to SIMP</a></li>
@@ -168,9 +168,9 @@
       
           <li><a href="../index.html">4. SIMP User Guide</a> &raquo;</li>
       
-          <li><a href="../HOWTO.html">4.7. SIMP HOWTO Guides</a> &raquo;</li>
+          <li><a href="../HOWTO.html">4.8. SIMP HOWTO Guides</a> &raquo;</li>
       
-    <li>4.7.6. HOWTO Configure NFS</li>
+    <li>4.8.6. HOWTO Configure NFS</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -185,30 +185,29 @@
            <div itemprop="articleBody">
             
   <div class="section" id="howto-configure-nfs">
-<h1>4.7.6. HOWTO Configure NFS<a class="headerlink" href="#howto-configure-nfs" title="Permalink to this headline">¶</a></h1>
+<h1>4.8.6. HOWTO Configure NFS<a class="headerlink" href="#howto-configure-nfs" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="this-chapter-describes-multiple-configurations-of-nfs-including">
 <p class="topic-title first">This chapter describes multiple configurations of NFS including:</p>
 <ul class="simple">
-<li><a class="reference internal" href="#exporting-non-home-directories" id="id5">Exporting Non-Home Directories</a><ul>
-<li><a class="reference internal" href="#default-yaml" id="id6">default.yaml</a></li>
-<li><a class="reference internal" href="#server" id="id7">Server</a></li>
-<li><a class="reference internal" href="#client" id="id8">Client</a></li>
+<li><a class="reference internal" href="#exporting-arbitrary-directories" id="id4">Exporting Arbitrary Directories</a><ul>
+<li><a class="reference internal" href="#server" id="id5">Server</a></li>
+<li><a class="reference internal" href="#client" id="id6">Client</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#exporting-home-directories" id="id9">Exporting home directories</a><ul>
-<li><a class="reference internal" href="#id1" id="id10">default.yaml</a></li>
-<li><a class="reference internal" href="#id2" id="id11">Server</a></li>
+<li><a class="reference internal" href="#exporting-home-directories" id="id7">Exporting Home Directories</a><ul>
+<li><a class="reference internal" href="#default-yaml" id="id8">default.yaml</a></li>
+<li><a class="reference internal" href="#id1" id="id9">Server</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#enabling-disabling-stunnel" id="id12">Enabling/Disabling Stunnel</a><ul>
-<li><a class="reference internal" href="#enable" id="id13">Enable</a></li>
-<li><a class="reference internal" href="#disable" id="id14">Disable</a></li>
+<li><a class="reference internal" href="#enabling-disabling-stunnel" id="id10">Enabling/Disabling Stunnel</a><ul>
+<li><a class="reference internal" href="#enable" id="id11">Enable</a></li>
+<li><a class="reference internal" href="#disable" id="id12">Disable</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#enabling-krb5" id="id15">Enabling krb5</a><ul>
-<li><a class="reference internal" href="#id3" id="id16">default.yaml</a></li>
-<li><a class="reference internal" href="#id4" id="id17">Server</a></li>
-<li><a class="reference internal" href="#clients" id="id18">Clients</a></li>
+<li><a class="reference internal" href="#enabling-kerberos" id="id13">Enabling Kerberos</a><ul>
+<li><a class="reference internal" href="#id2" id="id14">default.yaml</a></li>
+<li><a class="reference internal" href="#id3" id="id15">Server</a></li>
+<li><a class="reference internal" href="#clients" id="id16">Clients</a></li>
 </ul>
 </li>
 </ul>
@@ -217,42 +216,51 @@
 and <code class="docutils literal"><span class="pre">pupmod-simp-simp</span></code>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">pupmod-simp-simp_nfs is not a core module, and may need to be installed prior
-to applying the following manifests.</p>
+<p class="last"><code class="docutils literal"><span class="pre">pupmod-simp-simp_nfs</span></code> and <code class="docutils literal"><span class="pre">pupmod-simp-nfs</span></code> are not core modules, and
+may need to be installed prior to following this guide.</p>
 </div>
-<div class="section" id="exporting-non-home-directories">
-<h2><a class="toc-backref" href="#id5">4.7.6.1. Exporting Non-Home Directories</a><a class="headerlink" href="#exporting-non-home-directories" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exporting-arbitrary-directories">
+<h2><a class="toc-backref" href="#id4">4.8.6.1. Exporting Arbitrary Directories</a><a class="headerlink" href="#exporting-arbitrary-directories" title="Permalink to this headline">¶</a></h2>
 <p><strong>Goal:</strong> Export <code class="docutils literal"><span class="pre">/var/nfs_share</span></code> on the server, mount as <code class="docutils literal"><span class="pre">/mnt/nfs</span></code> on the
 client.</p>
-<div class="section" id="default-yaml">
-<h3><a class="toc-backref" href="#id6">4.7.6.1.1. default.yaml</a><a class="headerlink" href="#default-yaml" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">nfs::server</span><span class="p p-Indicator">:</span> <span class="s">&quot;your.server.fqdn&quot;</span>
-</pre></div>
-</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If anything in this section does not make sense, there is a full working
+example of how to export NFS home directories in the <code class="docutils literal"><span class="pre">simp_nfs</span></code> module.</p>
 </div>
 <div class="section" id="server">
-<h3><a class="toc-backref" href="#id7">4.7.6.1.2. Server</a><a class="headerlink" href="#server" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id5">4.8.6.1.1. Server</a><a class="headerlink" href="#server" title="Permalink to this headline">¶</a></h3>
 <p>In <code class="docutils literal"><span class="pre">site/manifests/nfs_server.pp</span></code>:</p>
 <div class="highlight-puppet"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="na">site</span><span class="p">::</span><span class="na">nfs_server</span> <span class="p">(</span>
-  <span class="na">Boolean</span>          <span class="nv">$kerberos</span>     <span class="o">=</span> <span class="na">simplib</span><span class="p">::</span><span class="na">lookup</span><span class="p">(</span><span class="s">&#39;simp_options::kerberos&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="s">&#39;default_value&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span> <span class="p">}),</span>
-  <span class="na">Simplib</span><span class="p">::</span><span class="na">Netlist</span> <span class="nv">$trusted_nets</span> <span class="o">=</span> <span class="na">simplib</span><span class="p">::</span><span class="na">lookup</span><span class="p">(</span><span class="s">&#39;simp_options::trusted_nets&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="s">&#39;default_value&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s">&#39;127.0.0.1&#39;</span><span class="p">]</span> <span class="p">}),</span>
+  <span class="na">Boolean</span>                                          <span class="nv">$data_dir</span>     <span class="o">=</span> <span class="s">&#39;/var/nfs_share&#39;</span><span class="p">,</span>
+  <span class="na">Simplib</span><span class="p">::</span><span class="na">Netlist</span>                                 <span class="nv">$trusted_nets</span> <span class="o">=</span> <span class="na">simplib</span><span class="p">::</span><span class="na">lookup</span><span class="p">(</span><span class="s">&#39;simp_options::trusted_nets&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="s">&#39;default_value&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s">&#39;127.0.0.1&#39;</span><span class="p">]</span> <span class="p">}),</span>
+  <span class="na">Array</span><span class="p">[</span><span class="na">Enum</span><span class="p">[</span><span class="s">&#39;none&#39;</span><span class="p">,</span><span class="s">&#39;sys&#39;</span><span class="p">,</span><span class="s">&#39;krb5&#39;</span><span class="p">,</span><span class="s">&#39;krb5i&#39;</span><span class="p">,</span><span class="s">&#39;krb5p&#39;</span><span class="p">]]</span> <span class="nv">$sec</span>          <span class="o">=</span> <span class="p">[</span><span class="s">&#39;sys&#39;</span><span class="p">]</span>
 <span class="p">){</span>
-  <span class="k">include</span> <span class="s">&#39;::nfs&#39;</span>
+  <span class="k">include</span> <span class="s">&#39;::nfs::server&#39;</span>
 
-  <span class="nv">$nfs_security</span> <span class="o">=</span> <span class="nv">$kerberos</span> <span class="o">?</span> <span class="p">{</span> <span class="k">true</span> <span class="o">=&gt;</span> <span class="s">&#39;krb5p&#39;</span><span class="p">,</span> <span class="k">false</span> <span class="o">=&gt;</span> <span class="s">&#39;sys&#39;</span> <span class="p">}</span>
-
-  <span class="k">file</span> <span class="p">{</span> <span class="s">&#39;/var/nfs_share&#39;</span><span class="p">:</span>
+  <span class="k">file</span> <span class="p">{</span> <span class="nv">$data_dir:</span>
     <span class="na">ensure</span> <span class="o">=&gt;</span> <span class="s">&#39;directory&#39;</span><span class="p">,</span>
     <span class="na">owner</span>  <span class="o">=&gt;</span> <span class="s">&#39;root&#39;</span><span class="p">,</span>
     <span class="na">group</span>  <span class="o">=&gt;</span> <span class="s">&#39;root&#39;</span><span class="p">,</span>
     <span class="na">mode</span>   <span class="o">=&gt;</span> <span class="s">&#39;0644&#39;</span>
   <span class="p">}</span>
 
-  <span class="na">nfs</span><span class="p">::</span><span class="na">server</span><span class="p">::</span><span class="na">export</span> <span class="p">{</span> <span class="s">&#39;nfs4_root&#39;</span><span class="p">:</span>
-    <span class="na">clients</span>     <span class="o">=&gt;</span> <span class="nv">$trusted_nets,</span>
-    <span class="na">export_path</span> <span class="o">=&gt;</span> <span class="s">&#39;/var/nfs_share&#39;</span><span class="p">,</span>
-    <span class="na">sec</span>         <span class="o">=&gt;</span> <span class="p">[</span><span class="nv">$nfs_security],</span>
-    <span class="na">require</span>     <span class="o">=&gt;</span> <span class="k">File</span><span class="p">[</span><span class="s">&#39;/var/nfs_share&#39;</span><span class="p">]</span>
+  <span class="k">if</span> <span class="o">!</span><span class="nv">$::nfs::stunnel</span> <span class="p">{</span>
+    <span class="na">nfs</span><span class="p">::</span><span class="na">server</span><span class="p">::</span><span class="na">export</span> <span class="p">{</span> <span class="s">&#39;nfs_share&#39;</span><span class="p">:</span>
+      <span class="na">clients</span>     <span class="o">=&gt;</span> <span class="nv">$trusted_nets,</span>
+      <span class="na">export_path</span> <span class="o">=&gt;</span> <span class="nv">$data_dir,</span>
+      <span class="na">sec</span>         <span class="o">=&gt;</span> <span class="nv">$sec,</span>
+      <span class="na">require</span>     <span class="o">=&gt;</span> <span class="k">File</span><span class="p">[</span><span class="nv">$data_dir]</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">else</span> <span class="p">{</span><span class="c"></span>
+<span class="c">    # Stunnel needs to point at the local host</span>
+    <span class="na">nfs</span><span class="p">::</span><span class="na">server</span><span class="p">::</span><span class="na">export</span> <span class="p">{</span> <span class="s">&#39;nfs_share&#39;</span><span class="p">:</span>
+      <span class="na">clients</span>     <span class="o">=&gt;</span> <span class="p">[</span><span class="s">&#39;127.0.0.1&#39;</span><span class="p">],</span>
+      <span class="na">export_path</span> <span class="o">=&gt;</span> <span class="nv">$data_dir,</span>
+      <span class="na">sec</span>         <span class="o">=&gt;</span> <span class="nv">$sec,</span>
+      <span class="na">require</span>     <span class="o">=&gt;</span> <span class="k">File</span><span class="p">[</span><span class="nv">$data_dir]</span>
+    <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -266,52 +274,67 @@ client.</p>
 </div>
 </div>
 <div class="section" id="client">
-<h3><a class="toc-backref" href="#id8">4.7.6.1.3. Client</a><a class="headerlink" href="#client" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id6">4.8.6.1.2. Client</a><a class="headerlink" href="#client" title="Permalink to this headline">¶</a></h3>
 <p>In <code class="docutils literal"><span class="pre">site/manifests/nfs_client.pp</span></code>:</p>
-<div class="highlight-puppet"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="na">site</span><span class="p">::</span><span class="na">nfs_client</span> <span class="p">(</span>
-  <span class="na">Boolean</span> <span class="nv">$kerberos</span> <span class="o">=</span> <span class="na">simplib</span><span class="p">::</span><span class="na">lookup</span><span class="p">(</span><span class="s">&#39;simp_options::kerberos&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="s">&#39;default_value&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span> <span class="p">}),</span>
+<div class="highlight-puppet"><div class="highlight"><pre><span></span> <span class="k">class</span> <span class="na">site</span><span class="p">::</span><span class="na">nfs_client</span> <span class="p">(</span>
+  <span class="na">Simplib</span><span class="p">::</span><span class="k">Host</span>                                    <span class="nv">$nfs_server,</span>
+  <span class="na">Enum</span><span class="p">[</span><span class="s">&#39;none&#39;</span><span class="p">,</span><span class="s">&#39;sys&#39;</span><span class="p">,</span><span class="s">&#39;krb5&#39;</span><span class="p">,</span><span class="s">&#39;krb5i&#39;</span><span class="p">,</span><span class="s">&#39;krb5p&#39;</span><span class="p">]</span>        <span class="nv">$sec</span> <span class="o">=</span> <span class="s">&#39;sys&#39;</span>
 <span class="p">){</span>
-  <span class="k">include</span> <span class="s">&#39;::nfs&#39;</span>
 
-  <span class="nv">$nfs_security</span> <span class="o">=</span> <span class="nv">$kerberos</span> <span class="o">?</span> <span class="p">{</span> <span class="k">true</span> <span class="o">=&gt;</span> <span class="s">&#39;krb5p&#39;</span><span class="p">,</span> <span class="k">false</span> <span class="o">=&gt;</span>  <span class="s">&#39;sys&#39;</span> <span class="p">}</span>
+   <span class="nv">$_mnt_point</span> <span class="o">=</span> <span class="s">&#39;/mnt/nfs&#39;</span>
 
-  <span class="k">file</span> <span class="p">{</span> <span class="s">&#39;/mnt/nfs&#39;</span><span class="p">:</span>
-    <span class="na">ensure</span> <span class="o">=&gt;</span> <span class="s">&#39;directory&#39;</span><span class="p">,</span>
-    <span class="na">mode</span> <span class="o">=&gt;</span> <span class="s">&#39;755&#39;</span><span class="p">,</span>
-    <span class="na">owner</span> <span class="o">=&gt;</span> <span class="s">&#39;root&#39;</span><span class="p">,</span>
-    <span class="na">group</span> <span class="o">=&gt;</span> <span class="s">&#39;root&#39;</span>
-  <span class="p">}</span>
+   <span class="k">file</span> <span class="p">{</span> <span class="s">&quot;${_mnt_point}&quot;</span><span class="p">:</span>
+     <span class="na">ensure</span> <span class="o">=&gt;</span> <span class="s">&#39;directory&#39;</span><span class="p">,</span>
+     <span class="na">mode</span>   <span class="o">=&gt;</span> <span class="s">&#39;755&#39;</span><span class="p">,</span>
+     <span class="na">owner</span>  <span class="o">=&gt;</span> <span class="s">&#39;root&#39;</span><span class="p">,</span>
+     <span class="na">group</span>  <span class="o">=&gt;</span> <span class="s">&#39;root&#39;</span>
+   <span class="p">}</span>
 
-  <span class="k">mount</span> <span class="p">{</span> <span class="s">&quot;/mnt/nfs&quot;</span><span class="p">:</span>
-    <span class="na">ensure</span>  <span class="o">=&gt;</span> <span class="s">&#39;mounted&#39;</span><span class="p">,</span>
-    <span class="na">fstype</span>  <span class="o">=&gt;</span> <span class="s">&#39;nfs4&#39;</span><span class="p">,</span>
-    <span class="na">device</span>  <span class="o">=&gt;</span> <span class="s">&#39;&lt;your nfs server&gt;:/var/nfs_share&#39;</span><span class="p">,</span>
-    <span class="na">options</span> <span class="o">=&gt;</span> <span class="s">&quot;sec=${nfs_security}&quot;</span><span class="p">,</span>
-    <span class="na">require</span> <span class="o">=&gt;</span> <span class="k">File</span><span class="p">[</span><span class="s">&#39;/mnt/nfs&#39;</span><span class="p">]</span>
-  <span class="p">}</span>
+   <span class="na">nfs</span><span class="p">::</span><span class="na">client</span><span class="p">::</span><span class="k">mount</span> <span class="p">{</span> <span class="s">&quot;${_mnt_point}&quot;</span><span class="p">:</span>
+     <span class="na">nfs_server</span>  <span class="o">=&gt;</span> <span class="nv">$nfs_server,</span>
+     <span class="na">remote_path</span> <span class="o">=&gt;</span> <span class="s">&#39;/var/nfs_share&#39;</span><span class="p">,</span>
+     <span class="na">sec</span>         <span class="o">=&gt;</span> <span class="nv">$sec,</span>
+     <span class="na">at_boot</span>     <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+     <span class="na">autofs</span>      <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+     <span class="na">require</span>     <span class="o">=&gt;</span> <span class="k">File</span><span class="p">[</span><span class="s">&quot;${_mnt_point}&quot;</span><span class="p">]</span>
+   <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>In <code class="docutils literal"><span class="pre">hosts/&lt;your_client_fqdn&gt;.yaml</span></code>:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">nfs::is_server</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="l l-Scalar l-Scalar-Plain">site::nfs_client::nfs_server</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;your nfs server&gt;</span>
 
 <span class="l l-Scalar l-Scalar-Plain">classes</span><span class="p p-Indicator">:</span>
   <span class="p p-Indicator">-</span> <span class="s">&#39;site::nfs_client&#39;</span>
 </pre></div>
 </div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Non-wildcard indirect autofs mounts configured via <a class="reference external" href="nfs::client::mount">nfs::client::mount</a>
+are not working properly at this time. See SIMP-2944 in our
+<a class="reference external" href="https://simp-project.atlassian.net/">JIRA Bug Tracking</a> . You may wish to manually configure the mount
+via autofs::map::master, and autofs::map::entry instead.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <code class="docutils literal"><span class="pre">simp_nfs</span></code> module contains a further example that includes the
+use of a NFS root on the server and indirect autofs with wildcards on
+the client.</p>
+</div>
 </div>
 </div>
 <div class="section" id="exporting-home-directories">
-<h2><a class="toc-backref" href="#id9">4.7.6.2. Exporting home directories</a><a class="headerlink" href="#exporting-home-directories" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id7">4.8.6.2. Exporting Home Directories</a><a class="headerlink" href="#exporting-home-directories" title="Permalink to this headline">¶</a></h2>
 <p><strong>Goal:</strong> Export home directories for LDAP users.</p>
 <p>Utilize the SIMP profile module <code class="docutils literal"><span class="pre">simp_nfs</span></code>:</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li><code class="docutils literal"><span class="pre">simp_nfs</span></code>: Manages client and server configurations for managing nfs
+<li><code class="docutils literal"><span class="pre">simp_nfs</span></code>: Manages client and server configurations for managing NFS
 home directories.</li>
-<li><code class="docutils literal"><span class="pre">simp_nfs::export_home::create_home_dirs</span></code>: Optional hourly cron that
-binds to a LDAP server, <code class="docutils literal"><span class="pre">ldap::uri</span></code> by default, and creates a NFS home
-directory for all users in the LDAP server. Also expires any home
+<li><code class="docutils literal"><span class="pre">simp_nfs::create_home_dirs</span></code>: Optional hourly cron job that binds to a
+<a class="reference internal" href="../../glossary.html#term-ldap"><span class="xref std std-term">LDAP</span></a> server, <code class="docutils literal"><span class="pre">simp_options::ldap::uri</span></code> by default, and creates a
+NFS home directory for all users in the LDAP server. Also expires any home
 directories for users that no longer exist in LDAP.</li>
 </ol>
 </div></blockquote>
@@ -326,8 +349,8 @@ a while to log in, don&#8217;t panic!</p>
 <p class="last">Any users logged onto a host at the time of module application will not have
 their home directories re-mounted until they log out and log back in.</p>
 </div>
-<div class="section" id="id1">
-<h3><a class="toc-backref" href="#id10">4.7.6.2.1. default.yaml</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="default-yaml">
+<h3><a class="toc-backref" href="#id8">4.8.6.2.1. default.yaml</a><a class="headerlink" href="#default-yaml" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">nfs::is_server</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
 <span class="l l-Scalar l-Scalar-Plain">simp_nfs::home_dir_server</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;your nfs server&gt;</span>
 
@@ -336,8 +359,8 @@ their home directories re-mounted until they log out and log back in.</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id2">
-<h3><a class="toc-backref" href="#id11">4.7.6.2.2. Server</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id1">
+<h3><a class="toc-backref" href="#id9">4.8.6.2.2. Server</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">nfs::is_server</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="l l-Scalar l-Scalar-Plain">simp_nfs::export_home::create_home_dirs</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
 
@@ -348,12 +371,12 @@ their home directories re-mounted until they log out and log back in.</p>
 </div>
 </div>
 <div class="section" id="enabling-disabling-stunnel">
-<h2><a class="toc-backref" href="#id12">4.7.6.3. Enabling/Disabling Stunnel</a><a class="headerlink" href="#enabling-disabling-stunnel" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id10">4.8.6.3. Enabling/Disabling Stunnel</a><a class="headerlink" href="#enabling-disabling-stunnel" title="Permalink to this headline">¶</a></h2>
 <p>Stunnel is a means to encrypt your NFS data.</p>
 <div class="section" id="enable">
-<h3><a class="toc-backref" href="#id13">4.7.6.3.1. Enable</a><a class="headerlink" href="#enable" title="Permalink to this headline">¶</a></h3>
-<p>If simp_options::stunnel is set to true, you need only specify the following,
-in the server&#8217;s yaml file:</p>
+<h3><a class="toc-backref" href="#id11">4.8.6.3.1. Enable</a><a class="headerlink" href="#enable" title="Permalink to this headline">¶</a></h3>
+<p>If <code class="docutils literal"><span class="pre">simp_options::stunnel</span></code> is set to <code class="docutils literal"><span class="pre">true</span></code>, you need only specify the
+following, in the server&#8217;s <a class="reference internal" href="../../glossary.html#term-yaml"><span class="xref std std-term">YAML</span></a> file:</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">The following is set to prevent a cyclical connection of stunnel to itself,
@@ -362,34 +385,33 @@ in the event the server is a client of itself.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">nfs::client::stunnel::nfs_server</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;your nfs server&gt;</span>
 </pre></div>
 </div>
-<p>If simp_options::stunnel is set to false and you don&#8217;t wish to globally enable
-stunnel, you will also need to set the following, in default.yaml:</p>
+<p>If <code class="docutils literal"><span class="pre">simp_options::stunnel</span></code> is set to <code class="docutils literal"><span class="pre">false</span></code> and you don&#8217;t wish to globally
+enable stunnel, you will also need to set the following, in default.yaml:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">nfs::stunnel</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="disable">
-<h3><a class="toc-backref" href="#id14">4.7.6.3.2. Disable</a><a class="headerlink" href="#disable" title="Permalink to this headline">¶</a></h3>
-<p>If simp_options::stunnel is set to true, but you don&#8217;t want your NFS traffic to
-go through stunnel, set the following, in default.yaml:</p>
+<h3><a class="toc-backref" href="#id12">4.8.6.3.2. Disable</a><a class="headerlink" href="#disable" title="Permalink to this headline">¶</a></h3>
+<p>If <code class="docutils literal"><span class="pre">simp_options::stunnel</span></code> is set to <code class="docutils literal"><span class="pre">true</span></code>, but you don&#8217;t want your NFS
+traffic to go through stunnel, set the following, in default.yaml:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">nfs::stunnel</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
 </pre></div>
 </div>
-<p>If simp_options::stunnel is set to false, stunnel is already disabled.</p>
+<p>If <code class="docutils literal"><span class="pre">simp_options::stunnel</span></code> is set to <code class="docutils literal"><span class="pre">false</span></code> then stunnel is already disabled.</p>
 </div>
 </div>
-<div class="section" id="enabling-krb5">
-<h2><a class="toc-backref" href="#id15">4.7.6.4. Enabling krb5</a><a class="headerlink" href="#enabling-krb5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="enabling-kerberos">
+<h2><a class="toc-backref" href="#id13">4.8.6.4. Enabling Kerberos</a><a class="headerlink" href="#enabling-kerberos" title="Permalink to this headline">¶</a></h2>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">This functionality is incomplete. See ticket SIMP-1400 in our
-<a class="reference external" href="https://simp-project.atlassian.net/">JIRA Bug Tracking</a> . Until that ticket is resolved, it is
-HIGHLY recommended you continue to use stunnel for encrypted
-nfs traffic.</p>
+<a class="reference external" href="https://simp-project.atlassian.net/">JIRA Bug Tracking</a> . Until that ticket is resolved, it is HIGHLY
+recommended you continue to use stunnel for encrypted nfs traffic.</p>
 </div>
-<p>In addition to the code above, add the following code:</p>
-<div class="section" id="id3">
-<h3><a class="toc-backref" href="#id16">4.7.6.4.1. default.yaml</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>In addition to the sharing code (not the stunnel code) above, add the following:</p>
+<div class="section" id="id2">
+<h3><a class="toc-backref" href="#id14">4.8.6.4.1. default.yaml</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">classes</span><span class="p p-Indicator">:</span>
   <span class="p p-Indicator">-</span> <span class="s">&#39;krb5::keytab&#39;</span>
 
@@ -401,15 +423,15 @@ nfs traffic.</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id4">
-<h3><a class="toc-backref" href="#id17">4.7.6.4.2. Server</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h3><a class="toc-backref" href="#id15">4.8.6.4.2. Server</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">classes</span><span class="p p-Indicator">:</span>
   <span class="p p-Indicator">-</span> <span class="s">&#39;krb5::kdc&#39;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="clients">
-<h3><a class="toc-backref" href="#id18">4.7.6.4.3. Clients</a><a class="headerlink" href="#clients" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id16">4.8.6.4.3. Clients</a><a class="headerlink" href="#clients" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">nfs::is_server</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
 
 <span class="l l-Scalar l-Scalar-Plain">classes</span><span class="p p-Indicator">:</span>
@@ -427,10 +449,10 @@ nfs traffic.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="IPTables_NAT_Rules.html" class="btn btn-neutral float-right" title="4.7.7. HOWTO Configure iptables NAT Rules" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="IPTables_NAT_Rules.html" class="btn btn-neutral float-right" title="4.8.7. HOWTO Configure iptables NAT Rules" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Exclude_Repositories.html" class="btn btn-neutral" title="4.7.5. HOWTO Exclude YUM Repositories" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Exclude_Repositories.html" class="btn btn-neutral" title="4.8.5. HOWTO Exclude YUM Repositories" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

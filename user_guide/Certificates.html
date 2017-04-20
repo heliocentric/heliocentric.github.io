@@ -144,15 +144,16 @@
 <h1>Apply Certificates<a class="headerlink" href="#apply-certificates" title="Permalink to this headline">¶</a></h1>
 <p>All clients in a SIMP system must have <a class="reference internal" href="../glossary.html#term-public-key-infrastructure"><span class="xref std std-term">Public Key Infrastructure</span></a> (PKI)
 keypairs generated for the server.  These keys reside in the
-<code class="docutils literal"><span class="pre">/var/simp/environments/simp/site_files/pki_files/files/keydist</span></code> directory  on the
+<code class="docutils literal"><span class="pre">/var/simp/environments/simp/site_files/pki_files/files/keydist</span></code> directory on the
 SIMP server and are served to the clients over the puppet protocol.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">These keypairs are <strong>not</strong> the keys that the Puppet server uses for its
+<p>These keypairs are <strong>not</strong> the keys that the Puppet server uses for its
 operation. Do not get the two confused.</p>
+<p class="last">See <a class="reference internal" href="SIMP_Administration/General_Administration.html#certificate-management"><span class="std std-ref">Certificate Management</span></a> for more information.</p>
 </div>
-<p>This section provides guidance on installing official certificates or, as
-an interim measure, generating certificates from the Fake (self-signing)
+<p>This section provides guidance on installing official certificates or, as an
+interim measure, generating certificates from the Fake (self-signing)
 Certificate Authority provided by SIMP.</p>
 <div class="section" id="installing-official-certificates">
 <h2>Installing Official Certificates<a class="headerlink" href="#installing-official-certificates" title="Permalink to this headline">¶</a></h2>
@@ -199,12 +200,12 @@ installation, SIMP provides a way to create them for the system, so that it
 will work until proper certificates are provided.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">This option should not be used for any operational system that can use proper
-enterprise PKI certificates.</p>
+<p class="last">This option should not be used for any operational system that can use
+proper enterprise PKI certificates.</p>
 </div>
 <p>Below are the steps to generate the certificates using the SIMP-provided, Fake CA.</p>
 <ol class="arabic simple">
-<li>Type <code class="docutils literal"><span class="pre">cd</span> <span class="pre">/etc/puppetlabs/code/environments/simp/FakeCA</span></code></li>
+<li>Type <code class="docutils literal"><span class="pre">cd</span> <span class="pre">/var/simp/environments/simp/FakeCA</span></code></li>
 <li>Type <code class="docutils literal"><span class="pre">vi</span> <span class="pre">togen</span></code></li>
 <li>Remove old entries from the file and add the <a class="reference internal" href="../glossary.html#term-fully-qualified-domain-name"><span class="xref std std-term">Fully Qualified Domain Name</span></a>
 (FQDN) of the systems (one per line) for which certificates will be created.</li>

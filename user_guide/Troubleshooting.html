@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.6. Troubleshooting Common Issues &mdash; SIMP 5.2.1-0 documentation</title>
+  <title>4.7. Troubleshooting Common Issues &mdash; SIMP 5.2.1-0 documentation</title>
   
 
   
@@ -38,8 +38,8 @@
   
     <link rel="top" title="SIMP 5.2.1-0 documentation" href="../index.html"/>
         <link rel="up" title="4. SIMP User Guide" href="index.html"/>
-        <link rel="next" title="4.6.1. My Services Are Dying!" href="Troubleshooting/My_Services_Are_Dying.html"/>
-        <link rel="prev" title="4.5. Hiera Overview" href="Hiera_Overview.html"/> 
+        <link rel="next" title="4.7.1. My Services Are Dying!" href="Troubleshooting/My_Services_Are_Dying.html"/>
+        <link rel="prev" title="4.6.3. Managing SSSD LOCAL Domain And Users" href="User_Management/SSSD.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -100,19 +100,20 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">4. User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Introduction.html">4.1. Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Client_Management.html">4.2. Client Management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SIMP_Administration.html">4.3. General Administration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="User_Management.html">4.4. User Management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Hiera_Overview.html">4.5. Hiera Overview</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">4.6. Troubleshooting Common Issues</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Troubleshooting/My_Services_Are_Dying.html">4.6.1. My Services Are Dying!</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Troubleshooting/Why_Cant_I_Login.html">4.6.2. Why Can&#8217;t I Login?!</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Troubleshooting/PKI_Validation.html">4.6.3. Checking Your SIMP PKI Communication</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Troubleshooting/Puppet_Certificate_Issues.html">4.6.4. Puppet Certificate Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Client_Management.html#configure-pxe-boot">4.3. Configure PXE Boot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Client_Management.html#apply-certificates">4.4. Apply Certificates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SIMP_Administration.html">4.5. SIMP Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="User_Management.html">4.6. User Management</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.7. Troubleshooting Common Issues</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Troubleshooting/My_Services_Are_Dying.html">4.7.1. My Services Are Dying!</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Troubleshooting/Why_Cant_I_Login.html">4.7.2. Why Can&#8217;t I Login?!</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Troubleshooting/PKI_Validation.html">4.7.3. Checking Your SIMP PKI Communication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Troubleshooting/Puppet_Certificate_Issues.html">4.7.4. Puppet Certificate Issues</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="HOWTO.html">4.7. SIMP HOWTO Guides</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SIMP_Package_Data.html">4.8. Package Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#indices-and-tables">4.9. Indices and tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOWTO.html">4.8. SIMP HOWTO Guides</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SIMP_Package_Data.html">4.9. Package Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#indices-and-tables">4.10. Indices and tables</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../contributors_guide/index.html">5. Contributing to SIMP</a></li>
@@ -148,7 +149,7 @@
       
           <li><a href="index.html">4. SIMP User Guide</a> &raquo;</li>
       
-    <li>4.6. Troubleshooting Common Issues</li>
+    <li>4.7. Troubleshooting Common Issues</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -163,28 +164,28 @@
            <div itemprop="articleBody">
             
   <div class="section" id="troubleshooting-common-issues">
-<span id="troubleshooting"></span><h1>4.6. Troubleshooting Common Issues<a class="headerlink" href="#troubleshooting-common-issues" title="Permalink to this headline">¶</a></h1>
+<span id="troubleshooting"></span><h1>4.7. Troubleshooting Common Issues<a class="headerlink" href="#troubleshooting-common-issues" title="Permalink to this headline">¶</a></h1>
 <p>How to troubleshoot common problems that occur when installing and using SIMP.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Troubleshooting/My_Services_Are_Dying.html">4.6.1. My Services Are Dying!</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Troubleshooting/My_Services_Are_Dying.html#destructive-reasoning-with-svckill">4.6.1.1. Destructive Reasoning with <cite>svckill</cite></a></li>
-<li class="toctree-l2"><a class="reference internal" href="Troubleshooting/My_Services_Are_Dying.html#avoiding-destruction">4.6.1.2. Avoiding Destruction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Troubleshooting/My_Services_Are_Dying.html">4.7.1. My Services Are Dying!</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Troubleshooting/My_Services_Are_Dying.html#destructive-reasoning-with-svckill">4.7.1.1. Destructive Reasoning with <cite>svckill</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Troubleshooting/My_Services_Are_Dying.html#avoiding-destruction">4.7.1.2. Avoiding Destruction</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Troubleshooting/Why_Cant_I_Login.html">4.6.2. Why Can&#8217;t I Login?!</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Troubleshooting/Why_Cant_I_Login.html#sssd-password-checks">4.6.2.1. SSSD Password Checks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Troubleshooting/Why_Cant_I_Login.html#pam-access-restrictions">4.6.2.2. PAM Access Restrictions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Troubleshooting/Why_Cant_I_Login.html#faillock">4.6.2.3. Faillock</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Troubleshooting/Why_Cant_I_Login.html#ldap-lockout">4.6.2.4. LDAP Lockout</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Troubleshooting/Why_Cant_I_Login.html#troubleshooting-dns">4.6.2.5. Troubleshooting DNS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Troubleshooting/Why_Cant_I_Login.html#pki-issues">4.6.2.6. PKI Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Troubleshooting/Why_Cant_I_Login.html">4.7.2. Why Can&#8217;t I Login?!</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Troubleshooting/Why_Cant_I_Login.html#sssd-password-checks">4.7.2.1. SSSD Password Checks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Troubleshooting/Why_Cant_I_Login.html#pam-access-restrictions">4.7.2.2. PAM Access Restrictions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Troubleshooting/Why_Cant_I_Login.html#faillock">4.7.2.3. Faillock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Troubleshooting/Why_Cant_I_Login.html#ldap-lockout">4.7.2.4. LDAP Lockout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Troubleshooting/Why_Cant_I_Login.html#troubleshooting-dns">4.7.2.5. Troubleshooting DNS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Troubleshooting/Why_Cant_I_Login.html#pki-issues">4.7.2.6. PKI Issues</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Troubleshooting/PKI_Validation.html">4.6.3. Checking Your SIMP PKI Communication</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Troubleshooting/Puppet_Certificate_Issues.html">4.6.4. Puppet Certificate Issues</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Troubleshooting/Puppet_Certificate_Issues.html#puppet-client-certificate-issues">4.6.4.1. Puppet Client Certificate Issues</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Troubleshooting/Puppet_Certificate_Issues.html#puppet-server-certificate-issues">4.6.4.2. Puppet Server Certificate Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Troubleshooting/PKI_Validation.html">4.7.3. Checking Your SIMP PKI Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Troubleshooting/Puppet_Certificate_Issues.html">4.7.4. Puppet Certificate Issues</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Troubleshooting/Puppet_Certificate_Issues.html#puppet-client-certificate-issues">4.7.4.1. Puppet Client Certificate Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Troubleshooting/Puppet_Certificate_Issues.html#puppet-server-certificate-issues">4.7.4.2. Puppet Server Certificate Issues</a></li>
 </ul>
 </li>
 </ul>
@@ -198,10 +199,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Troubleshooting/My_Services_Are_Dying.html" class="btn btn-neutral float-right" title="4.6.1. My Services Are Dying!" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Troubleshooting/My_Services_Are_Dying.html" class="btn btn-neutral float-right" title="4.7.1. My Services Are Dying!" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Hiera_Overview.html" class="btn btn-neutral" title="4.5. Hiera Overview" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="User_Management/SSSD.html" class="btn btn-neutral" title="4.6.3. Managing SSSD LOCAL Domain And Users" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

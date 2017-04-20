@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.7.13. HOWTO Enable Redundant LDAP &mdash; SIMP 5.2.1-0 documentation</title>
+  <title>4.8.12. HOWTO Enable Redundant LDAP &mdash; SIMP 5.2.1-0 documentation</title>
   
 
   
@@ -37,9 +37,9 @@
 
   
     <link rel="top" title="SIMP 5.2.1-0 documentation" href="../../index.html"/>
-        <link rel="up" title="4.7. SIMP HOWTO Guides" href="../HOWTO.html"/>
-        <link rel="next" title="4.7.14. HOWTO Enable SFTP Restricted Accounts" href="SFTP_Restricted_Accounts.html"/>
-        <link rel="prev" title="4.7.12. HOWTO Configure a Puppet Server Behind a NAT" href="Puppet_Server_NAT.html"/> 
+        <link rel="up" title="4.8. SIMP HOWTO Guides" href="../HOWTO.html"/>
+        <link rel="next" title="4.8.13. HOWTO Enable SFTP Restricted Accounts" href="SFTP_Restricted_Accounts.html"/>
+        <link rel="prev" title="4.8.11. HOWTO Configure a Puppet Server Behind a NAT" href="Puppet_Server_NAT.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -100,41 +100,41 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">4. User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../Introduction.html">4.1. Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Client_Management.html">4.2. Client Management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../SIMP_Administration.html">4.3. General Administration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../User_Management.html">4.4. User Management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Hiera_Overview.html">4.5. Hiera Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Troubleshooting.html">4.6. Troubleshooting Common Issues</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../HOWTO.html">4.7. SIMP HOWTO Guides</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="Work_With_Rsync.html">4.7.1. Work with the SIMP Rsync Shares</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Central_Log_Collection.html">4.7.2. Setup Central Log Collection</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Changing_Puppet_Masters.html">4.7.3. Change Puppet Masters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Discard_Mail_to_Root.html">4.7.4. Discard Mail to Root</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Exclude_Repositories.html">4.7.5. Exclude YUM Repositories from Nightly Updates</a></li>
-<li class="toctree-l3"><a class="reference internal" href="NFS.html">4.7.6. Configure NFS</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IPTables_NAT_Rules.html">4.7.7. Configure IPTables NAT Rules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Kerberos.html">4.7.8. Enable Kerberos</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Managing_Workstation_Infrastructures.html">4.7.9. Manage Workstation Infrastructures</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Network_Build.html">4.7.10. Kickstart the Initial Server</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Puppetmaster_Backup.html">4.7.11. Backup the Puppet Master</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Puppet_Server_NAT.html">4.7.12. Configure a Puppet Server Behind a NAT</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">4.7.13. Enable Redundent LDAP</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#set-up-the-master">4.7.13.1. Set up the Master</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#set-up-the-redundant-slave-servers">4.7.13.2. Set up the Redundant (Slave) Servers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#promote-a-slave-node">4.7.13.3. Promote a Slave Node</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#remove-a-node-or-demote-a-master">4.7.13.4. Remove a Node or Demote a Master</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#troubleshooting">4.7.13.5. Troubleshooting</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#further-information">4.7.13.6. Further Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Client_Management.html#configure-pxe-boot">4.3. Configure PXE Boot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Client_Management.html#apply-certificates">4.4. Apply Certificates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SIMP_Administration.html">4.5. SIMP Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../User_Management.html">4.6. User Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Troubleshooting.html">4.7. Troubleshooting Common Issues</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../HOWTO.html">4.8. SIMP HOWTO Guides</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Work_With_Rsync.html">4.8.1. Work with the SIMP Rsync Shares</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Central_Log_Collection.html">4.8.2. Setup Central Log Collection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Changing_Puppet_Masters.html">4.8.3. Change Puppet Masters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Discard_Mail_to_Root.html">4.8.4. Discard Mail to Root</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Exclude_Repositories.html">4.8.5. Exclude YUM Repositories from Nightly Updates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NFS.html">4.8.6. Configure NFS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IPTables_NAT_Rules.html">4.8.7. Configure IPTables NAT Rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Kerberos.html">4.8.8. Enable Kerberos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Managing_Workstation_Infrastructures.html">4.8.9. Manage Workstation Infrastructures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Puppetmaster_Backup.html">4.8.10. Backup the Puppet Master</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Puppet_Server_NAT.html">4.8.11. Configure a Puppet Server Behind a NAT</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">4.8.12. Enable Redundent LDAP</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#set-up-the-master">4.8.12.1. Set up the Master</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#set-up-the-redundant-slave-servers">4.8.12.2. Set up the Redundant (Slave) Servers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#promote-a-slave-node">4.8.12.3. Promote a Slave Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#remove-a-node-or-demote-a-master">4.8.12.4. Remove a Node or Demote a Master</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#troubleshooting">4.8.12.5. Troubleshooting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#further-information">4.8.12.6. Further Information</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="SFTP_Restricted_Accounts.html">4.7.14. Enable SFTP Restricted Accounts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="SSH_Keys.html">4.7.15. Setup SSH Authorized Keys</a></li>
-<li class="toctree-l3"><a class="reference internal" href="SSH_Restrict_Network_Access.html">4.7.16. Restrict SSH Network Access</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Upgrade_SIMP.html">4.7.17. Upgrade SIMP (Coming Soon!)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Manage_TPM.html">4.7.18. Manage TPM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SFTP_Restricted_Accounts.html">4.8.13. Enable SFTP Restricted Accounts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SSH_Keys.html">4.8.14. Setup SSH Authorized Keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SSH_Restrict_Network_Access.html">4.8.15. Restrict SSH Network Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Upgrade_SIMP.html">4.8.16. Upgrade SIMP (Coming Soon!)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Manage_TPM.html">4.8.17. Manage TPM</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../SIMP_Package_Data.html">4.8. Package Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#indices-and-tables">4.9. Indices and tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SIMP_Package_Data.html">4.9. Package Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#indices-and-tables">4.10. Indices and tables</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../contributors_guide/index.html">5. Contributing to SIMP</a></li>
@@ -170,9 +170,9 @@
       
           <li><a href="../index.html">4. SIMP User Guide</a> &raquo;</li>
       
-          <li><a href="../HOWTO.html">4.7. SIMP HOWTO Guides</a> &raquo;</li>
+          <li><a href="../HOWTO.html">4.8. SIMP HOWTO Guides</a> &raquo;</li>
       
-    <li>4.7.13. HOWTO Enable Redundant LDAP</li>
+    <li>4.8.12. HOWTO Enable Redundant LDAP</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -187,11 +187,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="howto-enable-redundant-ldap">
-<h1>4.7.13. HOWTO Enable Redundant LDAP<a class="headerlink" href="#howto-enable-redundant-ldap" title="Permalink to this headline">¶</a></h1>
+<h1>4.8.12. HOWTO Enable Redundant LDAP<a class="headerlink" href="#howto-enable-redundant-ldap" title="Permalink to this headline">¶</a></h1>
 <p>This section describes how to set up redundant OpenLDAP servers in SIMP. These
 servers are also referred to as &#8220;slave&#8221; servers.</p>
 <div class="section" id="set-up-the-master">
-<h2>4.7.13.1. Set up the Master<a class="headerlink" href="#set-up-the-master" title="Permalink to this headline">¶</a></h2>
+<h2>4.8.12.1. Set up the Master<a class="headerlink" href="#set-up-the-master" title="Permalink to this headline">¶</a></h2>
 <p>The easiest way to set up an LDAP master is to set it up on the Puppet server
 using <code class="docutils literal"><span class="pre">simp</span> <span class="pre">config</span></code> during the initial configuration of the Puppet server.
 This is done by answering &#8220;yes&#8221; when asked if you want to use LDAP during your
@@ -275,9 +275,9 @@ described in the <a class="reference internal" href="../User_Management.html#use
 </div>
 </div>
 <div class="section" id="set-up-the-redundant-slave-servers">
-<h2>4.7.13.2. Set up the Redundant (Slave) Servers<a class="headerlink" href="#set-up-the-redundant-slave-servers" title="Permalink to this headline">¶</a></h2>
+<h2>4.8.12.2. Set up the Redundant (Slave) Servers<a class="headerlink" href="#set-up-the-redundant-slave-servers" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="default-settings">
-<h3>4.7.13.2.1. Default Settings<a class="headerlink" href="#default-settings" title="Permalink to this headline">¶</a></h3>
+<h3>4.8.12.2.1. Default Settings<a class="headerlink" href="#default-settings" title="Permalink to this headline">¶</a></h3>
 <p>Once the LDAP master is ready, LDAP slave nodes can be configured to replicate
 data from the master. These servers are read-only, and modifications cannot be
 made to LDAP entries while the master is down.</p>
@@ -313,7 +313,7 @@ file. Definitions can be found in the syncrepl.conf (5) man page.</p>
 </div>
 </div>
 <div class="section" id="custom-replication-settings">
-<h3>4.7.13.2.2. Custom Replication Settings<a class="headerlink" href="#custom-replication-settings" title="Permalink to this headline">¶</a></h3>
+<h3>4.8.12.2.2. Custom Replication Settings<a class="headerlink" href="#custom-replication-settings" title="Permalink to this headline">¶</a></h3>
 <p>If settings other than the defaults are needed, create a manifest under
 <code class="docutils literal"><span class="pre">site</span></code> and use the <code class="docutils literal"><span class="pre">simp_openldap::server::syncrepl</span></code> class with the necessary
 parameters.</p>
@@ -344,7 +344,7 @@ clients know about it once they have updated from the Puppet server.</p>
 </div>
 </div>
 <div class="section" id="promote-a-slave-node">
-<h2>4.7.13.3. Promote a Slave Node<a class="headerlink" href="#promote-a-slave-node" title="Permalink to this headline">¶</a></h2>
+<h2>4.8.12.3. Promote a Slave Node<a class="headerlink" href="#promote-a-slave-node" title="Permalink to this headline">¶</a></h2>
 <p>Slave nodes can be promoted to act as the LDAP master node. To do this, change
 the node classifications of the relevant hosts. For a node with the default
 settings, just remove the <code class="docutils literal"><span class="pre">simp::server::ldap::is_slave</span> <span class="pre">:</span> <span class="pre">true</span></code> from the
@@ -365,7 +365,7 @@ hosts the server will be promoted to master and all the slaves will point to
 it.</p>
 </div>
 <div class="section" id="remove-a-node-or-demote-a-master">
-<h2>4.7.13.4. Remove a Node or Demote a Master<a class="headerlink" href="#remove-a-node-or-demote-a-master" title="Permalink to this headline">¶</a></h2>
+<h2>4.8.12.4. Remove a Node or Demote a Master<a class="headerlink" href="#remove-a-node-or-demote-a-master" title="Permalink to this headline">¶</a></h2>
 <p>To demote a master, simply configure it as slave in either of the
 configurations above after the new master has been configured and put in place,
 then run the Puppet agent. Lastly, manually remove the active database from
@@ -377,7 +377,7 @@ they do not attempt to call it. Then remove relevant settings from it&#8217;s Hi
 .yaml file and run the Puppet agent.</p>
 </div>
 <div class="section" id="troubleshooting">
-<h2>4.7.13.5. Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
+<h2>4.8.12.5. Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
 <p>If the system is not replicating, it is possible that another user has updated
 the <code class="docutils literal"><span class="pre">simp_options::ldap::sync_pw</span></code> and <code class="docutils literal"><span class="pre">simp_options::ldap::sync_hash</span></code>
 entries in Hiera file without also updating the value in LDAP itself;
@@ -398,7 +398,7 @@ LDAP.</p>
 </div>
 </div>
 <div class="section" id="further-information">
-<h2>4.7.13.6. Further Information<a class="headerlink" href="#further-information" title="Permalink to this headline">¶</a></h2>
+<h2>4.8.12.6. Further Information<a class="headerlink" href="#further-information" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference external" href="http://www.openldap.org/doc/admin24/intro.html">OpenLDAP site</a> contains
 more information on configuring and maintaining OpenLDAP servers.</p>
 </div>
@@ -411,10 +411,10 @@ more information on configuring and maintaining OpenLDAP servers.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="SFTP_Restricted_Accounts.html" class="btn btn-neutral float-right" title="4.7.14. HOWTO Enable SFTP Restricted Accounts" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="SFTP_Restricted_Accounts.html" class="btn btn-neutral float-right" title="4.8.13. HOWTO Enable SFTP Restricted Accounts" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Puppet_Server_NAT.html" class="btn btn-neutral" title="4.7.12. HOWTO Configure a Puppet Server Behind a NAT" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Puppet_Server_NAT.html" class="btn btn-neutral" title="4.8.11. HOWTO Configure a Puppet Server Behind a NAT" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

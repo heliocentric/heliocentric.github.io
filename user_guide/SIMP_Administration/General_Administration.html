@@ -1,0 +1,492 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4.5.3. General Administration &mdash; SIMP 5.2.1-0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="https://media.readthedocs.org/css/sphinx_rtd_theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="https://media.readthedocs.org/css/readthedocs-doc-embed.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css_overrides.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="SIMP 5.2.1-0 documentation" href="../../index.html"/>
+        <link rel="up" title="4.5. SIMP Administration" href="../SIMP_Administration.html"/>
+        <link rel="next" title="4.6. User Management" href="../User_Management.html"/>
+        <link rel="prev" title="4.5.2. Integrating Applications" href="Integrating_Applications.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html">
+        
+
+        
+          
+          <img src="../../_static/SIMP_Logo.png" class="logo" />
+        
+        </a>
+
+        
+          
+          
+            <div class="version">
+              5.2.1
+            </div>
+          
+        
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Welcome to the SIMP documentation!</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started_guide/Just_Install.html">1. For the Impatient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dynamic/Changelog.html">2. Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started_guide/index.html">3. Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">4. User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Introduction.html">4.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Client_Management.html">4.2. Client Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Client_Management.html#configure-pxe-boot">4.3. Configure PXE Boot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Client_Management.html#apply-certificates">4.4. Apply Certificates</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../SIMP_Administration.html">4.5. SIMP Administration</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Classification_and_Data.html">4.5.1. Classification and Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Integrating_Applications.html">4.5.2. Integrating Applications</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">4.5.3. General Administration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-simp-environment">4.5.3.1. The SIMP Environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nightly-updates">4.5.3.2. Nightly Updates</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#session-auditing">4.5.3.3. Session auditing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#user-accounts">4.5.3.4. User Accounts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#certificate-management">4.5.3.5. Certificate Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-simp-utility">4.5.3.6. The SIMP Utility</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gui">4.5.3.7. GUI</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../User_Management.html">4.6. User Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Troubleshooting.html">4.7. Troubleshooting Common Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../HOWTO.html">4.8. SIMP HOWTO Guides</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SIMP_Package_Data.html">4.9. Package Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#indices-and-tables">4.10. Indices and tables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributors_guide/index.html">5. Contributing to SIMP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_conop/index.html">6. Security Concept of Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security_mapping/index.html">7. Security Control Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../help/index.html">8. Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">9. License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html#contact">10. Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">11. Glossary of Terms</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">SIMP</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">4. SIMP User Guide</a> &raquo;</li>
+      
+          <li><a href="../SIMP_Administration.html">4.5. SIMP Administration</a> &raquo;</li>
+      
+    <li>4.5.3. General Administration</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/user_guide/SIMP_Administration/General_Administration.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="general-administration">
+<h1>4.5.3. General Administration<a class="headerlink" href="#general-administration" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">While working with the system, keep in mind that Puppet does not work well
+with capital letters in host names. Therefore, they should not be used.</p>
+</div>
+<div class="section" id="the-simp-environment">
+<h2>4.5.3.1. The SIMP Environment<a class="headerlink" href="#the-simp-environment" title="Permalink to this headline">¶</a></h2>
+<p>SIMP fully supports <a class="reference external" href="https://docs.puppet.com/puppet/latest/environments.html">Puppet Environments</a> and, by default, installs into an
+environment named <code class="docutils literal"><span class="pre">simp</span></code>. This environment is symlinked to the <code class="docutils literal"><span class="pre">production</span></code>
+environment by <code class="docutils literal"><span class="pre">simp</span> <span class="pre">config</span></code> but that symlink will <strong>not</strong> be overwritten on
+update so you may freely change or replace the symlink to meet your needs.</p>
+<p>There are a couple of paths on the system that are environment related.</p>
+<div class="section" id="var-simp">
+<h3>4.5.3.1.1. /var/simp<a class="headerlink" href="#var-simp" title="Permalink to this headline">¶</a></h3>
+<p>This space holds all static, non-Puppet created files. It is generally used for
+large binary items that will be centrally delievered via rsync and for files
+that are too dangerous to add to a version control system. These include things
+like the SIMP rsync materials and the Infrastructure keys.</p>
+<p>This space is environment aware and you will note that there is an
+<code class="docutils literal"><span class="pre">environments</span></code> directory under <code class="docutils literal"><span class="pre">/var/simp</span></code> with, by default, the <code class="docutils literal"><span class="pre">simp</span></code>
+environment represented. If you add new environments, you will need to
+replicate the appropriate structure from the <code class="docutils literal"><span class="pre">simp</span></code> environment into your
+custom environment.</p>
+<p>This space also holds FakeCA. See <a class="reference internal" href="#infrastructure-certificates">Infrastructure Certificates</a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For more information on the SIMP rsync structure, please see
+<a class="reference internal" href="../HOWTO/Work_With_Rsync.html#howto-work-with-the-simp-rsync-shares"><span class="std std-ref">HOWTO Work with the SIMP Rsync Shares</span></a></p>
+</div>
+</div>
+<div class="section" id="opt-puppetlabs-server-data-puppetserver-simp">
+<h3>4.5.3.1.2. /opt/puppetlabs/server/data/puppetserver/simp<a class="headerlink" href="#opt-puppetlabs-server-data-puppetserver-simp" title="Permalink to this headline">¶</a></h3>
+<p>This space holds all non-static, Puppet <strong>server</strong> created files. This is used
+by both <code class="docutils literal"><span class="pre">passgen()</span></code> and the <code class="docutils literal"><span class="pre">krb5</span></code> Puppet module for storing dynamically
+generated server-side content.</p>
+<p>Like <code class="docutils literal"><span class="pre">/var/simp</span></code> this space is also environment aware but you should never
+need to manually adjust anything in this directory space.</p>
+</div>
+</div>
+<div class="section" id="nightly-updates">
+<h2>4.5.3.2. Nightly Updates<a class="headerlink" href="#nightly-updates" title="Permalink to this headline">¶</a></h2>
+<p>All SIMP systems are configured, by default, to do a YUM update of the entire
+system on a nightly basis. When the update task runs, it will pull <strong>ALL</strong>
+updates that the system is aware of.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Refer to the <a class="reference internal" href="../HOWTO/Exclude_Repositories.html#exclude-repos"><span class="std std-ref">HOWTO Exclude YUM Repositories</span></a> HOWTO for additional configuration
+information.</p>
+</div>
+<p>SIMP chose this as the default because it is easier to manage symlinks in YUM
+repositories than it is to manage individual package minutia for all packages
+across the environment.</p>
+<p>To use this effectively, packages that all systems will receive should be
+placed into the <code class="docutils literal"><span class="pre">Updates</span></code> repository provided with SIMP. Any packages that
+will only go to specific system sets should then be placed into adjunct
+repositories under <code class="docutils literal"><span class="pre">/var/www/yum</span></code> and the user will point specific systems at
+those repositories using the <code class="docutils literal"><span class="pre">yumrepo</span></code> Puppet Type. Any common packages can
+be either symlinked or hard linked between repositories for efficiency.</p>
+<div class="section" id="changing-the-default-repositories">
+<h3>4.5.3.2.1. Changing the Default Repositories<a class="headerlink" href="#changing-the-default-repositories" title="Permalink to this headline">¶</a></h3>
+<p>By default, SIMP stores <a class="reference internal" href="../../glossary.html#term-yum"><span class="xref std std-term">YUM</span></a> information in the following directories:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">/var/www/yum</span></code></li>
+</ul>
+</div></blockquote>
+<p>The base SIMP repository is in <code class="docutils literal"><span class="pre">/var/www/yum/SIMP</span></code> and it is highly unlikely
+that you would want to modify anything in this directory.</p>
+<p>By default, access to the YUM repository is restricted to the networks
+contained in the <code class="docutils literal"><span class="pre">simp_options::trusted_nets</span></code> parameter. For this section, we
+will assume that this is sufficient.</p>
+</div>
+<div class="section" id="the-operating-system-repos">
+<h3>4.5.3.2.2. The Operating System Repos<a class="headerlink" href="#the-operating-system-repos" title="Permalink to this headline">¶</a></h3>
+<p>The default location for the <a class="reference internal" href="../../glossary.html#term-operating-system"><span class="xref std std-term">Operating System</span></a> (OS) repositories, on the
+Puppet server, is <code class="docutils literal"><span class="pre">/var/www/yum/&lt;OSTYPE&gt;/&lt;MAJORRELEASE&gt;/x86_64</span></code>.</p>
+<p>An <code class="docutils literal"><span class="pre">Updates</span></code> repository has been configured in this space. All OS updates
+should be placed within this directory.</p>
+<p>You should run the following in the <code class="docutils literal"><span class="pre">Updates</span></code> directory after <strong>ANY</strong> package
+addition or removal within that directory.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ createrepo .
+$ chown -R root.apache ./*
+$ find . -type f -exec chmod <span class="m">640</span> <span class="o">{}</span> <span class="se">\;</span>
+$ find . -type d -exec chmod <span class="m">750</span> <span class="o">{}</span> <span class="se">\;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="adding-a-custom-repository">
+<h3>4.5.3.2.3. Adding a Custom Repository<a class="headerlink" href="#adding-a-custom-repository" title="Permalink to this headline">¶</a></h3>
+<p>For this section, we will assume that you have a repository named <code class="docutils literal"><span class="pre">foo</span></code> that
+you would like to expose to your systems. To do this, perform the following:</p>
+<blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> /var/www/yum
+$ mkdir foo
+$ <span class="nb">cd</span> foo
+$ -- copy all RPMs into the folder
+$ createrepo .
+$ chown -R root.apache ./*
+$ find . -type f -exec chmod <span class="m">640</span> <span class="o">{}</span> <span class="se">\;</span>
+$ find . -type d -exec chmod <span class="m">750</span> <span class="o">{}</span> <span class="se">\;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For more information on managing YUM repos, please see the
+<a class="reference external" href="https://access.redhat.com/solutions/9892">Red Hat local repository Documentation</a>.</p>
+</div>
+</div>
+<div class="section" id="configuring-the-clients">
+<h3>4.5.3.2.4. Configuring the Clients<a class="headerlink" href="#configuring-the-clients" title="Permalink to this headline">¶</a></h3>
+<p>Now that you&#8217;ve added this repository, you&#8217;re going to want to add it to your
+clients.</p>
+<p>The best way to do this is to make it part of your site profile. You <strong>can</strong>
+make it part of your module, but you will need to wrap it in a Defined Type so
+that the server parameter can be modified.</p>
+<p>To add it to your clients, use the puppet <code class="docutils literal"><span class="pre">yumrepo</span></code> Type. You can find more
+information in the <a class="reference external" href="https://docs.puppet.com/puppet/latest/type.html">Puppet Type Reference</a>.</p>
+<p>The following is a basic <code class="docutils literal"><span class="pre">yumrepo</span></code> example:</p>
+<div class="highlight-ruby"><div class="highlight"><pre><span></span><span class="n">yumrepo</span> <span class="p">{</span> <span class="ss">example</span><span class="p">:</span>
+  <span class="n">baseurl</span>         <span class="o">=&gt;</span> <span class="s2">&quot;http://your.server.fqdn/yum/foo&quot;</span><span class="p">,</span>
+  <span class="n">enabled</span>         <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="n">enablegroups</span>    <span class="o">=&gt;</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="n">gpgcheck</span>        <span class="o">=&gt;</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="n">keepalive</span>       <span class="o">=&gt;</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="n">metadata_expire</span> <span class="o">=&gt;</span> <span class="mi">3600</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="session-auditing">
+<h2>4.5.3.3. Session auditing<a class="headerlink" href="#session-auditing" title="Permalink to this headline">¶</a></h2>
+<p>By default, a SIMP system uses <a class="reference internal" href="../../glossary.html#term-sudosh"><span class="xref std std-term">Sudosh</span></a> to enable logging of sudo
+sessions to <code class="docutils literal"><span class="pre">Rsyslog</span></code>.</p>
+<p>To open a <code class="docutils literal"><span class="pre">sudo</span></code> session from a regular user to <code class="docutils literal"><span class="pre">root</span></code>, you should type
+<code class="docutils literal"><span class="pre">sudo</span> <span class="pre">sudosh</span></code>.</p>
+<p><code class="docutils literal"><span class="pre">sudosh</span></code> logs are stored in <code class="docutils literal"><span class="pre">/var/log/sudosh.log</span></code>. Sessions can be replayed
+by typing <code class="docutils literal"><span class="pre">sudosh-syslog-replay</span></code>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The SIMP system does not allow the <code class="docutils literal"><span class="pre">root</span></code> user to execute <code class="docutils literal"><span class="pre">sudo</span></code> by
+default per common configuration guidance.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>If you built your system from an ISO, you will probably have a local
+<code class="docutils literal"><span class="pre">simp</span></code> user that has the ability to run <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">su</span> <span class="pre">-</span> <span class="pre">root</span></code> directly and
+bypass <code class="docutils literal"><span class="pre">sudosh</span></code>.</p>
+<p class="last">This is meant as an emergency &#8216;break glass&#8217; user and should be removed or
+disabled once your environment is configured to your satisfaction.</p>
+</div>
+</div>
+<div class="section" id="user-accounts">
+<h2>4.5.3.4. User Accounts<a class="headerlink" href="#user-accounts" title="Permalink to this headline">¶</a></h2>
+<p>The SIMP team tests both local and <a class="reference internal" href="../../glossary.html#term-ldap"><span class="xref std std-term">LDAP</span></a> account access to systems.
+Other modes of access may function but are not tested by the SIMP test suite at
+this time.</p>
+<p>We recommend that LDAP be used for adding all human users so that there is no
+conflict with multiple system updates and synchronization.  For more
+information on managing LDAP users, refer to the <a class="reference internal" href="../User_Management.html#user-management"><span class="std std-ref">User Management</span></a>
+chapter.</p>
+<p>If you need to create local system accounts, you can use the <code class="docutils literal"><span class="pre">user</span></code> and
+<code class="docutils literal"><span class="pre">group</span></code> Native Types.</p>
+</div>
+<div class="section" id="certificate-management">
+<span id="id1"></span><h2>4.5.3.5. Certificate Management<a class="headerlink" href="#certificate-management" title="Permalink to this headline">¶</a></h2>
+<p>This section describes the two different types of certificates used in a SIMP
+system and how to manage them. For information on initial certificate setup,
+refer to the <a class="reference internal" href="../Client_Management.html#certificates"><span class="std std-ref">Apply Certificates</span></a> section of <a class="reference internal" href="../Client_Management.html#client-management"><span class="std std-ref">Client Management</span></a>.</p>
+<div class="section" id="infrastructure-certificates">
+<h3>4.5.3.5.1. Infrastructure Certificates<a class="headerlink" href="#infrastructure-certificates" title="Permalink to this headline">¶</a></h3>
+<p>Server certificates are the standard <a class="reference internal" href="../../glossary.html#term-pki"><span class="xref std std-term">PKI</span></a> certificates assigned either
+by an official <a class="reference internal" href="../../glossary.html#term-ca"><span class="xref std std-term">CA</span></a> (preferred) or generated using the FakeCA utility
+offered by SIMP. Generated certificates are placed in the <code class="docutils literal"><span class="pre">/etc/pki/simp</span></code>
+directory of all managed systems.  These certificates are set to expire
+annually. To change this, edit the following files with the number of days for
+the desired lifespan of the certificates:</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This assumes that the user has generated Certificates with the FakeCA
+provided by SIMP. If official certificates are being used, these settings
+<strong>must be changed within the official CA, not on the SIMP system</strong>.</p>
+</div>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">/var/simp/environments/simp/FakeCA/CA</span></code></li>
+<li><code class="docutils literal"><span class="pre">/var/simp/environments/simp/FakeCA/ca.cnf</span></code></li>
+<li><code class="docutils literal"><span class="pre">/var/simp/environments/simp/FakeCA/default\_altnames.cnf</span></code></li>
+<li><code class="docutils literal"><span class="pre">/var/simp/environments/simp/FakeCA/default.cnf</span></code></li>
+<li><code class="docutils literal"><span class="pre">/var/simp/environments/simp/FakeCA/user.cnf</span></code></li>
+</ul>
+<p>In addition, any certificates that have already been created and signed will
+have a config file containing all of its details in
+<code class="docutils literal"><span class="pre">/var/simp/environments/simp/FakeCA/output/conf/</span></code>.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Editing any entries in the above mentioned config files will <strong>not</strong> affect
+existing certificates. Existing certificates must be regenerated if you need
+to make changes.</p>
+</div>
+<p>The following is an example of how to change the expiration time from one year
+(the default) to five years for any newly created certificate.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="k">for</span> file in <span class="k">$(</span>grep -rl <span class="m">365</span> /var/simp/environments/simp/FakeCA/<span class="k">)</span>
+<span class="k">do</span>
+   sed -i <span class="s1">&#39;s/365/1825/&#39;</span> <span class="nv">$file</span>
+<span class="k">done</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="puppet-certificates">
+<h3>4.5.3.5.2. Puppet Certificates<a class="headerlink" href="#puppet-certificates" title="Permalink to this headline">¶</a></h3>
+<p>Puppet certificates are issued and maintained strictly within Puppet.  They are
+different from the server certificates and should be managed with the
+<code class="docutils literal"><span class="pre">puppet</span> <span class="pre">cert</span></code> utility.</p>
+<p>For documentation on the <code class="docutils literal"><span class="pre">puppet</span> <span class="pre">cert</span></code> tool, visit the <a class="reference external" href="https://docs.puppet.com/puppet/latest/man/cert.html">Puppet Inc. cert manual</a>.</p>
+<p>You can find the location for the Puppet certificates on your system by running
+<code class="docutils literal"><span class="pre">puppet</span> <span class="pre">config</span> <span class="pre">print</span> <span class="pre">ssldir</span></code>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">By default, Puppet certificates expire every five (5) years.</p>
+</div>
+</div>
+</div>
+<div class="section" id="the-simp-utility">
+<h2>4.5.3.6. The SIMP Utility<a class="headerlink" href="#the-simp-utility" title="Permalink to this headline">¶</a></h2>
+<p>The SIMP server provides a command line utility called <code class="docutils literal"><span class="pre">simp</span></code> that is an
+interface into SIMP-specific settings and subsystems.</p>
+<p>You can get information on the <code class="docutils literal"><span class="pre">simp</span></code> utility by running <code class="docutils literal"><span class="pre">simp</span> <span class="pre">help</span></code> on
+your SIMP server.</p>
+<div class="section" id="simp-passgen">
+<span id="id2"></span><h3>4.5.3.6.1. simp passgen<a class="headerlink" href="#simp-passgen" title="Permalink to this headline">¶</a></h3>
+<p>Throughout the SIMP codebase, you may find references to the <code class="docutils literal"><span class="pre">passgen()</span></code>
+function. This function auto-generates passwords and stores them in
+<code class="docutils literal"><span class="pre">/opt/puppetlabs/server/data/puppetserver/simp/environments/&lt;environment&gt;/simp_autofiles/gen_passwd</span></code>
+on the Puppet server.</p>
+<p>For more information, see the <a class="reference external" href="https://github.com/simp/pupmod-simp-simplib/blob/master/lib/puppet/parser/functions/passgen.rb">passgen()</a> documentation.</p>
+</div>
+</div>
+<div class="section" id="gui">
+<h2>4.5.3.7. GUI<a class="headerlink" href="#gui" title="Permalink to this headline">¶</a></h2>
+<p>SIMP was designed as a minimized system, but you may occasionally need a GUI.
+Refer to the <a class="reference internal" href="../HOWTO/Managing_Workstation_Infrastructures.html#graphical-desktop-setup"><span class="std std-ref">Graphical Desktop Setup</span></a> documentation for information on
+setting up GUIs for the systems.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../User_Management.html" class="btn btn-neutral float-right" title="4.6. User Management" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Integrating_Applications.html" class="btn btn-neutral" title="4.5.2. Integrating Applications" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, THE SIMP TEAM.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'4.2.X',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

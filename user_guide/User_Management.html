@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.4. User Management &mdash; SIMP 5.2.1-0 documentation</title>
+  <title>4.6. User Management &mdash; SIMP 5.2.1-0 documentation</title>
   
 
   
@@ -38,8 +38,8 @@
   
     <link rel="top" title="SIMP 5.2.1-0 documentation" href="../index.html"/>
         <link rel="up" title="4. SIMP User Guide" href="index.html"/>
-        <link rel="next" title="4.4.1. Managing Users with Lightweight Directory Access Protocol (LDAP)" href="User_Management/LDAP.html"/>
-        <link rel="prev" title="4.3. General Administration" href="SIMP_Administration.html"/> 
+        <link rel="next" title="4.6.1. Managing Users with Lightweight Directory Access Protocol (LDAP)" href="User_Management/LDAP.html"/>
+        <link rel="prev" title="4.5.3. General Administration" href="SIMP_Administration/General_Administration.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -100,18 +100,19 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">4. User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Introduction.html">4.1. Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Client_Management.html">4.2. Client Management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SIMP_Administration.html">4.3. General Administration</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">4.4. User Management</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="User_Management/LDAP.html">4.4.1. Managing Users with Lightweight Directory Access Protocol (LDAP)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="User_Management/Local_Users.html">4.4.2. Managing Local/Service Users</a></li>
-<li class="toctree-l3"><a class="reference internal" href="User_Management/SSSD.html">4.4.3. Managing SSSD LOCAL Domain And Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Client_Management.html#configure-pxe-boot">4.3. Configure PXE Boot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Client_Management.html#apply-certificates">4.4. Apply Certificates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SIMP_Administration.html">4.5. SIMP Administration</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.6. User Management</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="User_Management/LDAP.html">4.6.1. Managing Users with Lightweight Directory Access Protocol (LDAP)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="User_Management/Local_Users.html">4.6.2. Managing Local/Service Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="User_Management/SSSD.html">4.6.3. Managing SSSD LOCAL Domain And Users</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Hiera_Overview.html">4.5. Hiera Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Troubleshooting.html">4.6. Troubleshooting Common Issues</a></li>
-<li class="toctree-l2"><a class="reference internal" href="HOWTO.html">4.7. SIMP HOWTO Guides</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SIMP_Package_Data.html">4.8. Package Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#indices-and-tables">4.9. Indices and tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Troubleshooting.html">4.7. Troubleshooting Common Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOWTO.html">4.8. SIMP HOWTO Guides</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SIMP_Package_Data.html">4.9. Package Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#indices-and-tables">4.10. Indices and tables</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../contributors_guide/index.html">5. Contributing to SIMP</a></li>
@@ -147,7 +148,7 @@
       
           <li><a href="index.html">4. SIMP User Guide</a> &raquo;</li>
       
-    <li>4.4. User Management</li>
+    <li>4.6. User Management</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -162,42 +163,42 @@
            <div itemprop="articleBody">
             
   <div class="section" id="user-management">
-<span id="id1"></span><h1>4.4. User Management<a class="headerlink" href="#user-management" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>4.6. User Management<a class="headerlink" href="#user-management" title="Permalink to this headline">¶</a></h1>
 <p>This chapter explains how to manage users in the default SIMP environment.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="User_Management/LDAP.html">4.4.1. Managing Users with Lightweight Directory Access Protocol (LDAP)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="User_Management/LDAP.html#prepare-simp-ldifs">4.4.1.1. Prepare SIMP ldifs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="User_Management/LDAP.html#add-a-user">4.4.1.2. Add a User</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="User_Management/LDAP.html#add-a-user-with-a-password">4.4.1.2.1. Add a User with a Password</a></li>
-<li class="toctree-l3"><a class="reference internal" href="User_Management/LDAP.html#add-a-user-without-a-password">4.4.1.2.2. Add a User without a Password</a></li>
+<li class="toctree-l1"><a class="reference internal" href="User_Management/LDAP.html">4.6.1. Managing Users with Lightweight Directory Access Protocol (LDAP)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="User_Management/LDAP.html#prepare-simp-ldifs">4.6.1.1. Prepare SIMP ldifs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="User_Management/LDAP.html#add-a-user">4.6.1.2. Add a User</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="User_Management/LDAP.html#add-a-user-with-a-password">4.6.1.2.1. Add a User with a Password</a></li>
+<li class="toctree-l3"><a class="reference internal" href="User_Management/LDAP.html#add-a-user-without-a-password">4.6.1.2.2. Add a User without a Password</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="User_Management/LDAP.html#remove-a-user">4.4.1.3. Remove a User</a></li>
-<li class="toctree-l2"><a class="reference internal" href="User_Management/LDAP.html#additional-common-ldap-operations">4.4.1.4. Additional Common LDAP Operations</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="User_Management/LDAP.html#add-a-group">4.4.1.4.1. Add a Group</a></li>
-<li class="toctree-l3"><a class="reference internal" href="User_Management/LDAP.html#remove-a-group">4.4.1.4.2. Remove a Group</a></li>
-<li class="toctree-l3"><a class="reference internal" href="User_Management/LDAP.html#add-users-to-a-group">4.4.1.4.3. Add Users to a Group</a></li>
-<li class="toctree-l3"><a class="reference internal" href="User_Management/LDAP.html#remove-users-from-a-group">4.4.1.4.4. Remove Users from a Group</a></li>
-<li class="toctree-l3"><a class="reference internal" href="User_Management/LDAP.html#update-a-user-s-ssh-public-key">4.4.1.4.5. Update a User&#8217;s SSH Public Key</a></li>
-<li class="toctree-l3"><a class="reference internal" href="User_Management/LDAP.html#force-a-password-reset">4.4.1.4.6. Force a Password Reset</a></li>
-<li class="toctree-l3"><a class="reference internal" href="User_Management/LDAP.html#lock-an-ldap-account">4.4.1.4.7. Lock an LDAP Account</a></li>
-<li class="toctree-l3"><a class="reference internal" href="User_Management/LDAP.html#unlock-an-ldap-account">4.4.1.4.8. Unlock an LDAP Account</a></li>
+<li class="toctree-l2"><a class="reference internal" href="User_Management/LDAP.html#remove-a-user">4.6.1.3. Remove a User</a></li>
+<li class="toctree-l2"><a class="reference internal" href="User_Management/LDAP.html#additional-common-ldap-operations">4.6.1.4. Additional Common LDAP Operations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="User_Management/LDAP.html#add-a-group">4.6.1.4.1. Add a Group</a></li>
+<li class="toctree-l3"><a class="reference internal" href="User_Management/LDAP.html#remove-a-group">4.6.1.4.2. Remove a Group</a></li>
+<li class="toctree-l3"><a class="reference internal" href="User_Management/LDAP.html#add-users-to-a-group">4.6.1.4.3. Add Users to a Group</a></li>
+<li class="toctree-l3"><a class="reference internal" href="User_Management/LDAP.html#remove-users-from-a-group">4.6.1.4.4. Remove Users from a Group</a></li>
+<li class="toctree-l3"><a class="reference internal" href="User_Management/LDAP.html#update-a-user-s-ssh-public-key">4.6.1.4.5. Update a User&#8217;s SSH Public Key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="User_Management/LDAP.html#force-a-password-reset">4.6.1.4.6. Force a Password Reset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="User_Management/LDAP.html#lock-an-ldap-account">4.6.1.4.7. Lock an LDAP Account</a></li>
+<li class="toctree-l3"><a class="reference internal" href="User_Management/LDAP.html#unlock-an-ldap-account">4.6.1.4.8. Unlock an LDAP Account</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="User_Management/LDAP.html#troubleshooting-issues">4.4.1.5. Troubleshooting Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="User_Management/LDAP.html#troubleshooting-issues">4.6.1.5. Troubleshooting Issues</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="User_Management/Local_Users.html">4.4.2. Managing Local/Service Users</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="User_Management/Local_Users.html#local-user-account">4.4.2.1. Local User Account</a></li>
-<li class="toctree-l2"><a class="reference internal" href="User_Management/Local_Users.html#service-account">4.4.2.2. Service Account</a></li>
-<li class="toctree-l2"><a class="reference internal" href="User_Management/Local_Users.html#testing">4.4.2.3. Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="User_Management/Local_Users.html">4.6.2. Managing Local/Service Users</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="User_Management/Local_Users.html#local-user-account">4.6.2.1. Local User Account</a></li>
+<li class="toctree-l2"><a class="reference internal" href="User_Management/Local_Users.html#service-account">4.6.2.2. Service Account</a></li>
+<li class="toctree-l2"><a class="reference internal" href="User_Management/Local_Users.html#testing">4.6.2.3. Testing</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="User_Management/SSSD.html">4.4.3. Managing SSSD LOCAL Domain And Users</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="User_Management/SSSD.html#sssd-local-domain">4.4.3.1. SSSD LOCAL Domain</a></li>
-<li class="toctree-l2"><a class="reference internal" href="User_Management/SSSD.html#adding-an-sssd-local-user">4.4.3.2. Adding an SSSD Local User</a></li>
-<li class="toctree-l2"><a class="reference internal" href="User_Management/SSSD.html#giving-the-user-access">4.4.3.3. Giving The User Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="User_Management/SSSD.html">4.6.3. Managing SSSD LOCAL Domain And Users</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="User_Management/SSSD.html#sssd-local-domain">4.6.3.1. SSSD LOCAL Domain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="User_Management/SSSD.html#adding-an-sssd-local-user">4.6.3.2. Adding an SSSD Local User</a></li>
+<li class="toctree-l2"><a class="reference internal" href="User_Management/SSSD.html#giving-the-user-access">4.6.3.3. Giving The User Access</a></li>
 </ul>
 </li>
 </ul>
@@ -211,10 +212,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="User_Management/LDAP.html" class="btn btn-neutral float-right" title="4.4.1. Managing Users with Lightweight Directory Access Protocol (LDAP)" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="User_Management/LDAP.html" class="btn btn-neutral float-right" title="4.6.1. Managing Users with Lightweight Directory Access Protocol (LDAP)" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="SIMP_Administration.html" class="btn btn-neutral" title="4.3. General Administration" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="SIMP_Administration/General_Administration.html" class="btn btn-neutral" title="4.5.3. General Administration" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

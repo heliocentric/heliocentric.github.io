@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.6.4. Puppet Certificate Issues &mdash; SIMP 5.2.1-0 documentation</title>
+  <title>4.7.4. Puppet Certificate Issues &mdash; SIMP 5.2.1-0 documentation</title>
   
 
   
@@ -37,9 +37,9 @@
 
   
     <link rel="top" title="SIMP 5.2.1-0 documentation" href="../../index.html"/>
-        <link rel="up" title="4.6. Troubleshooting Common Issues" href="../Troubleshooting.html"/>
-        <link rel="next" title="4.7. SIMP HOWTO Guides" href="../HOWTO.html"/>
-        <link rel="prev" title="4.6.3. Checking Your SIMP PKI Communication" href="PKI_Validation.html"/> 
+        <link rel="up" title="4.7. Troubleshooting Common Issues" href="../Troubleshooting.html"/>
+        <link rel="next" title="4.8. SIMP HOWTO Guides" href="../HOWTO.html"/>
+        <link rel="prev" title="4.7.3. Checking Your SIMP PKI Communication" href="PKI_Validation.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -100,23 +100,24 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">4. User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../Introduction.html">4.1. Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Client_Management.html">4.2. Client Management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../SIMP_Administration.html">4.3. General Administration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../User_Management.html">4.4. User Management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Hiera_Overview.html">4.5. Hiera Overview</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../Troubleshooting.html">4.6. Troubleshooting Common Issues</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="My_Services_Are_Dying.html">4.6.1. My Services Are Dying!</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Why_Cant_I_Login.html">4.6.2. Why Can&#8217;t I Login?!</a></li>
-<li class="toctree-l3"><a class="reference internal" href="PKI_Validation.html">4.6.3. Checking Your SIMP PKI Communication</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">4.6.4. Puppet Certificate Issues</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#puppet-client-certificate-issues">4.6.4.1. Puppet Client Certificate Issues</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#puppet-server-certificate-issues">4.6.4.2. Puppet Server Certificate Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Client_Management.html#configure-pxe-boot">4.3. Configure PXE Boot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Client_Management.html#apply-certificates">4.4. Apply Certificates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SIMP_Administration.html">4.5. SIMP Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../User_Management.html">4.6. User Management</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Troubleshooting.html">4.7. Troubleshooting Common Issues</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="My_Services_Are_Dying.html">4.7.1. My Services Are Dying!</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Why_Cant_I_Login.html">4.7.2. Why Can&#8217;t I Login?!</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PKI_Validation.html">4.7.3. Checking Your SIMP PKI Communication</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">4.7.4. Puppet Certificate Issues</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#puppet-client-certificate-issues">4.7.4.1. Puppet Client Certificate Issues</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#puppet-server-certificate-issues">4.7.4.2. Puppet Server Certificate Issues</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../HOWTO.html">4.7. SIMP HOWTO Guides</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../SIMP_Package_Data.html">4.8. Package Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#indices-and-tables">4.9. Indices and tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../HOWTO.html">4.8. SIMP HOWTO Guides</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SIMP_Package_Data.html">4.9. Package Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#indices-and-tables">4.10. Indices and tables</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../contributors_guide/index.html">5. Contributing to SIMP</a></li>
@@ -152,9 +153,9 @@
       
           <li><a href="../index.html">4. SIMP User Guide</a> &raquo;</li>
       
-          <li><a href="../Troubleshooting.html">4.6. Troubleshooting Common Issues</a> &raquo;</li>
+          <li><a href="../Troubleshooting.html">4.7. Troubleshooting Common Issues</a> &raquo;</li>
       
-    <li>4.6.4. Puppet Certificate Issues</li>
+    <li>4.7.4. Puppet Certificate Issues</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -169,9 +170,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="puppet-certificate-issues">
-<h1>4.6.4. Puppet Certificate Issues<a class="headerlink" href="#puppet-certificate-issues" title="Permalink to this headline">¶</a></h1>
+<h1>4.7.4. Puppet Certificate Issues<a class="headerlink" href="#puppet-certificate-issues" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="puppet-client-certificate-issues">
-<h2>4.6.4.1. Puppet Client Certificate Issues<a class="headerlink" href="#puppet-client-certificate-issues" title="Permalink to this headline">¶</a></h2>
+<h2>4.7.4.1. Puppet Client Certificate Issues<a class="headerlink" href="#puppet-client-certificate-issues" title="Permalink to this headline">¶</a></h2>
 <p>Most of the time, clients will have certificate issues due to the system clock
 not being properly set. Before taking any other measures, make sure that your
 system clock is correct on both the master and the clients!</p>
@@ -193,7 +194,7 @@ Puppet certificates to <strong>all</strong> of your nodes!</p>
 <p class="last"><strong>NEVER RUN ``puppet cert clean &#8211;all``</strong></p>
 </div>
 <div class="section" id="puppet-client-re-registration">
-<h3>4.6.4.1.1. Puppet Client Re-Registration<a class="headerlink" href="#puppet-client-re-registration" title="Permalink to this headline">¶</a></h3>
+<h3>4.7.4.1.1. Puppet Client Re-Registration<a class="headerlink" href="#puppet-client-re-registration" title="Permalink to this headline">¶</a></h3>
 <p>If, for some reason, you need to re-register your client with a new server,
 simply run the following on your client once the server is ready.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ rm -rf <span class="sb">`</span>puppet config print ssldir<span class="sb">`</span>
@@ -203,7 +204,7 @@ $ puppet agent -t
 </div>
 </div>
 <div class="section" id="puppet-server-certificate-issues">
-<h2>4.6.4.2. Puppet Server Certificate Issues<a class="headerlink" href="#puppet-server-certificate-issues" title="Permalink to this headline">¶</a></h2>
+<h2>4.7.4.2. Puppet Server Certificate Issues<a class="headerlink" href="#puppet-server-certificate-issues" title="Permalink to this headline">¶</a></h2>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">This is destructive to your Puppet communications. This should only be used
@@ -231,10 +232,10 @@ $ puppet agent --test
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../HOWTO.html" class="btn btn-neutral float-right" title="4.7. SIMP HOWTO Guides" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../HOWTO.html" class="btn btn-neutral float-right" title="4.8. SIMP HOWTO Guides" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="PKI_Validation.html" class="btn btn-neutral" title="4.6.3. Checking Your SIMP PKI Communication" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="PKI_Validation.html" class="btn btn-neutral" title="4.7.3. Checking Your SIMP PKI Communication" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
