@@ -121,3 +121,6 @@ files in each folder that represents and rsync share called ``.shares``. There
 is a fact in the ``simp`` modules that checks for that files. The fact is then
 ingested by ``simp::server::rsync_shares`` and rsync shares are created on the
 Puppet server.
+.. _simp-core Git repository: https://github.com/simp/simp-core/tree/master/build/distributions/CentOS/7/x86_64/DVD/ks
+.. _simp-core: https://github.com/simp/simp-core/
+.. _documentation of a control repo online: https://docs.puppet.com/pe/latest/cmgmt_control_repo.html

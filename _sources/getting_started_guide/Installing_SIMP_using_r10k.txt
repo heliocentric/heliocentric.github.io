@@ -125,3 +125,4 @@ Updates URL.
 .. _runpuppet: https://github.com/simp/pupmod-simp-simp/blob/master/manifests/server/kickstart/runpuppet.pp
 .. _simp-core Git repository: https://github.com/simp/simp-core/tree/master/build/distributions/CentOS/7/x86_64/DVD/ks
 .. _simp-core: https://github.com/simp/simp-core/
+.. _documentation of a control repo online: https://docs.puppet.com/pe/latest/cmgmt_control_repo.html
