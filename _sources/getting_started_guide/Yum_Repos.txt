@@ -1,5 +1,5 @@
 Enable EPEL
-~~~~~~~~~~
+~~~~~~~~~~~
 
 .. code-block:: bash
 
