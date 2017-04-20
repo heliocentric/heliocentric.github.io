@@ -18,7 +18,10 @@ a valid support license do not invalidate their support by using SIMP.
 
 XXX TODO Insert further information relevant to the disclaimer
 
-XXX TODO Adding modules to Puppetfile in control-repo
+To install SIMP, you need to first add the modules to your control repo.
+At this time only all SIMP modules at once is a supported configuration.
+
+XXX TODO insert relevant sections of Install_Simp_from_r10k_
 
 XXX TODO Setting hiera simp_options::server_distribution
 
