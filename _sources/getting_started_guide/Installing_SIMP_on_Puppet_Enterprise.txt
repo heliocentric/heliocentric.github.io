@@ -6,11 +6,26 @@ Installing SIMP on Puppet Enterprise
 .. contents:: Contents:
   :local:
 
+Prerequisites
+^^^^^^^^^^^^^
+
 As of 6.0, SIMP can now be installed on top of an existing
 Puppet Enterprise installation. Once installed SIMP will 
 configure itself to add the necessary firewall rules, and service
 level exclusions based only on changes made to the PE Console.
 
+The following versions of Puppet Enterprise are currently supported:
+
++------------+--------------+-------------------------------------------------------+
+| PE Version | SIMP Version | Notes                                                 | 
++===================================================================================+
+| 2016.4     | 6.0          |                                                       |
+| 2016.5     | 6.0          | SIMP does not support HA without manual configuration |
+| 2017.1     | 6.0          | SIMP does not support HA without manual configuration |
++------------+--------------+-------------------------------------------------------+
+
+Disclaimer
+^^^^^^^^^^
 SIMP will attempt to make minor compliance changes to Puppet
 Enterprise on certain versions. However we have not made major changes
 to bring it in-line with FIPS 140-2 to ensure that SIMP users who have
@@ -18,8 +33,10 @@ a valid support license do not invalidate their support by using SIMP.
 
 XXX TODO Insert further information relevant to the disclaimer
 
-To install SIMP, you need to first add the modules to your control repo.
-At this time only all SIMP modules at once is a supported configuration.
+Procedure
+^^^^^^^^^
+
+Installing SIMP on top of Puppet Enterprise is a multi-step process
 
 .. include:: Creating_A_SIMP_Control_Repo.rst
 
