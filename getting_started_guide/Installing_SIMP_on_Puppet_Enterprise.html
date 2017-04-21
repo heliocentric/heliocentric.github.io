@@ -109,10 +109,8 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#disclaimer">3.5.3. Disclaimer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pre-install-tasks">3.5.4. Pre-install tasks</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#creating-or-updating-your-control-repo">3.5.5. Creating or updating your Control Repo</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#configuring-hiera">3.5.5.1. Configuring Hiera</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-or-updating-your-control-repo">3.5.5. Creating or updating your Control Repo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-hiera">3.5.6. Configuring Hiera</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="Building_A_SIMP_ISO.html">3.6. Building a SIMP ISO</a></li>
@@ -184,10 +182,8 @@
 </li>
 <li><a class="reference internal" href="#disclaimer" id="id6">Disclaimer</a></li>
 <li><a class="reference internal" href="#pre-install-tasks" id="id7">Pre-install tasks</a></li>
-<li><a class="reference internal" href="#creating-or-updating-your-control-repo" id="id8">Creating or updating your Control Repo</a><ul>
+<li><a class="reference internal" href="#creating-or-updating-your-control-repo" id="id8">Creating or updating your Control Repo</a></li>
 <li><a class="reference internal" href="#configuring-hiera" id="id9">Configuring Hiera</a></li>
-</ul>
-</li>
 </ul>
 </div>
 <div class="section" id="overview">
@@ -428,8 +424,9 @@ Puppet server.
 .. _simp-core Git repository: <a class="reference external" href="https://github.com/simp/simp-core/tree/master/build/distributions/CentOS/7/x86_64/DVD/ks">https://github.com/simp/simp-core/tree/master/build/distributions/CentOS/7/x86_64/DVD/ks</a>
 .. _simp-core: <a class="reference external" href="https://github.com/simp/simp-core/">https://github.com/simp/simp-core/</a>
 .. _documentation of a control repo online: <a class="reference external" href="https://docs.puppet.com/pe/latest/cmgmt_control_repo.html">https://docs.puppet.com/pe/latest/cmgmt_control_repo.html</a></p>
+</div>
 <div class="section" id="configuring-hiera">
-<h3><a class="toc-backref" href="#id9">3.5.5.1. Configuring Hiera</a><a class="headerlink" href="#configuring-hiera" title="Permalink to this headline">¶</a></h3>
+<h2><a class="toc-backref" href="#id9">3.5.6. Configuring Hiera</a><a class="headerlink" href="#configuring-hiera" title="Permalink to this headline">¶</a></h2>
 <p>In order to configure a working SIMP environment in a control-repo, you will need to add some settings to hiera. If you do not have a hiera.yaml in the root of your control-repo, you can use Puppet’s environment layer feature and just create a hiera.yaml file with the following contents:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="nn">---</span>
 <span class="l l-Scalar l-Scalar-Plain">version</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">4</span>
@@ -447,7 +444,6 @@ Puppet server.
 </pre></div>
 </div>
 <p>XXX TODO Node Classification recommendations</p>
-</div>
 </div>
 </div>
 
