@@ -112,8 +112,9 @@
 <li class="toctree-l3"><a class="reference internal" href="#disclaimer">3.5.3. Disclaimer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pre-install-tasks">3.5.4. Pre-install tasks</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#creating-or-updating-your-control-repo">3.5.5. Creating or updating your Control Repo</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#keydist-rsync-and-the-alternate-module-path">3.5.6. Keydist, Rsync, and the Alternate Module Path</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#configuring-hiera">3.5.7. Configuring Hiera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-simp-modules-to-the-puppetfile">3.5.6. Adding SIMP Modules to the Puppetfile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#keydist-rsync-and-the-alternate-module-path">3.5.7. Keydist, Rsync, and the Alternate Module Path</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-hiera">3.5.8. Configuring Hiera</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="Building_A_SIMP_ISO.html">3.6. Building a SIMP ISO</a></li>
@@ -184,8 +185,9 @@
 <li><a class="reference internal" href="#disclaimer" id="id6">Disclaimer</a></li>
 <li><a class="reference internal" href="#pre-install-tasks" id="id7">Pre-install tasks</a></li>
 <li><a class="reference internal" href="#creating-or-updating-your-control-repo" id="id8">Creating or updating your Control Repo</a></li>
-<li><a class="reference internal" href="#keydist-rsync-and-the-alternate-module-path" id="id9">Keydist, Rsync, and the Alternate Module Path</a></li>
-<li><a class="reference internal" href="#configuring-hiera" id="id10">Configuring Hiera</a></li>
+<li><a class="reference internal" href="#adding-simp-modules-to-the-puppetfile" id="id9">Adding SIMP Modules to the Puppetfile</a></li>
+<li><a class="reference internal" href="#keydist-rsync-and-the-alternate-module-path" id="id10">Keydist, Rsync, and the Alternate Module Path</a></li>
+<li><a class="reference internal" href="#configuring-hiera" id="id11">Configuring Hiera</a></li>
 </ul>
 </div>
 <div class="section" id="overview">
@@ -293,37 +295,9 @@ a valid support license do not invalidate their support by using SIMP.</p>
 </div>
 <div class="section" id="pre-install-tasks">
 <h2><a class="toc-backref" href="#id7">3.5.4. Pre-install tasks</a><a class="headerlink" href="#pre-install-tasks" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="creating-or-updating-your-control-repo">
-<h2><a class="toc-backref" href="#id8">3.5.5. Creating or updating your Control Repo</a><a class="headerlink" href="#creating-or-updating-your-control-repo" title="Permalink to this headline">¶</a></h2>
-<p>In order to use <a class="reference internal" href="../glossary.html#term-r10k"><span class="xref std std-term">r10k</span></a> or <a class="reference internal" href="../glossary.html#term-code-manager"><span class="xref std std-term">Code Manager</span></a> with SIMP, you must create or update your <a class="reference internal" href="../glossary.html#term-control-repo"><span class="xref std std-term">Control repo</span></a> with the following components:</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="24%" />
-<col width="76%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">File/Directory</th>
-<th class="head">Description of changes</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>environment.conf</td>
-<td>Configures the alternate module path for rsync and pki</td>
-</tr>
-<tr class="row-odd"><td>Puppetfile</td>
-<td>Add SIMP Puppet Modules</td>
-</tr>
-<tr class="row-even"><td>hieradata/</td>
-<td>Directory that needs to contain SIMP top-scope hiera data</td>
-</tr>
-<tr class="row-odd"><td>hiera.yaml</td>
-<td>Configured with simp::scenario settings and compliance map</td>
-</tr>
-</tbody>
-</table>
+<p>XXX TODO: place this chunk where it makes sense</p>
 <p>SIMP uses a <a class="reference internal" href="../glossary.html#term-puppetfile"><span class="xref std std-term">Puppetfile</span></a> and distributes some of a <a class="reference internal" href="../glossary.html#term-control-repo"><span class="xref std std-term">Control Repo</span></a> in
-the <code class="docutils literal"><span class="pre">simp-environment</span></code> package, or also in the <a href="#id11"><span class="problematic" id="id12">`simp-core`_</span></a> repository.:</p>
+the <code class="docutils literal"><span class="pre">simp-environment</span></code> package, or also in the <a href="#id12"><span class="problematic" id="id13">`simp-core`_</span></a> repository.:</p>
 <p>On the filesystem of an installed SIMP system:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ tree -L <span class="m">1</span> /usr/share/simp/environments/simp/
 /usr/share/simp/environments/simp/
@@ -341,12 +315,48 @@ src/assets/simp-environment/environments/simp
 └── manifests/
 </pre></div>
 </div>
+<p>XXX TODO: END</p>
+</div>
+<div class="section" id="creating-or-updating-your-control-repo">
+<h2><a class="toc-backref" href="#id8">3.5.5. Creating or updating your Control Repo</a><a class="headerlink" href="#creating-or-updating-your-control-repo" title="Permalink to this headline">¶</a></h2>
 <p>A Control Repo contains the modules, hieradata, and roles/profiles required for
 an infrastructure, and keeping it all in a git repo creates a workflow for
 updating and developing on your Puppet infrastructure.</p>
-<p>The modules are defined in a <a class="reference internal" href="../glossary.html#term-puppetfile"><span class="xref std std-term">Puppetfile</span></a>, which SIMP uses as a development
-tool. We keep an up-to-date Puppetfile in the core of our repo, which you can
-download using this snippet:</p>
+<p>Change into the directory you&#8217;re using from above and run <code class="docutils literal"><span class="pre">git</span> <span class="pre">init</span></code> to create
+a control repo. Puppet, Inc has some great <a href="#id14"><span class="problematic" id="id15">`documentation of a control repo online`_</span></a>.</p>
+<p>In order to use <a class="reference internal" href="../glossary.html#term-r10k"><span class="xref std std-term">r10k</span></a> or <a class="reference internal" href="../glossary.html#term-code-manager"><span class="xref std std-term">Code Manager</span></a> with SIMP, you must create
+or update your <a class="reference internal" href="../glossary.html#term-control-repo"><span class="xref std std-term">Control repo</span></a> with the following components:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="76%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">File/Directory</th>
+<th class="head">Description of changes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Puppetfile</td>
+<td>Add SIMP Puppet Modules</td>
+</tr>
+<tr class="row-odd"><td>environment.conf</td>
+<td>Configures the alternate module path for rsync and pki</td>
+</tr>
+<tr class="row-even"><td>hieradata/</td>
+<td>Directory that needs to contain SIMP top-scope hiera data</td>
+</tr>
+<tr class="row-odd"><td>hiera.yaml</td>
+<td>Configured with simp::scenario settings and compliance map</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="adding-simp-modules-to-the-puppetfile">
+<h2><a class="toc-backref" href="#id9">3.5.6. Adding SIMP Modules to the Puppetfile</a><a class="headerlink" href="#adding-simp-modules-to-the-puppetfile" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>We keep an up-to-date Puppetfile in the core of our repo, which you can</div></blockquote>
+<p>download using this snippet:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -o Puppetfile https://raw.githubusercontent.com/simp/simp-core/6.0.0-0/Puppetfile.stable
 </pre></div>
 </div>
@@ -358,11 +368,9 @@ modules from the git history of the <code class="docutils literal"><span class="
 contains more than just modules. Open up the <code class="docutils literal"><span class="pre">Puppetfile</span></code> that was just
 downloaded and remove the lines from <code class="docutils literal"><span class="pre">moduledir</span> <span class="pre">'src'</span></code> to
 <code class="docutils literal"><span class="pre">moduledir</span> <span class="pre">'src/puppet/modules'</span></code>. That should just leave the Puppet modules.</p>
-<p>Change into the directory you&#8217;re using from above and run <code class="docutils literal"><span class="pre">git</span> <span class="pre">init</span></code> to create
-a control repo. Puppet, Inc has some great <a href="#id13"><span class="problematic" id="id14">`documentation of a control repo online`_</span></a>.</p>
 </div>
 <div class="section" id="keydist-rsync-and-the-alternate-module-path">
-<h2><a class="toc-backref" href="#id9">3.5.6. Keydist, Rsync, and the Alternate Module Path</a><a class="headerlink" href="#keydist-rsync-and-the-alternate-module-path" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id10">3.5.7. Keydist, Rsync, and the Alternate Module Path</a><a class="headerlink" href="#keydist-rsync-and-the-alternate-module-path" title="Permalink to this headline">¶</a></h2>
 <p>SIMP uses an alternative module path, located at <code class="docutils literal"><span class="pre">/var/simp/environments/&lt;environment&gt;</span></code>
 and set in each environment&#8217;s <code class="docutils literal"><span class="pre">environment.conf</span></code>.
 Currently, it contains the rsync assets and PKI data, custom to each host. Here
@@ -424,7 +432,7 @@ Puppet server.
 .. _documentation of a control repo online: <a class="reference external" href="https://docs.puppet.com/pe/latest/cmgmt_control_repo.html">https://docs.puppet.com/pe/latest/cmgmt_control_repo.html</a></p>
 </div>
 <div class="section" id="configuring-hiera">
-<h2><a class="toc-backref" href="#id10">3.5.7. Configuring Hiera</a><a class="headerlink" href="#configuring-hiera" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id11">3.5.8. Configuring Hiera</a><a class="headerlink" href="#configuring-hiera" title="Permalink to this headline">¶</a></h2>
 <p>In order to configure a working SIMP environment under Puppet Enterprise,
 you will need to add some variables to Hiera in your &#8216;common.yaml&#8217;</p>
 <div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">simp_options</span><span class="p">::</span><span class="n">server_distribution</span><span class="p">:</span> <span class="s1">&#39;PE&#39;</span>

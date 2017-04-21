@@ -140,34 +140,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="creating-or-updating-your-control-repo">
-<h1>Creating or updating your Control Repo<a class="headerlink" href="#creating-or-updating-your-control-repo" title="Permalink to this headline">¶</a></h1>
-<p>In order to use <a class="reference internal" href="../glossary.html#term-r10k"><span class="xref std std-term">r10k</span></a> or <a class="reference internal" href="../glossary.html#term-code-manager"><span class="xref std std-term">Code Manager</span></a> with SIMP, you must create or update your <a class="reference internal" href="../glossary.html#term-control-repo"><span class="xref std std-term">Control repo</span></a> with the following components:</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="24%" />
-<col width="76%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">File/Directory</th>
-<th class="head">Description of changes</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>environment.conf</td>
-<td>Configures the alternate module path for rsync and pki</td>
-</tr>
-<tr class="row-odd"><td>Puppetfile</td>
-<td>Add SIMP Puppet Modules</td>
-</tr>
-<tr class="row-even"><td>hieradata/</td>
-<td>Directory that needs to contain SIMP top-scope hiera data</td>
-</tr>
-<tr class="row-odd"><td>hiera.yaml</td>
-<td>Configured with simp::scenario settings and compliance map</td>
-</tr>
-</tbody>
-</table>
+  <p>XXX TODO: place this chunk where it makes sense</p>
 <p>SIMP uses a <a class="reference internal" href="../glossary.html#term-puppetfile"><span class="xref std std-term">Puppetfile</span></a> and distributes some of a <a class="reference internal" href="../glossary.html#term-control-repo"><span class="xref std std-term">Control Repo</span></a> in
 the <code class="docutils literal"><span class="pre">simp-environment</span></code> package, or also in the <a href="#id1"><span class="problematic" id="id2">`simp-core`_</span></a> repository.:</p>
 <p>On the filesystem of an installed SIMP system:</p>
@@ -187,12 +160,47 @@ src/assets/simp-environment/environments/simp
 └── manifests/
 </pre></div>
 </div>
+<p>XXX TODO: END</p>
+<div class="section" id="creating-or-updating-your-control-repo">
+<h1>Creating or updating your Control Repo<a class="headerlink" href="#creating-or-updating-your-control-repo" title="Permalink to this headline">¶</a></h1>
 <p>A Control Repo contains the modules, hieradata, and roles/profiles required for
 an infrastructure, and keeping it all in a git repo creates a workflow for
 updating and developing on your Puppet infrastructure.</p>
-<p>The modules are defined in a <a class="reference internal" href="../glossary.html#term-puppetfile"><span class="xref std std-term">Puppetfile</span></a>, which SIMP uses as a development
-tool. We keep an up-to-date Puppetfile in the core of our repo, which you can
-download using this snippet:</p>
+<p>Change into the directory you&#8217;re using from above and run <code class="docutils literal"><span class="pre">git</span> <span class="pre">init</span></code> to create
+a control repo. Puppet, Inc has some great <a href="#id3"><span class="problematic" id="id4">`documentation of a control repo online`_</span></a>.</p>
+<p>In order to use <a class="reference internal" href="../glossary.html#term-r10k"><span class="xref std std-term">r10k</span></a> or <a class="reference internal" href="../glossary.html#term-code-manager"><span class="xref std std-term">Code Manager</span></a> with SIMP, you must create
+or update your <a class="reference internal" href="../glossary.html#term-control-repo"><span class="xref std std-term">Control repo</span></a> with the following components:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="76%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">File/Directory</th>
+<th class="head">Description of changes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Puppetfile</td>
+<td>Add SIMP Puppet Modules</td>
+</tr>
+<tr class="row-odd"><td>environment.conf</td>
+<td>Configures the alternate module path for rsync and pki</td>
+</tr>
+<tr class="row-even"><td>hieradata/</td>
+<td>Directory that needs to contain SIMP top-scope hiera data</td>
+</tr>
+<tr class="row-odd"><td>hiera.yaml</td>
+<td>Configured with simp::scenario settings and compliance map</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="adding-simp-modules-to-the-puppetfile">
+<h1>Adding SIMP Modules to the Puppetfile<a class="headerlink" href="#adding-simp-modules-to-the-puppetfile" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div>We keep an up-to-date Puppetfile in the core of our repo, which you can</div></blockquote>
+<p>download using this snippet:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -o Puppetfile https://raw.githubusercontent.com/simp/simp-core/6.0.0-0/Puppetfile.stable
 </pre></div>
 </div>
@@ -204,8 +212,6 @@ modules from the git history of the <code class="docutils literal"><span class="
 contains more than just modules. Open up the <code class="docutils literal"><span class="pre">Puppetfile</span></code> that was just
 downloaded and remove the lines from <code class="docutils literal"><span class="pre">moduledir</span> <span class="pre">'src'</span></code> to
 <code class="docutils literal"><span class="pre">moduledir</span> <span class="pre">'src/puppet/modules'</span></code>. That should just leave the Puppet modules.</p>
-<p>Change into the directory you&#8217;re using from above and run <code class="docutils literal"><span class="pre">git</span> <span class="pre">init</span></code> to create
-a control repo. Puppet, Inc has some great <a href="#id3"><span class="problematic" id="id4">`documentation of a control repo online`_</span></a>.</p>
 </div>
 
 

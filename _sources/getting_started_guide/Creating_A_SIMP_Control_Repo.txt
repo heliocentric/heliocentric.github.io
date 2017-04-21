@@ -1,19 +1,4 @@
-Creating or updating your Control Repo
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-In order to use :term:`r10k` or :term:`Code Manager` with SIMP, you must create or update your :term:`Control repo` with the following components:
-
-+-------------------+------------------------------------------------------------+
-| File/Directory    |  Description of changes                                    |
-+===================+============================================================+
-| environment.conf  | Configures the alternate module path for rsync and pki     |
-+-------------------+------------------------------------------------------------+
-| Puppetfile        | Add SIMP Puppet Modules                                    |
-+-------------------+------------------------------------------------------------+
-| hieradata/        | Directory that needs to contain SIMP top-scope hiera data  |
-+-------------------+------------------------------------------------------------+
-| hiera.yaml        | Configured with simp::scenario settings and compliance map |
-+-------------------+------------------------------------------------------------+
+XXX TODO: place this chunk where it makes sense
 
 SIMP uses a :term:`Puppetfile` and distributes some of a :term:`Control Repo` in
 the ``simp-environment`` package, or also in the `simp-core`_ repository.:
@@ -39,12 +24,39 @@ Our git repo:
   ├── hieradata/
   └── manifests/
 
+
+
+XXX TODO: END
+
+Creating or updating your Control Repo
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 A Control Repo contains the modules, hieradata, and roles/profiles required for
 an infrastructure, and keeping it all in a git repo creates a workflow for
 updating and developing on your Puppet infrastructure.
 
-The modules are defined in a :term:`Puppetfile`, which SIMP uses as a development
-tool. We keep an up-to-date Puppetfile in the core of our repo, which you can
+Change into the directory you're using from above and run ``git init`` to create
+a control repo. Puppet, Inc has some great `documentation of a control repo online`_.
+
+In order to use :term:`r10k` or :term:`Code Manager` with SIMP, you must create 
+or update your :term:`Control repo` with the following components:
+
++-------------------+------------------------------------------------------------+
+| File/Directory    |  Description of changes                                    |
++===================+============================================================+
+| Puppetfile        | Add SIMP Puppet Modules                                    |
++-------------------+------------------------------------------------------------+
+| environment.conf  | Configures the alternate module path for rsync and pki     |
++-------------------+------------------------------------------------------------+
+| hieradata/        | Directory that needs to contain SIMP top-scope hiera data  |
++-------------------+------------------------------------------------------------+
+| hiera.yaml        | Configured with simp::scenario settings and compliance map |
++-------------------+------------------------------------------------------------+
+
+Adding SIMP Modules to the Puppetfile
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+ We keep an up-to-date Puppetfile in the core of our repo, which you can
 download using this snippet:
 
 .. code-block:: bash
@@ -60,7 +72,3 @@ Our Puppetfile pulls down every dependency SIMP needs, which is currently
 contains more than just modules. Open up the ``Puppetfile`` that was just
 downloaded and remove the lines from ``moduledir 'src'`` to
 ``moduledir 'src/puppet/modules'``. That should just leave the Puppet modules.
-
-Change into the directory you're using from above and run ``git init`` to create
-a control repo. Puppet, Inc has some great `documentation of a control repo online`_.
-
