@@ -71,12 +71,11 @@ Configuring Hiera
 ^^^^^^^^^^^^^^^^^
 
 In order to configure a working SIMP environment under Puppet Enterprise,
-you will need to add some variables to Hiera
+you will need to add some variables to Hiera in your 'common.yaml'
 
 .. code:: bash
 
-  test
-  test
+  simp_options::server_distribution: 'PE'
 
 XXX TODO Node Classification recommendations
 
