@@ -4,7 +4,7 @@ Creating or updating your Control Repo
 In order to use :term:`r10k` or :term:`Code Manager` with SIMP, you must create or update your :term:`Control repo` with the following components:
 
 +-------------------+------------------------------------------------------------+
-| File/Directory    |  Description of changes                                   ` |
+| File/Directory    |  Description of changes                                    |
 +===================+============================================================+
 | environment.conf  | Configures the alternate module path for rsync and pki     |
 +-------------------+------------------------------------------------------------+
