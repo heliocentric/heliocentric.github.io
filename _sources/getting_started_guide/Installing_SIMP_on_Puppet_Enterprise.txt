@@ -67,6 +67,8 @@ Pre-install tasks
 
 .. include:: Creating_A_SIMP_Control_Repo.rst
 
+.. include:: Configuring_Rsync_Shares_Data.rst
+
 Configuring Hiera
 ^^^^^^^^^^^^^^^^^
 

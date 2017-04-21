@@ -53,6 +53,8 @@ added to ``$PATH``):
 
 .. include:: Creating_A_SIMP_Control_Repo.rst
 
+.. include:: Configuring_Rsync_Share_Data.rst
+
 Minimum classes for classification
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
