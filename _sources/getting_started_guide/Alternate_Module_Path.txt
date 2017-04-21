@@ -1,8 +1,18 @@
-Adding Alternate Module Path to environment.conf
+Adding the Alternate Module Path to environment.conf
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 SIMP uses an alternative module path, located at ``/var/simp/environments/<environment>``
 and set in each environment's ``environment.conf``.
+
+Change or add a modulepath directive like so:
+
+.. code:: bash
+
+  modules:/var/simp/environments/<environment>/site_files:$basemodulepath
+
+Creating Alternate Module Path
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Currently, it contains the rsync assets and PKI data, custom to each host. Here
 is an example from a fresh install:
 
@@ -19,9 +29,6 @@ is an example from a fresh install:
 * ``site_files`` is a place to store private files that may not belong in the
   control repo or another data source. And example of this would be host-based
   x509 certificates (which are used heavily by SIMP).
-
-Creating Alternate Module Path
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Each of these directories need to be created manually, except rsync, which
 requires a bit more work:

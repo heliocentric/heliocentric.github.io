@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Adding Alternate Module Path to environment.conf &mdash; SIMP 5.2.1-0 documentation</title>
+  <title>Adding the Alternate Module Path to environment.conf &mdash; SIMP 5.2.1-0 documentation</title>
   
 
   
@@ -126,7 +126,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-    <li>Adding Alternate Module Path to environment.conf</li>
+    <li>Adding the Alternate Module Path to environment.conf</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -140,11 +140,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="adding-alternate-module-path-to-environment-conf">
-<h1>Adding Alternate Module Path to environment.conf<a class="headerlink" href="#adding-alternate-module-path-to-environment-conf" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="adding-the-alternate-module-path-to-environment-conf">
+<h1>Adding the Alternate Module Path to environment.conf<a class="headerlink" href="#adding-the-alternate-module-path-to-environment-conf" title="Permalink to this headline">¶</a></h1>
 <p>SIMP uses an alternative module path, located at <code class="docutils literal"><span class="pre">/var/simp/environments/&lt;environment&gt;</span></code>
-and set in each environment&#8217;s <code class="docutils literal"><span class="pre">environment.conf</span></code>.
-Currently, it contains the rsync assets and PKI data, custom to each host. Here
+and set in each environment&#8217;s <code class="docutils literal"><span class="pre">environment.conf</span></code>.</p>
+<p>Change or add a modulepath directive like so:</p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span>modules:/var/simp/environments/&lt;environment&gt;/site_files:$basemodulepath
+</pre></div>
+</div>
+</div>
+<div class="section" id="creating-alternate-module-path">
+<h1>Creating Alternate Module Path<a class="headerlink" href="#creating-alternate-module-path" title="Permalink to this headline">¶</a></h1>
+<p>Currently, it contains the rsync assets and PKI data, custom to each host. Here
 is an example from a fresh install:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ tree -L <span class="m">1</span> /var/simp/environments/production
 /var/simp/environments/production
@@ -160,9 +167,6 @@ and large amounts of files. See <a class="reference internal" href="../help/FAQ/
 control repo or another data source. And example of this would be host-based
 x509 certificates (which are used heavily by SIMP).</li>
 </ul>
-</div>
-<div class="section" id="creating-alternate-module-path">
-<h1>Creating Alternate Module Path<a class="headerlink" href="#creating-alternate-module-path" title="Permalink to this headline">¶</a></h1>
 <p>Each of these directories need to be created manually, except rsync, which
 requires a bit more work:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ mkdir -p /var/simp/environments/&lt;environment&gt;/<span class="o">{</span>site_files/modules/pki_files,files/keydist<span class="o">}</span>
