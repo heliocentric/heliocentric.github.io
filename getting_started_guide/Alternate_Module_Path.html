@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Keydist, Rsync, and the Alternate Module Path &mdash; SIMP 5.2.1-0 documentation</title>
+  <title>Adding Alternate Module Path to environment.conf &mdash; SIMP 5.2.1-0 documentation</title>
   
 
   
@@ -126,7 +126,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-    <li>Keydist, Rsync, and the Alternate Module Path</li>
+    <li>Adding Alternate Module Path to environment.conf</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -140,8 +140,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="keydist-rsync-and-the-alternate-module-path">
-<h1>Keydist, Rsync, and the Alternate Module Path<a class="headerlink" href="#keydist-rsync-and-the-alternate-module-path" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="adding-alternate-module-path-to-environment-conf">
+<h1>Adding Alternate Module Path to environment.conf<a class="headerlink" href="#adding-alternate-module-path-to-environment-conf" title="Permalink to this headline">¶</a></h1>
 <p>SIMP uses an alternative module path, located at <code class="docutils literal"><span class="pre">/var/simp/environments/&lt;environment&gt;</span></code>
 and set in each environment&#8217;s <code class="docutils literal"><span class="pre">environment.conf</span></code>.
 Currently, it contains the rsync assets and PKI data, custom to each host. Here
@@ -160,11 +160,14 @@ and large amounts of files. See <a class="reference internal" href="../help/FAQ/
 control repo or another data source. And example of this would be host-based
 x509 certificates (which are used heavily by SIMP).</li>
 </ul>
+</div>
+<div class="section" id="creating-alternate-module-path">
+<h1>Creating Alternate Module Path<a class="headerlink" href="#creating-alternate-module-path" title="Permalink to this headline">¶</a></h1>
 <p>Each of these directories need to be created manually, except rsync, which
 requires a bit more work:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ mkdir -p /var/simp/environments/production/<span class="o">{</span>site_files/modules/pki_files/files/keydist<span class="o">}</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ mkdir -p /var/simp/environments/&lt;environment&gt;/<span class="o">{</span>site_files/modules/pki_files,files/keydist<span class="o">}</span>
 $ chown root.puppet /var/simp/environments/&lt;environment&gt;/site_files
-$ chmod -R g+rX /var/simp/environments/&lt;environment&gt;/<span class="o">{</span>site_files,simp_autofiles<span class="o">}</span>
+$ chmod -R g+rX /var/simp/environments/&lt;environment&gt;/site_files
 </pre></div>
 </div>
 <p>The rsync folder has a few tricks. When installed from an ISO, this data and
@@ -174,7 +177,7 @@ manipulated:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ git clone https://github.com/simp/simp-rsync.git /tmp/simp-rsync
 $ mv -f /tmp/simp-rsync/environments/simp/rsync /var/simp/environments/&lt;environment&gt;/
 $ ln -s /var/simp/environments/&lt;environment&gt;/rsync/RedHat /var/simp/environments/&lt;environment&gt;/rsync/CentOS
-$ chmod u+rwx,g+rX,o+rX /var/simp<span class="o">{</span>,/environments,/environments/production<span class="o">}</span>
+$ chmod u+rwx,g+rX,o+rX /var/simp/<span class="o">{</span>environments,environments/production<span class="o">}</span>
 </pre></div>
 </div>
 <p>Rsync&#8217;s primary use case in a base SIMP infrastructure is to distribute ClamAV
