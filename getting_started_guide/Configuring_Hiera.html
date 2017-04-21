@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Enable EPEL &mdash; SIMP 5.2.1-0 documentation</title>
+  <title>Configuring Hiera &mdash; SIMP 5.2.1-0 documentation</title>
   
 
   
@@ -126,11 +126,11 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-    <li>Enable EPEL</li>
+    <li>Configuring Hiera</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/getting_started_guide/Yum_Repos.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/getting_started_guide/Configuring_Hiera.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -140,46 +140,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="enable-epel">
-<h1>Enable EPEL<a class="headerlink" href="#enable-epel" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo yum install epel-release -y
-$ sudo yum install pygpgme yum-utils git
-</pre></div>
-</div>
-</div>
-<div class="section" id="install-the-simp-project-dependencies-repository">
-<h1>Install The SIMP-project_dependencies Repository<a class="headerlink" href="#install-the-simp-project-dependencies-repository" title="Permalink to this headline">¶</a></h1>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The repository may contain items from external vendors, most notably Puppet,
-Inc. and EPEL but may also contain non-SIMP project files that have been
-compiled for distribution.</p>
-</div>
-<p>Add the following to <code class="docutils literal"><span class="pre">/etc/yum.repos.d/simp-project_dependencies.repo</span></code>,
-replacing <code class="docutils literal"><span class="pre">6</span></code> with the appropriate version of SIMP. If the repo file
-does not exist, create it. The repo file for <code class="docutils literal"><span class="pre">SIMP</span> <span class="pre">6.X</span></code> is shown below.</p>
-<p>If you don&#8217;t know what versions map together, please see the
-<a class="reference internal" href="../help/FAQ/SIMP_Version_Guide.html#faq-simp-version-guide"><span class="std std-ref">SIMP Version Guide</span></a>.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The <strong>whitespace</strong> and <strong>alignment</strong> shown before the additional <code class="docutils literal"><span class="pre">gpgkey</span></code>
-values <strong>must be preserved</strong></p>
-</div>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>simp-project_6_X_dependencies<span class="o">]</span>
-<span class="nv">name</span><span class="o">=</span>simp-project_6_X_dependencies
-<span class="nv">baseurl</span><span class="o">=</span>https://packagecloud.io/simp-project/6_X_Dependencies/el/<span class="nv">$releasever</span>/<span class="nv">$basearch</span>
-<span class="nv">gpgcheck</span><span class="o">=</span><span class="m">1</span>
-<span class="nv">enabled</span><span class="o">=</span><span class="m">1</span>
-<span class="nv">gpgkey</span><span class="o">=</span>https://raw.githubusercontent.com/NationalSecurityAgency/SIMP/master/GPGKEYS/RPM-GPG-KEY-SIMP
-       https://yum.puppetlabs.com/RPM-GPG-KEY-puppetlabs
-       https://yum.puppetlabs.com/RPM-GPG-KEY-puppet
-       https://apt.postgresql.org/pub/repos/yum/RPM-GPG-KEY-PGDG-94
-       https://getfedora.org/static/352C64E5.txt
-<span class="nv">sslverify</span><span class="o">=</span><span class="m">1</span>
-<span class="nv">sslcacert</span><span class="o">=</span>/etc/pki/tls/certs/ca-bundle.crt
-<span class="nv">metadata_expire</span><span class="o">=</span><span class="m">300</span>
-</pre></div>
-</div>
+  <div class="section" id="configuring-hiera">
+<h1>Configuring Hiera<a class="headerlink" href="#configuring-hiera" title="Permalink to this headline">¶</a></h1>
+<p>In order to configure a working SIMP environment in a control-repo, you will need to add some settings to hiera. If you do not have a hiera.yaml in the root of your control-repo, you can use Puppet’s environment layer feature and just create a hiera.yaml file with the following contents:</p>
 </div>
 
 
