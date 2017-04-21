@@ -107,12 +107,14 @@
 <li class="toctree-l4"><a class="reference internal" href="#installation-of-r10k">3.4.1.3. Installation of r10k</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#creating-or-updating-your-control-repo">3.4.2. Creating or updating your Control Repo</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#adding-simp-modules-to-the-puppetfile">3.4.3. Adding SIMP Modules to the Puppetfile</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#keydist-rsync-and-the-alternate-module-path">3.4.4. Keydist, Rsync, and the Alternate Module Path</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#minimum-classes-for-classification">3.4.5. Minimum classes for classification</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#running-puppet-for-the-first-time">3.4.6. Running Puppet for the first time</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#notes-about-simp-infrastructure">3.4.7. Notes about SIMP Infrastructure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-or-updating-your-control-repo">3.4.2. Creating or updating your Control Repo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#adding-simp-modules-to-the-puppetfile">3.4.2.1. Adding SIMP Modules to the Puppetfile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#keydist-rsync-and-the-alternate-module-path">3.4.2.2. Keydist, Rsync, and the Alternate Module Path</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#minimum-classes-for-classification">3.4.3. Minimum classes for classification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-puppet-for-the-first-time">3.4.4. Running Puppet for the first time</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#notes-about-simp-infrastructure">3.4.5. Notes about SIMP Infrastructure</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="Installing_SIMP_on_Puppet_Enterprise.html">3.5. Installing SIMP on Puppet Enterprise</a></li>
@@ -180,9 +182,11 @@
 <li><a class="reference internal" href="#installation-of-r10k" id="id5">Installation of r10k</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#creating-or-updating-your-control-repo" id="id6">Creating or updating your Control Repo</a></li>
+<li><a class="reference internal" href="#creating-or-updating-your-control-repo" id="id6">Creating or updating your Control Repo</a><ul>
 <li><a class="reference internal" href="#adding-simp-modules-to-the-puppetfile" id="id7">Adding SIMP Modules to the Puppetfile</a></li>
 <li><a class="reference internal" href="#keydist-rsync-and-the-alternate-module-path" id="id8">Keydist, Rsync, and the Alternate Module Path</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#minimum-classes-for-classification" id="id9">Minimum classes for classification</a></li>
 <li><a class="reference internal" href="#running-puppet-for-the-first-time" id="id10">Running Puppet for the first time</a></li>
 <li><a class="reference internal" href="#notes-about-simp-infrastructure" id="id11">Notes about SIMP Infrastructure</a></li>
@@ -330,9 +334,8 @@ or update your <a class="reference internal" href="../glossary.html#term-control
 </tr>
 </tbody>
 </table>
-</div>
 <div class="section" id="adding-simp-modules-to-the-puppetfile">
-<h2><a class="toc-backref" href="#id7">3.4.3. Adding SIMP Modules to the Puppetfile</a><a class="headerlink" href="#adding-simp-modules-to-the-puppetfile" title="Permalink to this headline">¶</a></h2>
+<h3><a class="toc-backref" href="#id7">3.4.2.1. Adding SIMP Modules to the Puppetfile</a><a class="headerlink" href="#adding-simp-modules-to-the-puppetfile" title="Permalink to this headline">¶</a></h3>
 <p>We keep an up-to-date Puppetfile in the core of our repo, which you can
 download using this snippet:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -o Puppetfile https://raw.githubusercontent.com/simp/simp-core/6.0.0-0/Puppetfile.stable
@@ -348,7 +351,7 @@ downloaded and remove the lines from <code class="docutils literal"><span class=
 <code class="docutils literal"><span class="pre">moduledir</span> <span class="pre">'src/puppet/modules'</span></code>. That should just leave the Puppet modules.</p>
 </div>
 <div class="section" id="keydist-rsync-and-the-alternate-module-path">
-<h2><a class="toc-backref" href="#id8">3.4.4. Keydist, Rsync, and the Alternate Module Path</a><a class="headerlink" href="#keydist-rsync-and-the-alternate-module-path" title="Permalink to this headline">¶</a></h2>
+<h3><a class="toc-backref" href="#id8">3.4.2.2. Keydist, Rsync, and the Alternate Module Path</a><a class="headerlink" href="#keydist-rsync-and-the-alternate-module-path" title="Permalink to this headline">¶</a></h3>
 <p>SIMP uses an alternative module path, located at <code class="docutils literal"><span class="pre">/var/simp/environments/&lt;environment&gt;</span></code>
 and set in each environment&#8217;s <code class="docutils literal"><span class="pre">environment.conf</span></code>.
 Currently, it contains the rsync assets and PKI data, custom to each host. Here
@@ -409,8 +412,9 @@ Puppet server.
 .. _simp-core: <a class="reference external" href="https://github.com/simp/simp-core/">https://github.com/simp/simp-core/</a>
 .. _documentation of a control repo online: <a class="reference external" href="https://docs.puppet.com/pe/latest/cmgmt_control_repo.html">https://docs.puppet.com/pe/latest/cmgmt_control_repo.html</a></p>
 </div>
+</div>
 <div class="section" id="minimum-classes-for-classification">
-<h2><a class="toc-backref" href="#id9">3.4.5. Minimum classes for classification</a><a class="headerlink" href="#minimum-classes-for-classification" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id9">3.4.3. Minimum classes for classification</a><a class="headerlink" href="#minimum-classes-for-classification" title="Permalink to this headline">¶</a></h2>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">These instructions are for SIMP users who are not using Puppet Enterprise. Please refer to <a class="reference internal" href="Installing_SIMP_on_Puppet_Enterprise.html#install-simp-on-pe"><span class="std std-ref">Installing SIMP on Puppet Enterprise</span></a> for detailed documentation</p>
@@ -426,7 +430,7 @@ classes or profiles may be included on top of this baseline for the desired
 functionality. Check the <code class="docutils literal"><span class="pre">simp</span></code> scenario for a full list of classes.</p>
 </div>
 <div class="section" id="running-puppet-for-the-first-time">
-<h2><a class="toc-backref" href="#id10">3.4.6. Running Puppet for the first time</a><a class="headerlink" href="#running-puppet-for-the-first-time" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id10">3.4.4. Running Puppet for the first time</a><a class="headerlink" href="#running-puppet-for-the-first-time" title="Permalink to this headline">¶</a></h2>
 <p>SIMP doesn&#8217;t configure the puppetserver to listen on the typical port and CA
 port, so the first time the puppet agent is run, you may have to specify the
 <code class="docutils literal"><span class="pre">ca_port</span></code> and <code class="docutils literal"><span class="pre">server</span></code>. An example:</p>
@@ -461,7 +465,7 @@ it sudo powers:</p>
 </div>
 </div>
 <div class="section" id="notes-about-simp-infrastructure">
-<h2><a class="toc-backref" href="#id11">3.4.7. Notes about SIMP Infrastructure</a><a class="headerlink" href="#notes-about-simp-infrastructure" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id11">3.4.5. Notes about SIMP Infrastructure</a><a class="headerlink" href="#notes-about-simp-infrastructure" title="Permalink to this headline">¶</a></h2>
 <p>SIMP, when installed from the ISO, moves packages into <code class="docutils literal"><span class="pre">/var/www/yum</span></code> and
 creates a <code class="docutils literal"><span class="pre">yum</span></code> repo in itself. SIMP modules, notably the <code class="docutils literal"><span class="pre">simp::yum</span></code> class,
 assumes this. You will have to set <code class="docutils literal"><span class="pre">simp::yum::os_update_url</span></code> to a CentOS

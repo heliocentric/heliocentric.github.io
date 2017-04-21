@@ -54,7 +54,7 @@ or update your :term:`Control repo` with the following components:
 +-------------------+------------------------------------------------------------+
 
 Adding SIMP Modules to the Puppetfile
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We keep an up-to-date Puppetfile in the core of our repo, which you can
 download using this snippet:

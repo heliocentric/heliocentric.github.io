@@ -1,5 +1,5 @@
 Keydist, Rsync, and the Alternate Module Path
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 SIMP uses an alternative module path, located at ``/var/simp/environments/<environment>``
 and set in each environment's ``environment.conf``.
