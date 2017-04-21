@@ -111,7 +111,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#disclaimer">3.5.3. Disclaimer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pre-install-tasks">3.5.4. Pre-install tasks</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#setting-up-your-control-repo">3.5.5. Setting up your Control Repo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-or-updating-your-control-repo">3.5.5. Creating or updating your Control Repo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#keydist-rsync-and-the-alternate-module-path">3.5.6. Keydist, Rsync, and the Alternate Module Path</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#configuring-hiera">3.5.7. Configuring Hiera</a></li>
 </ul>
@@ -183,7 +183,7 @@
 </li>
 <li><a class="reference internal" href="#disclaimer" id="id6">Disclaimer</a></li>
 <li><a class="reference internal" href="#pre-install-tasks" id="id7">Pre-install tasks</a></li>
-<li><a class="reference internal" href="#setting-up-your-control-repo" id="id8">Setting up your Control Repo</a></li>
+<li><a class="reference internal" href="#creating-or-updating-your-control-repo" id="id8">Creating or updating your Control Repo</a></li>
 <li><a class="reference internal" href="#keydist-rsync-and-the-alternate-module-path" id="id9">Keydist, Rsync, and the Alternate Module Path</a></li>
 <li><a class="reference internal" href="#configuring-hiera" id="id10">Configuring Hiera</a></li>
 </ul>
@@ -294,8 +294,32 @@ a valid support license do not invalidate their support by using SIMP.</p>
 <div class="section" id="pre-install-tasks">
 <h2><a class="toc-backref" href="#id7">3.5.4. Pre-install tasks</a><a class="headerlink" href="#pre-install-tasks" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="setting-up-your-control-repo">
-<h2><a class="toc-backref" href="#id8">3.5.5. Setting up your Control Repo</a><a class="headerlink" href="#setting-up-your-control-repo" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="creating-or-updating-your-control-repo">
+<h2><a class="toc-backref" href="#id8">3.5.5. Creating or updating your Control Repo</a><a class="headerlink" href="#creating-or-updating-your-control-repo" title="Permalink to this headline">¶</a></h2>
+<p>In order to use <a class="reference internal" href="../glossary.html#term-r10k"><span class="xref std std-term">r10k</span></a> or <a class="reference internal" href="../glossary.html#term-code-manager"><span class="xref std std-term">Code Manager</span></a> with SIMP, you must create or update your <a class="reference internal" href="../glossary.html#term-control-repo"><span class="xref std std-term">Control repo</span></a> with the following components:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">File/Directory</th>
+<th class="head">Description of changes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td colspan="2">environment.conf   | Configures the alternate module path for rsync and pki</td>
+</tr>
+<tr class="row-odd"><td colspan="2">Puppetfile         | Add SIMP Puppet Modules</td>
+</tr>
+<tr class="row-even"><td>hieradata/</td>
+<td>Directory that needs to contain SIMP top-scope hiera data</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line">hieradata/         | Directory that needs to contain SIMP top-scope hiera data |</div>
+</div>
 <p>SIMP uses a <a class="reference internal" href="../glossary.html#term-puppetfile"><span class="xref std std-term">Puppetfile</span></a> and distributes some of a <a class="reference internal" href="../glossary.html#term-control-repo"><span class="xref std std-term">Control Repo</span></a> in
 the <code class="docutils literal"><span class="pre">simp-environment</span></code> package, or also in the <a href="#id11"><span class="problematic" id="id12">`simp-core`_</span></a> repository.:</p>
 <p>On the filesystem of an installed SIMP system:</p>

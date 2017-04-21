@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Setting up your Control Repo &mdash; SIMP 5.2.1-0 documentation</title>
+  <title>Creating or updating your Control Repo &mdash; SIMP 5.2.1-0 documentation</title>
   
 
   
@@ -126,7 +126,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-    <li>Setting up your Control Repo</li>
+    <li>Creating or updating your Control Repo</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -140,8 +140,32 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="setting-up-your-control-repo">
-<h1>Setting up your Control Repo<a class="headerlink" href="#setting-up-your-control-repo" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="creating-or-updating-your-control-repo">
+<h1>Creating or updating your Control Repo<a class="headerlink" href="#creating-or-updating-your-control-repo" title="Permalink to this headline">¶</a></h1>
+<p>In order to use <a class="reference internal" href="../glossary.html#term-r10k"><span class="xref std std-term">r10k</span></a> or <a class="reference internal" href="../glossary.html#term-code-manager"><span class="xref std std-term">Code Manager</span></a> with SIMP, you must create or update your <a class="reference internal" href="../glossary.html#term-control-repo"><span class="xref std std-term">Control repo</span></a> with the following components:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">File/Directory</th>
+<th class="head">Description of changes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td colspan="2">environment.conf   | Configures the alternate module path for rsync and pki</td>
+</tr>
+<tr class="row-odd"><td colspan="2">Puppetfile         | Add SIMP Puppet Modules</td>
+</tr>
+<tr class="row-even"><td>hieradata/</td>
+<td>Directory that needs to contain SIMP top-scope hiera data</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line">hieradata/         | Directory that needs to contain SIMP top-scope hiera data |</div>
+</div>
 <p>SIMP uses a <a class="reference internal" href="../glossary.html#term-puppetfile"><span class="xref std std-term">Puppetfile</span></a> and distributes some of a <a class="reference internal" href="../glossary.html#term-control-repo"><span class="xref std std-term">Control Repo</span></a> in
 the <code class="docutils literal"><span class="pre">simp-environment</span></code> package, or also in the <a href="#id1"><span class="problematic" id="id2">`simp-core`_</span></a> repository.:</p>
 <p>On the filesystem of an installed SIMP system:</p>

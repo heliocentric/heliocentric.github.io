@@ -1,5 +1,18 @@
-Setting up your Control Repo
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Creating or updating your Control Repo
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In order to use :term:`r10k` or :term:`Code Manager` with SIMP, you must create or update your :term:`Control repo` with the following components:
+
++--------------------+-----------------------------------------------------------+
+| File/Directory     |  Description of changes                                   |
++====================+===========================================================+
+| environment.conf   | Configures the alternate module path for rsync and pki    |
++--------------------------------------------------------------------------------+
+| Puppetfile         | Add SIMP Puppet Modules                                   |
++--------------------+-----------------------------------------------------------+
+| hieradata/         | Directory that needs to contain SIMP top-scope hiera data |
++--------------------+-----------------------------------------------------------+
+| hiera.yaml         | Configured with simp::scenario settings and compliance map|+--------------------+-----------------------------------------------------------+
 
 SIMP uses a :term:`Puppetfile` and distributes some of a :term:`Control Repo` in
 the ``simp-environment`` package, or also in the `simp-core`_ repository.:
