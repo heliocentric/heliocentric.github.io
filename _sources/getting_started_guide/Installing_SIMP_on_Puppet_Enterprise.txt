@@ -88,7 +88,7 @@ This server needs to have two classes assigned:
   simp
   simp::server::rsync_shares
 
-.. image: pe_classes.png
+.. image:: pe_classes.png
 
 It's recommended that you set simp::scenario to 'poss'
 
