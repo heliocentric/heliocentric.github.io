@@ -447,6 +447,26 @@ Puppet server.
     <span class="l l-Scalar l-Scalar-Plain">path</span><span class="p p-Indicator">:</span> <span class="s">&#39;scenarios/%{::simp_scenario}&#39;</span>
 </pre></div>
 </div>
+<p>If running a version of SIMP 6 prior to 6.0.1, you will need to tweak your common.yaml to work around a bug in 6.0.0 and the Release candidate:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">pupmod::pe_classlist</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">puppet_enterprise::profile::database</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">users</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pe-postgres</span>
+    <span class="l l-Scalar l-Scalar-Plain">services</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pe-postgresql</span>
+    <span class="l l-Scalar l-Scalar-Plain">firewall_rules</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">proto</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tcp</span>
+        <span class="l l-Scalar l-Scalar-Plain">port</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">5432</span>
+  <span class="l l-Scalar l-Scalar-Plain">puppet_enterprise::profile::puppetdb</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">users</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pe-puppetdb</span>
+    <span class="l l-Scalar l-Scalar-Plain">services</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pe-puppetdb</span>
+    <span class="l l-Scalar l-Scalar-Plain">firewall_rules</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">proto</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tcp</span>
+        <span class="l l-Scalar l-Scalar-Plain">port</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">8081</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="node-classification">
 <h2><a class="toc-backref" href="#id12">3.5.6. Node Classification</a><a class="headerlink" href="#node-classification" title="Permalink to this headline">¶</a></h2>

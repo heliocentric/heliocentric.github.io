@@ -67,6 +67,28 @@ XXX TODO Insert further information relevant to the disclaimer
 
 .. include:: Configuring_Hiera.rst
 
+If running a version of SIMP 6 prior to 6.0.1, you will need to tweak your common.yaml to work around a bug in 6.0.0 and the Release candidate:
+
+.. code-block:: yaml
+
+  pupmod::pe_classlist:
+    puppet_enterprise::profile::database:
+      users:
+        - pe-postgres
+      services:
+        - pe-postgresql
+      firewall_rules:
+        - proto: tcp
+          port: 5432
+    puppet_enterprise::profile::puppetdb:
+      users:
+        - pe-puppetdb
+      services:
+        - pe-puppetdb
+      firewall_rules:
+        - proto: tcp
+          port: 8081
+
 
 Node Classification
 ^^^^^^^^^^^^^^^^^^^
