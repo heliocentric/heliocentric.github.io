@@ -279,27 +279,6 @@ added to <code class="docutils literal"><span class="pre">$PATH</span></code>):<
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ /opt/puppetlabs/puppet/bin/r10k <span class="nb">help</span>
 </pre></div>
 </div>
-<p>XXX TODO: place this chunk where it makes sense</p>
-<p>SIMP uses a <a class="reference internal" href="../glossary.html#term-puppetfile"><span class="xref std std-term">Puppetfile</span></a> and distributes some of a <a class="reference internal" href="../glossary.html#term-control-repo"><span class="xref std std-term">Control Repo</span></a> in
-the <code class="docutils literal"><span class="pre">simp-environment</span></code> package, or also in the <a class="reference external" href="https://github.com/simp/simp-core/">simp-core</a> repository.:</p>
-<p>On the filesystem of an installed SIMP system:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ tree -L <span class="m">1</span> /usr/share/simp/environments/simp/
-/usr/share/simp/environments/simp/
-├── environment.conf
-├── hieradata
-├── manifests
-└── modules
-</pre></div>
-</div>
-<p>Our git repo:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ tree -L <span class="m">1</span> src/assets/simp-environment/environments/simp
-src/assets/simp-environment/environments/simp
-├── environment.conf
-├── hieradata/
-└── manifests/
-</pre></div>
-</div>
-<p>XXX TODO: END</p>
 </div>
 </div>
 <div class="section" id="creating-or-updating-your-control-repo">

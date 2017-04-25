@@ -140,34 +140,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <p>XXX TODO: place this chunk where it makes sense</p>
-<p>SIMP uses a <a class="reference internal" href="../glossary.html#term-puppetfile"><span class="xref std std-term">Puppetfile</span></a> and distributes some of a <a class="reference internal" href="../glossary.html#term-control-repo"><span class="xref std std-term">Control Repo</span></a> in
-the <code class="docutils literal"><span class="pre">simp-environment</span></code> package, or also in the <a href="#id1"><span class="problematic" id="id2">`simp-core`_</span></a> repository.:</p>
-<p>On the filesystem of an installed SIMP system:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ tree -L <span class="m">1</span> /usr/share/simp/environments/simp/
-/usr/share/simp/environments/simp/
-├── environment.conf
-├── hieradata
-├── manifests
-└── modules
-</pre></div>
-</div>
-<p>Our git repo:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ tree -L <span class="m">1</span> src/assets/simp-environment/environments/simp
-src/assets/simp-environment/environments/simp
-├── environment.conf
-├── hieradata/
-└── manifests/
-</pre></div>
-</div>
-<p>XXX TODO: END</p>
-<div class="section" id="creating-or-updating-your-control-repo">
+  <div class="section" id="creating-or-updating-your-control-repo">
 <h1>Creating or updating your Control Repo<a class="headerlink" href="#creating-or-updating-your-control-repo" title="Permalink to this headline">¶</a></h1>
 <p>A Control Repo contains the modules, hieradata, and roles/profiles required for
 an infrastructure, and keeping it all in a git repo creates a workflow for
 updating and developing on your Puppet infrastructure.</p>
 <p>Change into the directory you&#8217;re using from above and run <code class="docutils literal"><span class="pre">git</span> <span class="pre">init</span></code> to create
-a control repo. Puppet, Inc has some great <a href="#id3"><span class="problematic" id="id4">`documentation of a control repo online`_</span></a>.</p>
+a control repo. Puppet, Inc has some great <a href="#id1"><span class="problematic" id="id2">`documentation of a control repo online`_</span></a>.</p>
 <p>In order to use <a class="reference internal" href="../glossary.html#term-r10k"><span class="xref std std-term">r10k</span></a> or <a class="reference internal" href="../glossary.html#term-code-manager"><span class="xref std std-term">Code Manager</span></a> with SIMP, you must create
 or update your <a class="reference internal" href="../glossary.html#term-control-repo"><span class="xref std std-term">Control repo</span></a> with the following components:</p>
 <table border="1" class="docutils">
