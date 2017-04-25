@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.4. Installing SIMP using r10k or Code Manager &mdash; SIMP 5.2.1-0 documentation</title>
+  <title>3.4. Installing SIMP using r10k or Code Manager &mdash; SIMP 5.1.X-X documentation</title>
   
 
   
@@ -36,7 +36,7 @@
   
 
   
-    <link rel="top" title="SIMP 5.2.1-0 documentation" href="../index.html"/>
+    <link rel="top" title="SIMP 5.1.X-X documentation" href="../index.html"/>
         <link rel="up" title="3. SIMP Getting Started Guide" href="index.html"/>
         <link rel="next" title="3.5. Installing SIMP on Puppet Enterprise" href="Installing_SIMP_on_Puppet_Enterprise.html"/>
         <link rel="prev" title="3.3. Installing SIMP From A Repository" href="Installing_SIMP_From_A_Repository.html"/> 
@@ -69,7 +69,7 @@
           
           
             <div class="version">
-              5.2.1
+              5.1.X
             </div>
           
         
@@ -385,9 +385,10 @@ x509 certificates (which are used heavily by SIMP).</li>
 </dl>
 <p>Each of these directories need to be created manually, except rsync, which
 requires a bit more work:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>mkdir -p /var/simp/environments/&lt;environment&gt;/<span class="o">{</span>site_files/modules/pki_files,files/keydist<span class="o">}</span>
-chown root.puppet /var/simp/environments/&lt;environment&gt;/site_files
-chmod -R g+rX /var/simp/environments/&lt;environment&gt;/site_files
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">environment</span><span class="o">=</span>production
+mkdir -p /var/simp/environments/<span class="si">${</span><span class="nv">environment</span><span class="si">}</span>/<span class="o">{</span>site_files/modules/pki_files,files/keydist<span class="o">}</span>
+chown root.puppet /var/simp/environments/<span class="si">${</span><span class="nv">environment</span><span class="si">}</span>/site_files
+chmod -R g+rX /var/simp/environments/<span class="si">${</span><span class="nv">environment</span><span class="si">}</span>/site_files
 </pre></div>
 </div>
 <p>The rsync folder has a few tricks. When installed from an ISO, this data and
@@ -395,9 +396,9 @@ folder structure is laid out by the <code class="docutils literal"><span class="
 method described in this document, the git repo will have to be cloned and
 manipulated:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>git clone https://github.com/simp/simp-rsync.git /tmp/simp-rsync
-mv -f /tmp/simp-rsync/environments/simp/rsync /var/simp/environments/&lt;environment&gt;/
-ln -s /var/simp/environments/&lt;environment&gt;/rsync/RedHat /var/simp/environments/&lt;environment&gt;/rsync/CentOS
-chmod u+rwx,g+rX,o+rX /var/simp/<span class="o">{</span>environments,environments/production<span class="o">}</span>
+mv -f /tmp/simp-rsync/environments/simp/rsync /var/simp/environments/<span class="si">${</span><span class="nv">environment</span><span class="si">}</span>/
+ln -s /var/simp/environments/<span class="si">${</span><span class="nv">environment</span><span class="si">}</span>/rsync/RedHat /var/simp/environments/<span class="si">${</span><span class="nv">environment</span><span class="si">}</span>/rsync/CentOS
+chmod u+rwx,g+rX,o+rX /var/simp/<span class="o">{</span>environments,environments/<span class="si">${</span><span class="nv">environment</span><span class="si">}</span><span class="o">}</span>
 </pre></div>
 </div>
 <p>Rsync&#8217;s primary use case in a base SIMP infrastructure is to distribute ClamAV
@@ -406,14 +407,14 @@ required.</p>
 <p>Install <code class="docutils literal"><span class="pre">clamav-update</span></code> and download the latest database using the following
 config and commands, replacing &lt;environment&gt; with your environment.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ cat <span class="s">&lt;&lt; EOF &gt; /tmp/freshclam.conf</span>
-<span class="s">DatabaseDirectory /var/simp/environments/&lt;environment&gt;/rsync/Global/clamav</span>
+<span class="s">DatabaseDirectory /var/simp/environments/${environment}/rsync/Global/clamav</span>
 <span class="s">DatabaseMirror database.clamav.net</span>
 <span class="s">Bytecode yes</span>
 <span class="s">EOF</span>
 </pre></div>
 </div>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ yum install -y clamav-update
-$ freshclam -u root --config-file<span class="o">=</span>/tmp/freshclam.conf
+<div class="highlight-bash"><div class="highlight"><pre><span></span>yum install -y clamav-update
+freshclam -u root --config-file<span class="o">=</span>/tmp/freshclam.conf
 </pre></div>
 </div>
 <p>Be careful when copying the first rsync environment around. There are hidden

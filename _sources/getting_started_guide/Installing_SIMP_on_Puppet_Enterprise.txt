@@ -29,7 +29,7 @@ System Requirements
 ^^^^^^^^^^^^^^^^^^^
 
 Puppet Enterprise
------------------
+~~~~~~~~~~~~~~~~~
 
 The following versions of Puppet Enterprise are currently supported:
 
@@ -64,6 +64,28 @@ Pre-install tasks
 
 .. include:: Configuring_Hiera.rst
 
-XXX TODO Node Classification recommendations
+Preparing rsync certs
+^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+  hostname=$(hostname)
+  mkdir -p /etc/pki/simp_apps/stunnel/x509/{public,private,cacerts}
+  cp /etc/puppetlabs/puppet/ssl/certs/${hostname}.pem /etc/pki/simp_apps/stunnel/x509/public/${hostname}.pub
+  cp /etc/puppetlabs/puppet/ssl/ca/ca_crt.pem /etc/pki/simp_apps/stunnel/x509/cacerts/cacerts.pem
+  cp /etc/puppetlabs/puppet/ssl/private_keys/${hostname}.pem /etc/pki/simp_apps/stunnel/x509/private/
+
+
+Node Classification
+^^^^^^^^^^^^^^^^^^^
+
+Create a node group called 'SIMP Servers', and assign the Master of Masters to the group.
+
+This server needs to have two classes assigned:
+.. codeblock:: bash
+  simp
+  simp::server::rsync_shares
+
+It's recommended that you set simp::scenario to 'poss'
 
 
