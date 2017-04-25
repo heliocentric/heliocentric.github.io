@@ -117,8 +117,8 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#configuring-hiera">3.5.5. Configuring Hiera</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#preparing-rsync-certs">3.5.6. Preparing rsync certs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#node-classification">3.5.7. Node Classification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#node-classification">3.5.6. Node Classification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#preparing-rsync-certs">3.5.7. Preparing rsync certs</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="Building_A_SIMP_ISO.html">3.6. Building a SIMP ISO</a></li>
@@ -194,8 +194,8 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#configuring-hiera" id="id11">Configuring Hiera</a></li>
-<li><a class="reference internal" href="#preparing-rsync-certs" id="id12">Preparing rsync certs</a></li>
-<li><a class="reference internal" href="#node-classification" id="id13">Node Classification</a></li>
+<li><a class="reference internal" href="#node-classification" id="id12">Node Classification</a></li>
+<li><a class="reference internal" href="#preparing-rsync-certs" id="id13">Preparing rsync certs</a></li>
 </ul>
 </div>
 <div class="section" id="overview">
@@ -442,18 +442,8 @@ Puppet server.
 </pre></div>
 </div>
 </div>
-<div class="section" id="preparing-rsync-certs">
-<h2><a class="toc-backref" href="#id12">3.5.6. Preparing rsync certs</a><a class="headerlink" href="#preparing-rsync-certs" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">hostname</span><span class="o">=</span><span class="k">$(</span>hostname<span class="k">)</span>
-mkdir -p /etc/pki/simp_apps/stunnel/x509/<span class="o">{</span>public,private,cacerts<span class="o">}</span>
-cp /etc/puppetlabs/puppet/ssl/certs/<span class="si">${</span><span class="nv">hostname</span><span class="si">}</span>.pem /etc/pki/simp_apps/stunnel/x509/public/<span class="si">${</span><span class="nv">hostname</span><span class="si">}</span>.pub
-cp /etc/puppetlabs/puppet/ssl/ca/ca_crt.pem /etc/pki/simp_apps/stunnel/x509/cacerts/cacerts.pem
-cp /etc/puppetlabs/puppet/ssl/private_keys/<span class="si">${</span><span class="nv">hostname</span><span class="si">}</span>.pem /etc/pki/simp_apps/stunnel/x509/private/
-</pre></div>
-</div>
-</div>
 <div class="section" id="node-classification">
-<h2><a class="toc-backref" href="#id13">3.5.7. Node Classification</a><a class="headerlink" href="#node-classification" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id12">3.5.6. Node Classification</a><a class="headerlink" href="#node-classification" title="Permalink to this headline">¶</a></h2>
 <p>Create a node group called &#8216;SIMP Servers&#8217;, and assign the Master of Masters to the group.</p>
 <p>This server needs to have two classes assigned:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>simp
@@ -462,6 +452,16 @@ simp::server::rsync_shares
 </div>
 <p>You will also need to specify your simp::scenario. &#8216;poss&#8217; will only manage pupmod and will generally work with PE without any extra configuration. However it will not bring the server up to any compliance standard. &#8216;simp-lite&#8217; and &#8216;simp&#8217; scenarios will reconfigure the server with various compliance settings.</p>
 <img alt="../_images/pe_classes.png" src="../_images/pe_classes.png" />
+</div>
+<div class="section" id="preparing-rsync-certs">
+<h2><a class="toc-backref" href="#id13">3.5.7. Preparing rsync certs</a><a class="headerlink" href="#preparing-rsync-certs" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">hostname</span><span class="o">=</span><span class="k">$(</span>hostname<span class="k">)</span>
+mkdir -p /etc/pki/simp_apps/stunnel/x509/<span class="o">{</span>public,private,cacerts<span class="o">}</span>
+cp /etc/puppetlabs/puppet/ssl/certs/<span class="si">${</span><span class="nv">hostname</span><span class="si">}</span>.pem /etc/pki/simp_apps/stunnel/x509/public/<span class="si">${</span><span class="nv">hostname</span><span class="si">}</span>.pub
+cp /etc/puppetlabs/puppet/ssl/ca/ca_crt.pem /etc/pki/simp_apps/stunnel/x509/cacerts/cacerts.pem
+cp /etc/puppetlabs/puppet/ssl/private_keys/<span class="si">${</span><span class="nv">hostname</span><span class="si">}</span>.pem /etc/pki/simp_apps/stunnel/x509/private/
+</pre></div>
+</div>
 </div>
 </div>
 
