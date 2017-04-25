@@ -204,15 +204,21 @@
 Puppet Enterprise installation. Once installed SIMP will
 configure itself to add the necessary firewall rules, and service
 level exclusions based only on changes made to the PE Console.</p>
-<p>Installing SIMP on top of Puppet Enterprise is a multi-step process, involving changes at the following places in your environment:</p>
+<p>Installing SIMP on top of Puppet Enterprise is a multi-step process,
+involving changes at the following places in your environment:</p>
 <ul class="simple">
+<li>manual shell commands on the Master of Masters (MoM).</li>
 <li>control repo</li>
-<li>global hiera</li>
+<li>global or environment layer hiera</li>
 <li>console classifier</li>
-<li>Some manual shell commands on the Master of Masters (MoM).</li>
 </ul>
-<p>It is highly recommended to perform these steps in sequence to prevent loss of connectivity.</p>
-<p>At this time multiple compile masters and PE HA is not supported out of the box in SIMP. We are currently working on a Technology Preview in succeeding 6.x versions to support HA configurations out of the box. At this time HA support requires manual configuration and only supports manual failover.</p>
+<p>It is highly recommended to perform these steps in sequence
+to prevent loss of connectivity.</p>
+<p>At this time multiple compile masters and PE HA is not supported
+out of the box in SIMP. We are currently working on a Technology
+Preview in succeeding 6.x versions to support HA configurations
+out of the box. At this time HA support requires manual configuration
+and only supports manual failover.</p>
 </div>
 <div class="section" id="system-requirements">
 <h2><a class="toc-backref" href="#id2">3.5.2. System Requirements</a><a class="headerlink" href="#system-requirements" title="Permalink to this headline">¶</a></h2>
