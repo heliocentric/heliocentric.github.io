@@ -460,8 +460,8 @@ cp /etc/puppetlabs/puppet/ssl/private_keys/<span class="si">${</span><span class
 simp::server::rsync_shares
 </pre></div>
 </div>
+<p>You will also need to specify your simp::scenario. &#8216;poss&#8217; will only manage pupmod and will generally work with PE without any extra configuration. However it will not bring the server up to any compliance standard. &#8216;simp-lite&#8217; and &#8216;simp&#8217; scenarios will reconfigure the server with various compliance settings.</p>
 <img alt="../_images/pe_classes.png" src="../_images/pe_classes.png" />
-<p>It&#8217;s recommended that you set simp::scenario to &#8216;poss&#8217;</p>
 </div>
 </div>
 

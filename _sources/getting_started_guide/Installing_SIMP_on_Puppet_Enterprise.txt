@@ -85,8 +85,9 @@ This server needs to have two classes assigned:
   simp
   simp::server::rsync_shares
 
+You will also need to specify your simp::scenario. 'poss' will only manage pupmod and will generally work with PE without any extra configuration. However it will not bring the server up to any compliance standard. 'simp-lite' and 'simp' scenarios will reconfigure the server with various compliance settings.
+
 .. image:: pe_classes.png
 
-It's recommended that you set simp::scenario to 'poss'
 
 
