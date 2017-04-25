@@ -82,9 +82,13 @@ Node Classification
 Create a node group called 'SIMP Servers', and assign the Master of Masters to the group.
 
 This server needs to have two classes assigned:
+
 .. code-block:: bash
+
   simp
   simp::server::rsync_shares
+
+.. image: pe_classes.png
 
 It's recommended that you set simp::scenario to 'poss'
 
