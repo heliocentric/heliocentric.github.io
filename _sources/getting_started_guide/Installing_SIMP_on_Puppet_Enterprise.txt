@@ -88,6 +88,9 @@ If running a version of SIMP 6 prior to 6.0.1, you will need to tweak your commo
       firewall_rules:
         - proto: tcp
           port: 8081
+  lookup_options:
+    pupmod::pe_classlist:
+      merge: unique
 
 
 Node Classification
