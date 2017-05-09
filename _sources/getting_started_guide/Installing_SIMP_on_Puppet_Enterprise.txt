@@ -111,8 +111,11 @@ You will also need to specify your simp::scenario. 'poss' will only manage pupmo
 .. image:: pe_classes.png
 
 XXX TODO: Add blurb about pinning the puppet-agent package on simp versions before 6.0.1
+
 XXX TODO: simp::yum::schedule is set to auto update by default
+
 XXX TODO: add hiera workarounds for simp scenario:
+
 .. code-block:: yaml
 
   simp_options::ldap: false
